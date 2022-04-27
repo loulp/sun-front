@@ -1,0 +1,37 @@
+.btnBannerContainer {
+  height: 50vh;
+  position: relative;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.link {
+  text-align: start;
+  position: absolute;
+  left: 5%;
+  bottom: 10%;
+  padding-right: 3%;
+
+  border: 1px dashed white;
+  border-radius: 10px;
+  background-color: transparent;
+
+  white-space: nowrap;
+}
+
+p {
+  width: fit-content;
+  color: white;
+  margin: 5%;
+}
+
+.title {
+  margin-top: 10%;
+  font-size: 22px;
+}
+.discover {
+  margin-bottom: 10%;
+  font-size: 18px;
+}
