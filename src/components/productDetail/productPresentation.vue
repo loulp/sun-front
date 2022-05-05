@@ -2,7 +2,7 @@
   <div class="container">
     <div class="namePriceContainer">
       <h3>{{ product.attributes.nom }}</h3>
-      <p>Prix: {{ product.attributes.prix }}</p>
+      <p>Prix: {{ product.attributes.prix }}€</p>
     </div>
     <div class="description">{{ product.attributes.description }}</div>
     <div>

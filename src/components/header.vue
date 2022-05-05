@@ -30,6 +30,8 @@
 
 <script>
 import Menu from "./menu.vue";
+import EventBus from "@/shared/eventBus.js";
+
 export default {
   components: { Menu },
 
@@ -98,6 +100,14 @@ export default {
         logoEl.style.width = "0";
       }
     },
+
+    showShopMenu() {
+      this.showMenu = !this.showMenu;
+    },
+  },
+
+  created() {
+    EventBus.$on("showShopMenu", this.showShopMenu);
   },
 };
 </script>

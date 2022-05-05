@@ -1,6 +1,6 @@
 <template>
   <div class="btnBannerContainer">
-    <button class="link">
+    <button class="link" @click="sendShowMenuEvent">
       <p class="title">LA BOUTIQUE</p>
       <p class="discover">Découvrir</p>
     </button>
@@ -8,7 +8,15 @@
 </template>
 
 <script>
-export default {};
+import EventBus from '@/shared/eventBus.js'
+
+export default {
+  methods: {
+    sendShowMenuEvent() {
+      EventBus.$emit("showShopMenu")
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

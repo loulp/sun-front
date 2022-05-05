@@ -6,7 +6,7 @@
         <span>NOUVELLES CREATIONS</span>
       </h2>
     </div>
-    <div class="productList">
+    <div v-if="products.length > 0" class="productList">
       <div
         class="productItem"
         v-for="(product, index) in products"
@@ -21,13 +21,16 @@
         ></div>
       </div>
     </div>
+    <empty-list-message v-else />
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import emptyListMessage from "./emptyListMessage.vue";
+import productsServices from "../../shared/services/products.services";
 
 export default {
+  components: { emptyListMessage },
   data() {
     return {
       products: [],
@@ -41,28 +44,22 @@ export default {
 
   methods: {
     getProducts() {
-      axios
-        .get(`${process.env.VUE_APP_BACK_URL_API}bijoux?populate=photo`, {
-          headers: {
-            Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`,
-          },
-        })
-        .then(
-          (res) => {
-            res.data.data.forEach((el) => {
-              const product = {
-                id: el.id,
-                img: el.attributes.photo.data[0].attributes.url,
-              };
-              this.products.push(product);
-            });
-            //TODO requête coté back pour limité la taille de la liste
-            this.products = this.products.slice(0, 9);
-          },
-          (err) => {
-            console.log(err);
-          }
-        );
+      productsServices.getProducts().then(
+        (res) => {
+          res.data.data.forEach((el) => {
+            const product = {
+              id: el.id,
+              img: el.attributes.photo.data[0].attributes.url,
+            };
+            this.products.push(product);
+          });
+          //TODO requête coté back pour limité la taille de la liste
+          this.products = this.products.slice(0, 9);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     },
     toProductView(id) {
       this.$router.push({

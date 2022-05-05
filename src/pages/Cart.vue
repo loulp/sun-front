@@ -3,7 +3,7 @@
     <h2>Votre panier</h2>
     <ItemList v-if="productList.length > 0" :productList="productList" />
     <div class="priceAnbutton">
-      <p>Prix total: {{ totalPrice }}</p>
+      <p>Prix total: {{ totalPrice }}€</p>
       <button @click="toPayment()" class="paymentButton">Paiement</button>
     </div>
   </div>

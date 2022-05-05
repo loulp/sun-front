@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>LES COLLECTIONS</h2>
-    <div class="collectionList">
+    <div v-if="collections.length > 0" class="collectionList">
       <div
         class="collectionItem"
         v-for="(coll, index) in collections"
@@ -22,13 +22,16 @@
         </div>
       </div>
     </div>
+    <empty-list-message v-else />
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import emptyListMessage from "./emptyListMessage.vue";
+import collectionsServices from "@/shared/services/collections.services";
 
 export default {
+  components: { emptyListMessage },
   data() {
     return {
       collections: [],
@@ -37,13 +40,12 @@ export default {
   },
 
   mounted() {
-    axios
-      .get(`${process.env.VUE_APP_BACK_URL_API}collections?populate=img`, {
-        headers: {
-          Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`,
-        },
-      })
-      .then(
+    this.getCollections();
+  },
+
+  methods: {
+    getCollections() {
+      collectionsServices.getCollections().then(
         (res) => {
           console.log(res);
           res.data.data.forEach((el) => {
@@ -59,9 +61,7 @@ export default {
           console.log(err);
         }
       );
-  },
-
-  methods: {
+    },
     toShop(id) {
       this.$router.push({
         name: "BoutiqueColl",

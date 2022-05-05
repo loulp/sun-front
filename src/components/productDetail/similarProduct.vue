@@ -41,6 +41,7 @@ export default {
 
   methods: {
     getProducts() {
+      //TODO get similar product (by collection or categorie or else)
       axios
         .get(`${process.env.VUE_APP_BACK_URL_API}bijoux?populate=photo`, {
           headers: {

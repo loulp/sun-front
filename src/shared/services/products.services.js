@@ -2,6 +2,14 @@ import axios from 'axios';
 const qs = require('qs');
 
 export default {
+  getProducts() {
+    return axios.get(`${process.env.VUE_APP_BACK_URL_API}bijoux?populate=photo`, {
+      headers: {
+        Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`,
+      },
+    });
+  },
+
   getProduct(id) {
     return axios.get(
       `${process.env.VUE_APP_BACK_URL_API}bijoux/${id}?populate=*`,
@@ -81,19 +89,5 @@ export default {
         headers: { Authorization: `Bearer ${process.env.VUE_APP_TOKEN}` },
       }
     );
-  },
-
-  //TODO Séparer les service et mettre au propre
-  payment(body) {
-    return axios.post(
-      `${process.env.VUE_APP_BACK_URL_API}createPaymentIntent`,
-      body
-    );
-  },
-
-  createOrder(body) {
-    return axios.post(`${process.env.VUE_APP_BACK_URL_API}commandes`, {
-      data: body,
-    });
   },
 };

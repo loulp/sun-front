@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import productService from "@/shared/services/products.services";
+import paymentService from "@/shared/services/payment.services";
 
 // IMPORTANT COMMENT, dodge lint error on import
 /* global Stripe */
@@ -39,30 +39,21 @@ export default {
 
   mounted() {
     this.productList = this.$store.state.cart;
-    this.paying();
-    this.checkStatus();
+    this.initPayment();
   },
 
   methods: {
-    async paying() {
-      const body = {
-        nom: "nom",
-        prenom: "prenom",
-        email: "email@email.com",
-        adresse: "adresse",
-        prix_total: 10,
-        produits: {},
-        date: Date.now(),
-      };
+    async initPayment() {
+      const body = this.makeBody();
 
-      await productService.payment(body).then(
+      await paymentService.payment(body).then(
         (res) => {
           this.clientSecret = res.data;
-          console.log(`paying success : `);
+          console.log(`order creation successfull : `);
           console.log(res);
         },
         (err) => {
-          console.log(`paying error : ${err}`);
+          console.log(`order creation error : ${err}`);
         }
       );
 
@@ -84,16 +75,9 @@ export default {
     },
 
     async submit() {
-      const body = {
-        nom: "doe",
-        prenom: "john",
-        email: "mail@mail.com",
-        adresse: "adresse",
-        prix_total: 10,
-        produits: {},
-        date: Date.now(),
-      };
-      productService.createOrder(body).then(
+      const body = this.makeBody();
+
+      paymentService.createOrder(body).then(
         (res) => {
           console.log(res);
         },
@@ -106,7 +90,8 @@ export default {
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
-          return_url: "http://localhost:8081/panier",
+          return_url: "http://localhost:8081/payment",
+          //TODO set to customer email
           receipt_email: "louislepogam@gmail.com",
         },
       });
@@ -118,33 +103,33 @@ export default {
       }
     },
 
-    async checkStatus() {
-      const clientSecret = new URLSearchParams(window.location.search).get(
-        "payment_intent_client_secret"
-      );
+    makeBody() {
+      const products = this.$store.state.cart;
 
-      if (!clientSecret) {
-        return;
-      }
+      let totalPrice = () => {
+        let total = 0;
+        if (products.length > 0) {
+          products.forEach((item) => {
+            total = total + item.prix;
+          });
+        }
 
-      const { paymentIntent } = await stripe.retrievePaymentIntent(
-        clientSecret
-      );
+        return total;
+      };
 
-      switch (paymentIntent.status) {
-        case "succeeded":
-          console.log("Payment succeeded!");
-          break;
-        case "processing":
-          console.log("Your payment is processing.");
-          break;
-        case "requires_payment_method":
-          console.log("Your payment was not successful, please try again.");
-          break;
-        default:
-          console.log("Something went wrong.");
-          break;
-      }
+      const body = {
+        nom: this.userForm.lastname,
+        prenom: this.userForm.firstname,
+        email: this.userForm.email,
+        adresse: `${this.userForm.address} ${this.userForm.postalCode}`,
+        prix_total: totalPrice(),
+        produits: products,
+        date: Date.now(),
+      };
+
+      console.log(body);
+
+      return body;
     },
   },
 };

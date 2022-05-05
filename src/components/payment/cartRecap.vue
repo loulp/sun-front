@@ -9,7 +9,7 @@
       <img :src="strapiMediaUrl + item.media" />
       <div class="itemText">
         <h3>{{ item.nom }}</h3>
-        <p>{{ item.prix }}</p>
+        <p>{{ item.prix }}€</p>
         <p>Taille: {{ item.size }}</p>
       </div>
     </div>
