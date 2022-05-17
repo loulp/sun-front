@@ -6,7 +6,7 @@
       v-for="(item, index) in productList"
       :key="index"
     >
-      <img :src="strapiMediaUrl + item.media" />
+      <img :src="item.media" />
       <div class="itemText">
         <h3>{{ item.nom }}</h3>
         <p>{{ item.prix }}€</p>
@@ -21,7 +21,6 @@ export default {
   data() {
     return {
       productList: this.$store.state.cart,
-      strapiMediaUrl: process.env.VUE_APP_BACK_URL_IMG,
     };
   },
 

@@ -10,7 +10,7 @@
       <img
         v-for="(media, index) in this.product.attributes.photo.data"
         :key="index"
-        :src="strapiMediaUrl + media.attributes.url"
+        :src="media.attributes.url"
         alt=""
         class="relevantItem"
       />
@@ -24,18 +24,9 @@ export default {
     product: null,
   },
 
-  data() {
-    return {
-      strapiMediaUrl: process.env.VUE_APP_BACK_URL_IMG,
-    };
-  },
-
   mounted() {
     if (this.product) {
-      this.$refs.productPresentation.style.backgroundImage = `url(${
-        this.strapiMediaUrl +
-        this.product.attributes.photo.data[0].attributes.url
-      })`;
+      this.$refs.productPresentation.style.backgroundImage = `url(${this.product.attributes.photo.data[0].attributes.url})`;
     }
   },
 

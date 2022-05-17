@@ -11,7 +11,7 @@
         <div
           class="imgContainer"
           :style="{
-            'background-image': `url(${strapiMediaUrl + coll.img})`,
+            'background-image': `url(${coll.img})`,
           }"
         ></div>
         <div class="collectionNameContainer">
@@ -35,7 +35,6 @@ export default {
   data() {
     return {
       collections: [],
-      strapiMediaUrl: process.env.VUE_APP_BACK_URL_IMG,
     };
   },
 

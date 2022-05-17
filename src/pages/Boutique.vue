@@ -39,9 +39,7 @@ export default {
             id: res.data.data.id,
             name: res.data.data.attributes.name,
             description: res.data.data.attributes.description,
-            img:
-              process.env.VUE_APP_BACK_URL_IMG +
-              res.data.data.attributes.img.data.attributes.url,
+            img: res.data.data.attributes.img.data.attributes.url,
           };
           res.data.data.attributes.bijoux.data.forEach((bijou) => {
             this.products.push(bijou);
@@ -59,9 +57,7 @@ export default {
           this.subject = {
             id: res.data.data.id,
             type: res.data.data.attributes.type,
-            img:
-              process.env.VUE_APP_BACK_URL_IMG +
-              res.data.data.attributes.img.data.attributes.url,
+            img: res.data.data.attributes.img.data.attributes.url,
           };
           res.data.data.attributes.bijoux.data.forEach((bijou) => {
             this.products.push(bijou);
