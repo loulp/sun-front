@@ -5,7 +5,7 @@
       v-for="(item, index) in productList"
       :key="index"
     >
-      <img :src="strapiMediaUrl + item.media" />
+      <img :src="item.media" />
       <div class="itemText">
         <h3>{{ item.nom }}</h3>
         <p>{{ item.prix }}€</p>
@@ -20,12 +20,6 @@
 export default {
   props: {
     productList: null,
-  },
-
-  data() {
-    return {
-      strapiMediaUrl: process.env.VUE_APP_BACK_URL_IMG,
-    };
   },
 
   methods: {

@@ -112,9 +112,7 @@ export default {
     },
 
     changeImage(url) {
-      this.$refs.imageSide.style.backgroundImage = `url(${
-        process.env.VUE_APP_BACK_URL_IMG + url
-      })`;
+      this.$refs.imageSide.style.backgroundImage = `url(${url})`;
     },
   },
 

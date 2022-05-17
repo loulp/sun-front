@@ -16,7 +16,7 @@
         <div
           class="imgContainer"
           :style="{
-            'background-image': `url(${strapiMediaUrl + product.img})`,
+            'background-image': `url(${product.img})`,
           }"
         ></div>
       </div>
@@ -34,7 +34,6 @@ export default {
   data() {
     return {
       products: [],
-      strapiMediaUrl: process.env.VUE_APP_BACK_URL_IMG,
     };
   },
 
@@ -46,6 +45,7 @@ export default {
     getProducts() {
       productsServices.getProducts().then(
         (res) => {
+          console.log(res);
           res.data.data.forEach((el) => {
             const product = {
               id: el.id,

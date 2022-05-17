@@ -13,7 +13,7 @@
               class="mediaList"
               v-for="img in medias"
               :key="img.index"
-              :src="strapiMediaUrl + img"
+              :src="img"
               alt=""
               @click="changeMainMedia(img)"
             />
@@ -44,7 +44,6 @@ export default {
       medias: [],
       mainMedia: null,
       collection: this.product.attributes.collection.data,
-      strapiMediaUrl: process.env.VUE_APP_BACK_URL_IMG,
     };
   },
 
@@ -57,11 +56,11 @@ export default {
       this.product.attributes.photo.data.forEach((img) => {
         this.medias.push(img.attributes.url);
       });
-      this.mainMedia = this.strapiMediaUrl + this.medias[0];
+      this.mainMedia = this.medias[0];
     },
 
     changeMainMedia(url) {
-      this.mainMedia = this.strapiMediaUrl + url;
+      this.mainMedia = url;
     },
   },
 };
