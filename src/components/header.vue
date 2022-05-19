@@ -5,7 +5,18 @@
     </div>
     <div class="menuContainer">
       <div class="burgerMenu">
-        <img src="@/assets/menuIcon.svg" alt="" />
+        <img
+          v-if="!showMobileMenu"
+          src="@/assets/menuIcon.svg"
+          alt=""
+          @click="showMobileMenu = !showMobileMenu"
+        />
+        <img
+          v-if="showMobileMenu"
+          src="@/assets/cross.svg"
+          alt=""
+          @click="showMobileMenu = !showMobileMenu"
+        />
       </div>
       <div class="inlineMenu">
         <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
@@ -22,6 +33,7 @@
         </div>
       </div>
     </div>
+    <menuMobile v-if="showMobileMenu" />
     <menuShop v-if="currentMenu === 'SHOP'" @hideMenu="currentMenu = null" />
     <menuHouse v-if="currentMenu === 'HOUSE'" @hideMenu="currentMenu = null" />
   </div>
@@ -30,14 +42,16 @@
 <script>
 import menuShop from "./menus/menuShop.vue";
 import menuHouse from "./menus/menuHouse.vue";
+import menuMobile from "./menus/menuMobile.vue";
 import EventBus from "@/shared/eventBus.js";
 
 export default {
-  components: { menuShop, menuHouse },
+  components: { menuShop, menuHouse, menuMobile },
 
   data() {
     return {
       currentMenu: null,
+      showMobileMenu: false,
     };
   },
 
@@ -54,6 +68,7 @@ export default {
   watch: {
     $route() {
       this.currentMenu = null;
+      this.showMobileMenu = false;
       this.bannerStyle(true);
     },
   },
@@ -142,6 +157,7 @@ export default {
 
     img {
       width: 10%;
+      min-width: 90px;
       transition: all ease 0.5s;
     }
 
