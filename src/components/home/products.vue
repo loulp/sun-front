@@ -13,12 +13,10 @@
         :key="index"
         @click="toProductView(product.id)"
       >
-        <div
-          class="imgContainer"
-          :style="{
-            'background-image': `url(${product.img})`,
-          }"
-        ></div>
+      <!-- TODO fix image not taking full div width -->
+        <div class="imgContainer">
+          <img class="productMedia" :src="product.img" alt="" />
+        </div>
       </div>
     </div>
     <empty-list-message v-else />
@@ -114,9 +112,14 @@ export default {
 
         width: 100%;
         height: 50vh;
+        max-width: fit-content;
+        margin: auto;
 
-        background-position: center;
-        background-size: cover;
+        .productMedia {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+        }
       }
 
       &:hover {

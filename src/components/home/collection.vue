@@ -8,12 +8,9 @@
         :key="index"
         @click="toShop(coll.id)"
       >
-        <div
-          class="imgContainer"
-          :style="{
-            'background-image': `url(${coll.img})`,
-          }"
-        ></div>
+        <div class="imgContainer">
+          <img class="collectionMedia" :src="coll.img" alt="" />
+        </div>
         <div class="collectionNameContainer">
           <h3>
             Collection <br />
@@ -118,9 +115,13 @@ export default {
 
         width: 100%;
         height: 45vh;
+        max-width: fit-content;
 
-        background-position: center;
-        background-size: cover;
+        .collectionMedia {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+        }
       }
     }
   }

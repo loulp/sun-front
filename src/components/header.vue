@@ -8,12 +8,10 @@
         <img src="@/assets/menuIcon.svg" alt="" />
       </div>
       <div class="inlineMenu">
-        <span @click="showMenu = !showMenu" class="menuItem">L'atelier</span>
-        <span @click="showMenu = !showMenu" class="menuItem">La Maison</span>
-        <span @click="showMenu = !showMenu" class="menuItem">La Boutique</span>
-        <span @click="showMenu = !showMenu" class="menuItem"
-          >Contactez nous</span
-        >
+        <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
+        <span @click="showMenu('')" class="menuItem">Joaillerie</span>
+        <span @click="showMenu('SHOP')" class="menuItem">Boutique</span>
+        <span @click="showMenu('')" class="menuItem">Contactez nous</span>
       </div>
       <div class="iconContainer">
         <img src="@/assets/searchIcon.svg" alt="" />
@@ -24,20 +22,22 @@
         </div>
       </div>
     </div>
-    <Menu v-if="showMenu" @hideMenu="showMenu = !showMenu" />
+    <menuShop v-if="currentMenu === 'SHOP'" @hideMenu="currentMenu = null" />
+    <menuHouse v-if="currentMenu === 'HOUSE'" @hideMenu="currentMenu = null" />
   </div>
 </template>
 
 <script>
-import Menu from "./menu.vue";
+import menuShop from "./menus/menuShop.vue";
+import menuHouse from "./menus/menuHouse.vue";
 import EventBus from "@/shared/eventBus.js";
 
 export default {
-  components: { Menu },
+  components: { menuShop, menuHouse },
 
   data() {
     return {
-      showMenu: false,
+      currentMenu: null,
     };
   },
 
@@ -53,7 +53,7 @@ export default {
 
   watch: {
     $route() {
-      this.showMenu = false;
+      this.currentMenu = null;
       this.bannerStyle(true);
     },
   },
@@ -101,8 +101,14 @@ export default {
       }
     },
 
-    showShopMenu() {
-      this.showMenu = !this.showMenu;
+    showMenu(menu) {
+      if (this.currentMenu === null) {
+        this.currentMenu = menu;
+      } else if (this.currentMenu != null && this.currentMenu != menu) {
+        this.currentMenu = menu;
+      } else {
+        this.currentMenu = null;
+      }
     },
   },
 

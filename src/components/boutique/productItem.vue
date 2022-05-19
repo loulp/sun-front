@@ -1,6 +1,11 @@
 <template>
   <div @click="toProductView()" v-if="product" class="itemContainer">
-    <div class="productPresentation" ref="productPresentation">
+    <div class="productPresentation">
+      <img
+        class="productMedia"
+        :src="product.attributes.photo.data[0].attributes.url"
+        alt=""
+      />
       <div class="productDescription">
         <p>{{ product.attributes.nom }}</p>
         <p>{{ product.attributes.prix }}€</p>
@@ -22,12 +27,6 @@
 export default {
   props: {
     product: null,
-  },
-
-  mounted() {
-    if (this.product) {
-      this.$refs.productPresentation.style.backgroundImage = `url(${this.product.attributes.photo.data[0].attributes.url})`;
-    }
   },
 
   methods: {
@@ -62,13 +61,17 @@ export default {
   .productPresentation {
     cursor: pointer;
     height: 45vh;
-    background-size: cover;
-    background-position: center;
 
     position: relative;
 
     border: 1px solid;
     border-radius: 15px;
+
+    .productMedia {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
 
     .productDescription {
       visibility: hidden;

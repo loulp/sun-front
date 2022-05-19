@@ -38,6 +38,7 @@ export default {
 body,
 html {
   margin: 0;
+  font-family: sans-serif;
 }
 
 .viewContainer {
