@@ -13,7 +13,7 @@
         :key="index"
         @click="toProductView(product.id)"
       >
-      <!-- TODO fix image not taking full div width -->
+        <!-- TODO fix image not taking full div width -->
         <div class="imgContainer">
           <img class="productMedia" :src="product.img" alt="" />
         </div>
@@ -80,11 +80,18 @@ export default {
     text-align: center;
     h2 {
       font-size: 25px;
-      margin: 2% auto 2% 3%;
 
       span {
         border-top: 2px solid #efdebd;
       }
+
+      @media screen and (max-width: 660px) {
+        margin: 15% auto 15% 3%;
+      }
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 75%;
     }
   }
 
@@ -126,7 +133,19 @@ export default {
         transform: scale(1.05);
         box-shadow: 5px 5px 8px #bdbcbc;
       }
+
+      @media screen and (max-width: 660px) {
+        min-width: 66%;
+
+        .imgContainer {
+          height: auto;
+        }
+      }
     }
+  }
+
+  @media screen and (max-width: 660px) {
+    height: auto;
   }
 }
 </style>

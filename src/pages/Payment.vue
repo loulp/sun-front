@@ -113,6 +113,17 @@ export default {
     .cartRecapContainer {
       width: 40%;
     }
+
+    @media screen and (max-width: 660px) {
+      flex-direction: column-reverse;
+
+      .stepContainer {
+        width: auto;
+      }
+      .cartRecapContainer {
+        width: auto;
+      }
+    }
   }
 }
 </style>

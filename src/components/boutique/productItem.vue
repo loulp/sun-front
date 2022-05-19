@@ -78,7 +78,7 @@ export default {
       width: 50%;
       transition: all ease-in-out 0.5s;
 
-      background-color: beige;
+      background-color: #efdebd;
       border-radius: 0 0 15px 15px;
 
       bottom: 0;
@@ -87,6 +87,11 @@ export default {
 
       p {
         color: black;
+      }
+
+      @media screen and (max-width: 660px) {
+        visibility: visible;
+        width: 100%;
       }
     }
   }

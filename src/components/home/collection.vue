@@ -73,6 +73,10 @@ export default {
   margin: 5% auto;
   h2 {
     margin: 2% auto 2% 3%;
+
+    @media screen and (max-width: 660px) {
+      margin: 15% auto 15% 3%;
+    }
   }
 
   .collectionList {
@@ -121,6 +125,14 @@ export default {
           width: 100%;
           height: 100%;
           border-radius: 10px;
+        }
+      }
+
+      @media screen and (max-width: 660px) {
+        min-width: 66%;
+
+        .imgContainer {
+          height: 33vh;
         }
       }
     }

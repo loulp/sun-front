@@ -88,6 +88,14 @@ export default {
       span {
         border-top: 2px solid #efdebd;
       }
+
+      @media screen and (max-width: 660px) {
+        margin: 15% auto 15% 3%;
+      }
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 75%;
     }
   }
 
@@ -131,6 +139,14 @@ export default {
       &:hover {
         transform: scale(1.05);
         box-shadow: 5px 5px 8px #bdbcbc;
+      }
+
+      @media screen and (max-width: 660px) {
+        min-width: 66%;
+
+        .imgContainer {
+          height: auto;
+        }
       }
     }
   }

@@ -78,5 +78,10 @@ export default {
       }
     }
   }
+
+  @media screen and (max-width: 660px) {
+    height: 33vh;
+    width: 100%;
+  }
 }
 </style>

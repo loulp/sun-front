@@ -66,5 +66,11 @@ export default {
       border: none;
     }
   }
+
+      @media screen and (max-width: 660px) {
+        width: auto;
+        margin: auto;
+        height: auto;
+      }
 }
 </style>
