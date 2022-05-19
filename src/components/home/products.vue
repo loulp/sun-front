@@ -13,12 +13,10 @@
         :key="index"
         @click="toProductView(product.id)"
       >
-        <div
-          class="imgContainer"
-          :style="{
-            'background-image': `url(${product.img})`,
-          }"
-        ></div>
+        <!-- TODO fix image not taking full div width -->
+        <div class="imgContainer">
+          <img class="productMedia" :src="product.img" alt="" />
+        </div>
       </div>
     </div>
     <empty-list-message v-else />
@@ -82,11 +80,18 @@ export default {
     text-align: center;
     h2 {
       font-size: 25px;
-      margin: 2% auto 2% 3%;
 
       span {
         border-top: 2px solid #efdebd;
       }
+
+      @media screen and (max-width: 660px) {
+        margin: 15% auto 15% 3%;
+      }
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 75%;
     }
   }
 
@@ -114,16 +119,33 @@ export default {
 
         width: 100%;
         height: 50vh;
+        max-width: fit-content;
+        margin: auto;
 
-        background-position: center;
-        background-size: cover;
+        .productMedia {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+        }
       }
 
       &:hover {
         transform: scale(1.05);
         box-shadow: 5px 5px 8px #bdbcbc;
       }
+
+      @media screen and (max-width: 660px) {
+        min-width: 66%;
+
+        .imgContainer {
+          height: auto;
+        }
+      }
     }
+  }
+
+  @media screen and (max-width: 660px) {
+    height: auto;
   }
 }
 </style>

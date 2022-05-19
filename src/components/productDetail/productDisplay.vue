@@ -97,15 +97,27 @@ export default {
       .mainMedia {
         width: 100%;
         height: 90vh;
+
+        @media screen and (max-width: 660px) {
+          height: auto;
+        }
       }
 
       .mediaList {
         width: 10%;
         cursor: pointer;
+
+        @media screen and (max-width: 660px) {
+          width: 25%;
+        }
       }
     }
     .productDetail {
       flex: 50%;
+    }
+
+    @media screen and (max-width: 660px) {
+      flex-direction: column;
     }
   }
 }

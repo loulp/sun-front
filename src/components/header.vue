@@ -5,15 +5,24 @@
     </div>
     <div class="menuContainer">
       <div class="burgerMenu">
-        <img src="@/assets/menuIcon.svg" alt="" />
+        <img
+          v-if="!showMobileMenu"
+          src="@/assets/menuIcon.svg"
+          alt=""
+          @click="showMobileMenu = !showMobileMenu"
+        />
+        <img
+          v-if="showMobileMenu"
+          src="@/assets/cross.svg"
+          alt=""
+          @click="showMobileMenu = !showMobileMenu"
+        />
       </div>
       <div class="inlineMenu">
-        <span @click="showMenu = !showMenu" class="menuItem">L'atelier</span>
-        <span @click="showMenu = !showMenu" class="menuItem">La Maison</span>
-        <span @click="showMenu = !showMenu" class="menuItem">La Boutique</span>
-        <span @click="showMenu = !showMenu" class="menuItem"
-          >Contactez nous</span
-        >
+        <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
+        <span @click="showMenu('')" class="menuItem">Joaillerie</span>
+        <span @click="showMenu('SHOP')" class="menuItem">Boutique</span>
+        <span @click="showMenu('')" class="menuItem">Contactez nous</span>
       </div>
       <div class="iconContainer">
         <img src="@/assets/searchIcon.svg" alt="" />
@@ -24,20 +33,25 @@
         </div>
       </div>
     </div>
-    <Menu v-if="showMenu" @hideMenu="showMenu = !showMenu" />
+    <menuMobile v-if="showMobileMenu" />
+    <menuShop v-if="currentMenu === 'SHOP'" @hideMenu="currentMenu = null" />
+    <menuHouse v-if="currentMenu === 'HOUSE'" @hideMenu="currentMenu = null" />
   </div>
 </template>
 
 <script>
-import Menu from "./menu.vue";
+import menuShop from "./menus/menuShop.vue";
+import menuHouse from "./menus/menuHouse.vue";
+import menuMobile from "./menus/menuMobile.vue";
 import EventBus from "@/shared/eventBus.js";
 
 export default {
-  components: { Menu },
+  components: { menuShop, menuHouse, menuMobile },
 
   data() {
     return {
-      showMenu: false,
+      currentMenu: null,
+      showMobileMenu: false,
     };
   },
 
@@ -53,7 +67,8 @@ export default {
 
   watch: {
     $route() {
-      this.showMenu = false;
+      this.currentMenu = null;
+      this.showMobileMenu = false;
       this.bannerStyle(true);
     },
   },
@@ -101,8 +116,14 @@ export default {
       }
     },
 
-    showShopMenu() {
-      this.showMenu = !this.showMenu;
+    showMenu(menu) {
+      if (this.currentMenu === null) {
+        this.currentMenu = menu;
+      } else if (this.currentMenu != null && this.currentMenu != menu) {
+        this.currentMenu = menu;
+      } else {
+        this.currentMenu = null;
+      }
     },
   },
 
@@ -136,6 +157,7 @@ export default {
 
     img {
       width: 10%;
+      min-width: 90px;
       transition: all ease 0.5s;
     }
 

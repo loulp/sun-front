@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <product-item v-for="item in products" :key="item.index" :product="item"></product-item>
+    <product-item
+      v-for="item in products"
+      :key="item.index"
+      :product="item"
+    ></product-item>
   </div>
 </template>
 
@@ -23,5 +27,9 @@ export default {
   justify-content: center;
 
   flex-wrap: wrap;
+
+  @media screen and (max-width: 660px) {
+    flex-direction: column;
+  }
 }
 </style>

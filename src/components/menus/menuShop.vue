@@ -127,7 +127,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../shared/styles/variables.scss";
+@import "@/shared/styles/variables.scss";
 
 .flexContainer {
   height: calc(100vh - #{$headerHeight});
@@ -152,7 +152,6 @@ export default {
       h3 {
         flex: 40%;
         font-size: 24px;
-        font-family: cursive;
         text-align: center;
       }
 
@@ -180,7 +179,7 @@ export default {
         }
 
         & :hover {
-          list-style: url("../assets/favIcon.svg");
+          list-style: url("../../assets/favIcon.svg");
         }
       }
     }

@@ -37,6 +37,28 @@ const routes = [
     props: true,
     component: () => import('@/pages/Product'),
   },
+  {
+    path: '/lamaison',
+    name: 'lamaison',
+    component: () => import('@/pages/House'),
+    children: [
+      {
+        path: '/lamaison/creatrice',
+        name: 'creatrice',
+        component: () => import('@/components/house/creator'),
+      },
+      {
+        path: '/lamaison/savoir_faire',
+        name: 'savoir_faire',
+        component: () => import('@/components/house/expertise'),
+      },
+      {
+        path: '/lamaison/inspiration',
+        name: 'inspiration',
+        component: () => import('@/components/house/inspiration'),
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({

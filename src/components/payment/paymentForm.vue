@@ -151,4 +151,14 @@ export default {
   background-color: #efdebd;
   color: white;
 }
+
+@media screen and (max-width: 660px) {
+  .container {
+    margin-top: 10%;
+  }
+
+  #payment-form {
+    width: 100%;
+  }
+}
 </style>
