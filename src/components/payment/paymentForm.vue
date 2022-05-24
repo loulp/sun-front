@@ -34,6 +34,7 @@ export default {
       elements: null,
       productList: [],
       stripeKey: process.env.VUE_APP_STRIPE_KEY,
+      body: null,
     };
   },
 
@@ -44,11 +45,12 @@ export default {
 
   methods: {
     async initPayment() {
-      const body = this.makeBody();
+      this.createBody();
 
-      await paymentService.payment(body).then(
+      await paymentService.payment(this.body).then(
         (res) => {
-          this.clientSecret = res.data;
+          this.clientSecret = res.data.client_secret;
+          this.body.paymentIntent = res.data.id;
           console.log(`order creation successfull : `);
           console.log(res);
         },
@@ -75,9 +77,7 @@ export default {
     },
 
     async submit() {
-      const body = this.makeBody();
-
-      paymentService.createOrder(body).then(
+      paymentService.createOrder(this.body).then(
         (res) => {
           console.log(res);
         },
@@ -103,7 +103,7 @@ export default {
       }
     },
 
-    makeBody() {
+    createBody() {
       const products = this.$store.state.cart;
 
       let totalPrice = () => {
@@ -125,11 +125,11 @@ export default {
         prix_total: totalPrice(),
         produits: products,
         date: Date.now(),
+        PaymentIntent: null,
+        PaymentConfirmed: false,
       };
 
-      console.log(body);
-
-      return body;
+      this.body = body;
     },
   },
 };
