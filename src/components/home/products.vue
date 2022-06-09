@@ -161,7 +161,6 @@ export default {
       display: flex;
       overflow-x: auto;
       padding-bottom: 5%;
-      justify-content: center;
 
       &::-webkit-scrollbar {
         display: none;
