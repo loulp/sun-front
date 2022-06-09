@@ -1,6 +1,6 @@
 <template>
   <div class="btnBannerContainer">
-    <button class="link">
+    <button class="link" @click="redirect">
       <p class="title">L'ATELIER</p>
       <p class="discover">Découvrir</p>
     </button>
@@ -8,7 +8,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    redirect() {
+      this.$router.push({
+        name: "savoir_faire",
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -17,6 +25,10 @@ export default {};
 
 .btnBannerContainer {
   height: calc(100vh - #{$headerHeight});
-  background-image: url("https://thumbs.dreamstime.com/b/bijoutier-travaillant-avec-la-cha%C3%AEne-dans-l-atelier-le-se-ferment-vers-haut-de-photo-cultiv%C3%A9e-homme-dou%C3%A9-r%C3%A9parant-collier-pour-140725539.jpg");
+  background-image: url("../../assets/workshop.jpg");
+
+  button {
+    cursor: pointer;
+  }
 }
 </style>

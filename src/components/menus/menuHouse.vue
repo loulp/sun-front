@@ -6,7 +6,7 @@
         <ul>
           <li>
             <div
-              @mouseover="changeImage('../../assets/toolsnb.jpg')"
+              @mouseover="changeImage('../../assets/housebanner.jpg')"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             >
@@ -21,7 +21,7 @@
           </li>
           <li>
             <div
-              @mouseover="changeImage('../../assets/jewelnb.jpg')"
+              @mouseover="changeImage('../../assets/housebanner.jpg')"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             >
@@ -30,13 +30,13 @@
                 :to="{
                   name: 'savoir_faire',
                 }"
-                >Savoir faire</router-link
+                >Le savoir faire</router-link
               >
             </div>
           </li>
           <li>
             <div
-              @mouseover="changeImage('../../assets/toolsnb.jpg')"
+              @mouseover="changeImage('../../assets/housebanner.jpg')"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             >
@@ -45,7 +45,7 @@
                 :to="{
                   name: 'inspiration',
                 }"
-                >Inspiration</router-link
+                >L'inspiration</router-link
               >
             </div>
           </li>
@@ -120,7 +120,7 @@ export default {
         }
 
         & :hover {
-          list-style: url("../../assets/favIcon.svg");
+          list-style: url("../../assets/ulicon15.jpg");
         }
       }
     }
@@ -140,7 +140,7 @@ export default {
 
     background-position: center;
     background-size: cover;
-    background-image: url("../../assets/jewelnb.jpg");
+    background-image: url("../../assets/housebanner.jpg");
     transition: background-image 0.3s ease-in-out;
   }
 }

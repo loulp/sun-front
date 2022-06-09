@@ -20,8 +20,8 @@
       </div>
       <div class="inlineMenu">
         <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
-        <span @click="showMenu('')" class="menuItem">Joaillerie</span>
-        <span @click="showMenu('SHOP')" class="menuItem">Boutique</span>
+        <span @click="showMenu('SHOP')" class="menuItem">Joaillerie</span>
+        <span @click="showMenu('')" class="menuItem">Boutique</span>
         <span @click="showMenu('')" class="menuItem">Contactez nous</span>
       </div>
       <div class="iconContainer">
@@ -105,7 +105,7 @@ export default {
       if (visible) {
         bannerEl.style.visibility = "visible";
         bannerEl.style.height = "80px";
-        bannerEl.style.borderBottom = "2px solid black";
+        bannerEl.style.borderBottom = "1px solid black";
         logoEl.style.width = "10%";
       } else {
         bannerEl.style.visibility = "hidden";
@@ -128,7 +128,9 @@ export default {
   },
 
   created() {
-    EventBus.$on("showShopMenu", this.showShopMenu);
+    EventBus.$on("showShopMenu", () => {
+      this.currentMenu = "SHOP"
+    });
   },
 };
 </script>
@@ -157,11 +159,11 @@ export default {
 
     img {
       width: 10%;
-      min-width: 90px;
+      // min-width: 90px;
       transition: all ease 0.5s;
     }
 
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 
     @media screen and (max-width: 660px) {
       img {

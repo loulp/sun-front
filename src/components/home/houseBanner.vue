@@ -1,14 +1,22 @@
 <template>
   <div class="btnBannerContainer">
-    <button class="link">
-      <p class="title">LA MAISON</p>
+    <button class="link" @click="redirect">
+      <p class="title">L'INSPIRATION</p>
       <p class="discover">Découvrir</p>
     </button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    redirect() {
+      this.$router.push({
+        name: "inspiration",
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -17,6 +25,10 @@ export default {};
 
 .btnBannerContainer {
   height: calc(100vh - #{$headerHeight});
-  background-image: url("../../assets/jewelnb.jpg");
+  background-image: url("../../assets/housebanner.jpg");
+
+  button {
+    cursor: pointer;
+  }
 }
 </style>
