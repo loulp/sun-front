@@ -2,33 +2,73 @@
   <div class="container">
     <div class="titleContainer">
       <h2>
-        Vous pourriez aussi <br />
-        <span>LES AIMERS</span>
+        Découvrez les <br />
+        <span>NOUVELLES CREATIONS</span>
       </h2>
     </div>
-    <div class="productList">
-      <div
-        class="productItem"
-        v-for="(product, index) in products"
-        :key="index"
-        @click="toProductView(product.id)"
-      >
-        <div class="imgContainer">
+    <div v-if="products.length > 0" class="carouselContainer">
+      <img
+        @mouseover="scrollCarousel('LEFT')"
+        @mouseout="stopScroll"
+        src="@/assets/control_left.svg"
+        alt=""
+        class="controls left"
+      />
+      <img
+        @mouseover="scrollCarousel('RIGHT')"
+        @mouseout="stopScroll"
+        src="@/assets/control_right.svg"
+        alt=""
+        class="controls right"
+      />
+      <div class="productList">
+        <div
+          class="productItem"
+          v-for="(product, index) in products"
+          :key="index"
+          @click="toProductView(product.id)"
+          @mouseenter="product.mainMedia = product.img[1].attributes.url"
+          @mouseleave="product.mainMedia = product.img[0].attributes.url"
+        >
           <!-- TODO fix image not taking full div width -->
-          <img class="productMedia" :src="product.img" alt="" />
+          <div class="productPresentation">
+            <div class="imgContainer">
+              <img class="productMedia" :src="product.mainMedia" alt="" />
+            </div>
+            <div class="productDescription">
+              <p>{{ product.attr.nom }}</p>
+              <p>{{ product.attr.prix }}€</p>
+            </div>
+          </div>
+
+          <div class="relevantContainer">
+            <img
+              v-for="(media, index) in product.img"
+              :key="index"
+              :src="media.attributes.url"
+              alt=""
+              class="relevantItem"
+              @mouseenter="product.mainMedia = media.attributes.url"
+              @mouseleave="product.mainMedia = product.img[0].attributes.url"
+            />
+          </div>
         </div>
       </div>
     </div>
+    <empty-list-message v-else />
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import emptyListMessage from "@/components/home/emptyListMessage.vue";
+import productsServices from "../../shared/services/products.services";
 
 export default {
+  components: { emptyListMessage },
   data() {
     return {
       products: [],
+      scrolling: null,
     };
   },
 
@@ -38,29 +78,25 @@ export default {
 
   methods: {
     getProducts() {
-      //TODO get similar product (by collection or categorie or else)
-      axios
-        .get(`${process.env.VUE_APP_BACK_URL_API}bijoux?populate=photo`, {
-          headers: {
-            Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`,
-          },
-        })
-        .then(
-          (res) => {
-            res.data.data.forEach((el) => {
-              const product = {
-                id: el.id,
-                img: el.attributes.photo.data[0].attributes.url,
-              };
-              this.products.push(product);
-            });
-            //TODO requête coté back pour limité la taille de la liste
-            this.products = this.products.slice(0, 9);
-          },
-          (err) => {
-            console.log(err);
-          }
-        );
+      productsServices.getProducts().then(
+        (res) => {
+          console.log(res);
+          res.data.data.forEach((el) => {
+            const product = {
+              id: el.id,
+              attr: el.attributes,
+              mainMedia: el.attributes.photo.data[0].attributes.url,
+              img: el.attributes.photo.data,
+            };
+            this.products.push(product);
+          });
+          //TODO requête coté back pour limité la taille de la liste
+          this.products = this.products.slice(0, 9);
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     },
     toProductView(id) {
       this.$router.push({
@@ -68,13 +104,33 @@ export default {
         params: { id: id },
       });
     },
+
+    scrollCarousel(side) {
+      const self = this;
+      const carousel = document.getElementsByClassName("productList")[0];
+      const scrollLength = 25;
+
+      carousel.style.scrollBehavior = "smooth";
+      if (side === "LEFT") {
+        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
+      } else {
+        carousel.scrollLeft = carousel.scrollLeft - scrollLength;
+      }
+
+      this.scrolling = window.setTimeout(function () {
+        self.scrollCarousel(side);
+      }, 100);
+    },
+
+    stopScroll() {
+      window.clearTimeout(this.scrolling);
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  height: calc(100vh - 160px);
   margin: 5% auto;
 
   .titleContainer {
@@ -83,7 +139,6 @@ export default {
     text-align: center;
     h2 {
       font-size: 25px;
-      margin: 2% auto 2% 3%;
 
       span {
         border-top: 2px solid #efdebd;
@@ -99,56 +154,138 @@ export default {
     }
   }
 
-  .productList {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 5%;
+  .carouselContainer {
+    position: relative;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    .productList {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 5%;
 
-    .productItem {
-      min-width: 25%;
-      margin: 1%;
-      position: relative;
-      box-shadow: 3px 3px 5px #bdbcbc;
-      border-radius: 15px;
-      cursor: pointer;
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
-      transition: all ease 0.5s;
+      .productItem {
+        min-width: 22%;
+        margin: 1%;
+        position: relative;
+        cursor: pointer;
 
-      .imgContainer {
-        border-radius: 10px;
+        .productPresentation {
+          position: relative;
 
-        width: 100%;
-        height: 40vh;
-        max-width: fit-content;
-        margin: auto;
+          .imgContainer {
+            width: 100%;
+            height: 60vh;
+            max-width: fit-content;
+            margin: auto;
 
-        background-position: center;
-        background-size: cover;
+            // TODO DELETE
+            // border: 0.5px solid black;
 
-        .productMedia {
-          width: 100%;
-          height: 100%;
-          border-radius: 10px;
+            .productMedia {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .productDescription {
+            visibility: hidden;
+            width: 100%;
+            height: 0;
+            transition: all ease-in-out 0.5s;
+
+            background-color: rgba(239, 222, 189, 0.5);
+
+            bottom: 0;
+            left: 0;
+            position: absolute;
+
+            p {
+              margin-left: 2%;
+              font-size: 0;
+              color: black;
+            }
+
+            @media screen and (max-width: 660px) {
+              visibility: visible;
+              width: 100%;
+            }
+          }
+
+          @media screen and (max-width: 660px) {
+            min-width: 66%;
+
+            .imgContainer {
+              height: auto;
+            }
+          }
+        }
+
+        .relevantContainer {
+          width: 80%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          visibility: hidden;
+
+          .relevantItem {
+            cursor: pointer;
+
+            flex-basis: 20%;
+            height: 50px;
+            width: 50px;
+
+            border: 0.5px solid;
+            margin: 5px 5px 0 0;
+          }
+        }
+
+        &:hover {
+          .relevantContainer {
+            visibility: visible;
+            transition: all ease-in-out 3s;
+          }
+
+          .productPresentation .productDescription {
+            visibility: visible;
+            height: 25%;
+            transition: all ease-in-out 1s;
+          }
+
+          .productPresentation .productDescription p {
+            font-size: inherit;
+            transition: all ease-in-out 1s;
+          }
         }
       }
+    }
 
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 5px 5px 8px #bdbcbc;
+    .controls {
+      position: absolute;
+      width: 35px;
+      z-index: 75;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+
+      background-color: rgba(193, 199, 201, 0.2);
+      padding: 5px;
+
+      &.left {
+        left: 0;
       }
 
-      @media screen and (max-width: 660px) {
-        min-width: 66%;
-
-        .imgContainer {
-          height: auto;
-        }
+      &.right {
+        right: 0;
       }
     }
+  }
+
+  @media screen and (max-width: 660px) {
+    height: auto;
   }
 }
 </style>

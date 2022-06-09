@@ -38,7 +38,7 @@ export default {
 body,
 html {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Abhaya Libre", serif;
 }
 
 .viewContainer {

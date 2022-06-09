@@ -179,7 +179,7 @@ export default {
         }
 
         & :hover {
-          list-style: url("../../assets/favIcon.svg");
+          list-style: url("../../assets/ulicon15.jpg");
         }
       }
     }

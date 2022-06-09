@@ -25,6 +25,10 @@ export default {
 
 .btnBannerContainer {
   height: calc(100vh - #{$headerHeight});
-  background-image: url("../../assets/toolsnb.jpg");
+  background-image: url("../../assets/shopbanner.jpg");
+
+  button {
+    cursor: pointer
+  }
 }
 </style>
