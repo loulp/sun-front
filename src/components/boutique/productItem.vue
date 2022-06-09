@@ -96,8 +96,6 @@ export default {
     .imgContainer {
       width: 100%;
       height: 60vh;
-      max-width: fit-content;
-      margin: auto;
 
       // TODO DELETE
       border: 0.5px solid black;

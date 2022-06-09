@@ -161,13 +161,14 @@ export default {
       display: flex;
       overflow-x: auto;
       padding-bottom: 5%;
+      justify-content: center;
 
       &::-webkit-scrollbar {
         display: none;
       }
 
       .productItem {
-        min-width: 22%;
+        min-width: 21%;
         margin: 1%;
         position: relative;
         cursor: pointer;
@@ -178,8 +179,6 @@ export default {
           .imgContainer {
             width: 100%;
             height: 60vh;
-            max-width: fit-content;
-            margin: auto;
 
             // TODO DELETE
             // border: 0.5px solid black;
