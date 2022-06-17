@@ -62,7 +62,7 @@ export default {
   },
 
   mounted() {
-    this.manageBannerDisplay();
+    // this.manageBannerDisplay();
   },
 
   watch: {

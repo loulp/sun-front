@@ -1,16 +1,26 @@
 <template>
   <div v-if="subject">
     <div class="imgContainer" ref="imgContainer">
-      <h1 class="subjectName">{{subject.name}}</h1>
+      <h1 class="subjectName">{{ subject.name }}</h1>
     </div>
-    <h3 class="description">{{ subject.description }}</h3>
+    <vue-markdown-it
+      v-if="subject.description"
+      :source="subject.description"
+      id="editor"
+    />
   </div>
 </template>
 
 <script>
+import VueMarkdownIt from "vue-markdown-it";
+
 export default {
   props: {
-    subject: null
+    subject: null,
+  },
+
+  components: {
+    VueMarkdownIt,
   },
 
   mounted() {
@@ -40,9 +50,9 @@ export default {
   }
 }
 
-.description {
+#editor {
   margin: 3% 10%;
   color: black;
-  width: 50%
+  width: 50%;
 }
 </style>

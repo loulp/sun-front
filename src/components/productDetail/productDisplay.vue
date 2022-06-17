@@ -92,11 +92,19 @@ export default {
     .productMedia {
       flex: 50%;
       width: 100%;
-      overflow: hidden;
+      overflow-y: scroll;
+      margin-left: 5%;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .mainMedia {
-        width: 100%;
-        height: 90vh;
+        width: 85%;
+        height: 75vh;
+
+        // TODO DELETE BEFORE COMMIT
+        // border: 1px solid black;
 
         @media screen and (max-width: 660px) {
           height: auto;
@@ -106,6 +114,10 @@ export default {
       .mediaList {
         width: 10%;
         cursor: pointer;
+        margin: 5px 10px 5px 0;
+
+        // TODO DELETE BEFORE COMMIT
+        // border: 1px solid black;
 
         @media screen and (max-width: 660px) {
           width: 25%;

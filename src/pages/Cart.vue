@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <h2>Votre panier</h2>
-    <ItemList v-if="productList.length > 0" :productList="productList" />
+  <div class="mainContainer">
+    <div class="itemList">
+      <h2>Votre panier</h2>
+      <ItemList v-if="productList.length > 0" :productList="productList" />
+    </div>
     <div class="priceAnbutton">
       <p>Prix total: {{ totalPrice }}€</p>
       <button @click="toPayment()" class="paymentButton">Paiement</button>
@@ -51,18 +53,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.priceAnbutton {
-  width: fit-content;
-  margin-right: 10%;
-  margin-left: auto;
+.mainContainer {
+  display: flex;
+  flex-direction: row;
 
-  .paymentButton {
+  .itemList {
+    flex: 85%;
+  }
+
+  .priceAnbutton {
+    flex: 15%;
+    font-size: 22px;
+
     width: fit-content;
-    border: none;
-    padding: 10% 25%;
-    font-size: 18px;
-    border-radius: 15px;
-    cursor: pointer;
+    margin-right: 5%;
+    margin-top: 10%;
+    margin-left: auto;
+
+    .paymentButton {
+      width: fit-content;
+      border: none;
+      padding: 10% 25%;
+      font-size: 18px;
+      border-radius: 15px;
+      cursor: pointer;
+      background-color: #efdebd;
+      color: white;
+      font-weight: bold;
+    }
   }
 }
 </style>
