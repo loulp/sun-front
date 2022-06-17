@@ -4,8 +4,12 @@
       <h3>{{ product.attributes.nom }}</h3>
       <p>Prix: {{ product.attributes.prix }}€</p>
     </div>
-    <div class="description">{{ product.attributes.description }}</div>
-    <div>
+    <vue-markdown-it
+      v-if="product.attributes.description"
+      :source="product.attributes.description"
+      id="editor"
+    />
+    <div v-if="product.attributes.category.data.attributes.type === 'Bague'">
       <div class="fingerSize">
         <p>Taille de doigt :</p>
         <select name="fingerSize" id="fingerSize">
@@ -23,7 +27,8 @@
         :to="{
           name: 'Home',
         }"
-        >* Consulter le guide des tailles *</router-link
+        class="sizeGuideLink"
+        >*Consulter le guide des tailles</router-link
       >
     </div>
     <button class="cartButton" @click="addToCart()">Ajouter au panier</button>
@@ -31,9 +36,15 @@
 </template>
 
 <script>
+import VueMarkdownIt from "vue-markdown-it";
+
 export default {
   props: {
     product: null,
+  },
+
+  components: {
+    VueMarkdownIt,
   },
 
   computed: {
@@ -64,10 +75,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 5%;
+  padding-left: 15%;
 
   > * {
-    margin-bottom: 10%;
+    margin-bottom: 1%;
   }
 
   p {
@@ -104,16 +115,22 @@ export default {
     }
   }
 
-  .description {
+  #editor {
     width: 75%;
   }
 
+  .sizeGuideLink {
+    color: black;
+  }
+
   .cartButton {
+    margin-top: 3%;
     width: fit-content;
+    background-color: #efdebd;
+    color: white;
     border: none;
     padding: 3% 10%;
     font-size: 18px;
-    border-radius: 15px;
     cursor: pointer;
   }
 }

@@ -33,7 +33,6 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin: 5%;
-  width: 75%;
   height: 80vh;
   overflow-y: scroll;
 

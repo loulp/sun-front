@@ -98,7 +98,7 @@ export default {
       height: 60vh;
 
       // TODO DELETE
-      border: 0.5px solid black;
+      // border: 0.5px solid black;
 
       .productMedia {
         width: 100%;

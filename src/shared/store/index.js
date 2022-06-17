@@ -23,12 +23,18 @@ export default new Vuex.Store({
 
       state.cart.push(newItem);
       const json = JSON.stringify(state.cart);
-      Cookies.set('SUNcart', json, { expires: 7, domain: 'localhost' });
+      Cookies.set('SUNcart', json, {
+        expires: 7,
+        domain: process.env.VUE_APP_DOMAIN,
+      });
     },
     removeItemFromCart(state, index) {
       state.cart.splice(index, 1);
       const json = JSON.stringify(state.cart);
-      Cookies.set('SUNcart', json, { expires: 7, domain: 'localhost' });
+      Cookies.set('SUNcart', json, {
+        expires: 7,
+        domain: process.env.VUE_APP_DOMAIN,
+      });
     },
     fillCartOnPageLoad(state) {
       const existingCart = Cookies.get('SUNcart');
