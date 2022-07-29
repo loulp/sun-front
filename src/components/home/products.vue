@@ -6,69 +6,74 @@
         <span>NOUVELLES CREATIONS</span>
       </h2>
     </div>
-    <div v-if="products.length > 0" class="carouselContainer">
-      <img
-        @mouseover="scrollCarousel('LEFT')"
-        @mouseout="stopScroll"
-        src="@/assets/control_left.svg"
-        alt=""
-        class="controls left"
-      />
-      <img
-        @mouseover="scrollCarousel('RIGHT')"
-        @mouseout="stopScroll"
-        src="@/assets/control_right.svg"
-        alt=""
-        class="controls right"
-      />
-      <div class="productList">
-        <div
-          class="productItem"
-          v-for="(product, index) in products"
-          :key="index"
-          @click="toProductView(product.id)"
-          @mouseenter="product.mainMedia = product.img[1].attributes.url"
-          @mouseleave="product.mainMedia = product.img[0].attributes.url"
-        >
-          <!-- TODO fix image not taking full div width -->
-          <div class="productPresentation">
-            <div class="imgContainer">
-              <img class="productMedia" :src="product.mainMedia" alt="" />
+    <div v-if="!loading">
+      <div v-if="products.length > 0" class="carouselContainer">
+        <img
+          @mouseover="scrollCarousel('LEFT')"
+          @mouseout="stopScroll"
+          src="@/assets/control_left.svg"
+          alt=""
+          class="controls left"
+        />
+        <img
+          @mouseover="scrollCarousel('RIGHT')"
+          @mouseout="stopScroll"
+          src="@/assets/control_right.svg"
+          alt=""
+          class="controls right"
+        />
+        <div class="productList">
+          <div
+            class="productItem"
+            v-for="(product, index) in products"
+            :key="index"
+            @click="toProductView(product.id)"
+            @mouseenter="product.mainMedia = product.img[1].attributes.url"
+            @mouseleave="product.mainMedia = product.img[0].attributes.url"
+          >
+            <!-- TODO fix image not taking full div width -->
+            <div class="productPresentation">
+              <div class="imgContainer">
+                <img class="productMedia" :src="product.mainMedia" alt="" />
+              </div>
+              <div class="productDescription">
+                <p>{{ product.attr.nom }}</p>
+                <p>{{ product.attr.prix }}€</p>
+              </div>
             </div>
-            <div class="productDescription">
-              <p>{{ product.attr.nom }}</p>
-              <p>{{ product.attr.prix }}€</p>
-            </div>
-          </div>
 
-          <div class="relevantContainer">
-            <img
-              v-for="(media, index) in product.img"
-              :key="index"
-              :src="media.attributes.url"
-              alt=""
-              class="relevantItem"
-              @mouseenter="product.mainMedia = media.attributes.url"
-              @mouseleave="product.mainMedia = product.img[0].attributes.url"
-            />
+            <div class="relevantContainer">
+              <img
+                v-for="(media, index) in product.img"
+                :key="index"
+                :src="media.attributes.url"
+                alt=""
+                class="relevantItem"
+                @mouseenter="product.mainMedia = media.attributes.url"
+                @mouseleave="product.mainMedia = product.img[0].attributes.url"
+              />
+            </div>
           </div>
         </div>
       </div>
+      <empty-list-message v-else />
     </div>
-    <empty-list-message v-else />
+    <spinner class="spinner" :size="'50px'" v-if="loading" />
   </div>
 </template>
 
 <script>
 import emptyListMessage from "./emptyListMessage.vue";
 import productsServices from "../../shared/services/products.services";
+import Spinner from "../../shared/components/spinner.vue";
 
 export default {
-  components: { emptyListMessage },
+  components: { emptyListMessage, Spinner },
   data() {
     return {
       products: [],
       scrolling: null,
+      loading: true,
     };
   },
 
@@ -78,6 +83,7 @@ export default {
 
   methods: {
     getProducts() {
+      this.loading = true;
       productsServices.getProducts().then(
         (res) => {
           console.log(res);
@@ -92,8 +98,10 @@ export default {
           });
           //TODO requête coté back pour limité la taille de la liste
           this.products = this.products.slice(0, 9);
+          this.loading = !this.loading;
         },
         (err) => {
+          this.loading = !this.loading;
           console.log(err);
         }
       );
@@ -280,6 +288,10 @@ export default {
         right: 0;
       }
     }
+  }
+
+  .spinner {
+    margin: 10% auto 15% auto;
   }
 
   @media screen and (max-width: 660px) {

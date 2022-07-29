@@ -71,15 +71,14 @@ export default {
     margin-left: auto;
 
     .paymentButton {
-      width: fit-content;
-      border: none;
-      padding: 10% 25%;
-      font-size: 18px;
-      border-radius: 15px;
-      cursor: pointer;
-      background-color: #efdebd;
-      color: white;
-      font-weight: bold;
+     margin-top: 3%;
+    width: fit-content;
+    background-color: #efdebd;
+    color: white;
+    border: none;
+    padding: 10% 25%;
+    font-size: 18px;
+    cursor: pointer;
     }
   }
 }

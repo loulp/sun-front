@@ -10,6 +10,11 @@ const routes = [
     component: () => import('@/pages/Home'),
   },
   {
+    path: '/Contact',
+    name: 'Contact',
+    component: () => import('@/pages/Contact'),
+  },
+  {
     path: '/panier',
     name: 'Cart',
     component: () => import('@/pages/Cart'),

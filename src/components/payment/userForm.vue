@@ -113,51 +113,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.formItem {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  margin: 2% auto;
-  width: 50%;
-  span {
-    margin: 3%;
-  }
-
-  input {
-    border-radius: 25px;
-    border: 1px solid #707070;
-    padding: 8px;
-
-    &:focus {
-      outline: none;
-      border-color: #efdebd;
-    }
-  }
-
-  .error {
-    font-size: 12px;
-    color: red;
-  }
-}
-
-button {
-  width: fit-content;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  border-radius: 15px;
-  cursor: pointer;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-  margin: 5%;
-  background-color: #efdebd;
-  color: white;
-
-  &:disabled {
-    background: grey;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
+@import "@/shared/styles/form.scss";
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- TODO afficher un message si panier vide -->
     <div
       class="productListItem"
       v-for="(item, index) in productList"
@@ -11,6 +12,7 @@
         <p>{{ item.prix }}€</p>
         <p>Taille: {{ item.size }}</p>
       </div>
+      <!-- TODO Bouton disabled si panier vide -->
       <button @click="removeItem(index)">X</button>
     </div>
   </div>
@@ -66,10 +68,10 @@ export default {
     }
   }
 
-      @media screen and (max-width: 660px) {
-        width: auto;
-        margin: auto;
-        height: auto;
-      }
+  @media screen and (max-width: 660px) {
+    width: auto;
+    margin: auto;
+    height: auto;
+  }
 }
 </style>

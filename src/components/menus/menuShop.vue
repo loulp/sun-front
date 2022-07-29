@@ -3,10 +3,10 @@
     <div class="menu">
       <div class="menuDiv">
         <h3>Collections</h3>
-        <span v-if="collections.length === 0"
+        <span v-if="collections.length === 0 && !loadingCollections"
           >Pas de collection disponible</span
         >
-        <ul v-if="collections.length > 0">
+        <ul v-if="collections.length > 0 && !loadingCollections">
           <li v-for="collection in collections" :key="collection.index">
             <div
               @mouseover="changeImage(collection.img)"
@@ -24,12 +24,15 @@
             </div>
           </li>
         </ul>
+        <spinner v-if="loadingCollections" class="spinner" :size="'25px'" />
       </div>
 
       <div class="menuDiv">
         <h3>Catégories</h3>
-        <span v-if="categories.length === 0">Pas de categorie disponible</span>
-        <ul v-if="categories.length > 0">
+        <span v-if="categories.length === 0 && !loadingCategories"
+          >Pas de categorie disponible</span
+        >
+        <ul v-if="categories.length > 0 && !loadingCategories">
           <li v-for="category in categories" :key="category.index">
             <div
               @mouseover="changeImage(category.img)"
@@ -47,6 +50,7 @@
             </div>
           </li>
         </ul>
+        <spinner v-if="loadingCategories" class="spinner" :size="'25px'" />
       </div>
     </div>
     <div class="image" ref="imageSide" @click="$emit('hideMenu')"></div>
@@ -55,12 +59,16 @@
 
 <script>
 import collectionService from "@/shared/services/collections.services.js";
+import spinner from "../../shared/components/spinner.vue";
 
 export default {
+  components: { spinner },
   data() {
     return {
       collections: [],
       categories: [],
+      loadingCategories: false,
+      loadingCollections: false,
     };
   },
 
@@ -79,6 +87,7 @@ export default {
 
   methods: {
     getCollections() {
+      this.loadingCollections = !this.loadingCollections;
       collectionService.getCollections().then(
         (res) => {
           res.data.data.forEach((el) => {
@@ -90,25 +99,35 @@ export default {
             this.collections.push(collection);
           });
           this.$store.commit("fillCollections", this.collections);
+          this.loadingCollections = !this.loadingCollections;
         },
         (err) => {
+          this.loadingCollections = !this.loadingCollections;
           console.log(err);
         }
       );
     },
 
     getCategories() {
-      collectionService.getCategories().then((res) => {
-        res.data.data.forEach((el) => {
-          const category = {
-            id: el.id,
-            type: el.attributes.type,
-            img: el.attributes.img.data.attributes.url,
-          };
-          this.categories.push(category);
-        });
-        this.$store.commit("fillCategories", this.categories);
-      });
+      this.loadingCategories = !this.loadingCategories;
+      collectionService.getCategories().then(
+        (res) => {
+          res.data.data.forEach((el) => {
+            const category = {
+              id: el.id,
+              type: el.attributes.type,
+              img: el.attributes.img.data.attributes.url,
+            };
+            this.categories.push(category);
+          });
+          this.$store.commit("fillCategories", this.categories);
+          this.loadingCategories = !this.loadingCategories;
+        },
+        (err) => {
+          this.loadingCategories = !this.loadingCategories;
+          console.log(err);
+        }
+      );
     },
 
     changeImage(url) {
@@ -181,6 +200,13 @@ export default {
         & :hover {
           list-style: url("../../assets/ulicon15.jpg");
         }
+      }
+
+      span {
+        flex: 60%;
+      }
+      .spinner {
+        flex: 60%;
       }
     }
 

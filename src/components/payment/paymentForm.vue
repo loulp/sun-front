@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <form id="payment-form" ref="paymentForm">
+    <!-- TODO ajoutez loader avant affichage formulaire paiment -->
+    <spinner v-if="loading" />
+    <form id="payment-form" ref="paymentForm" v-if="!loading">
       <div id="payment-element">
         <!--Stripe.js injects the Payment Element-->
       </div>
@@ -11,18 +13,21 @@
       <div id="payment-message" class="hidden"></div>
     </form>
     <button class="paymentButton" @click="submit()">Payer</button>
-    <span>Paiment sécurisé</span>
+    <!-- TODO ajoutez message rassurant-->
+    <!-- <span>Paiment sécurisé</span> -->
   </div>
 </template>
 
 <script>
 import paymentService from "@/shared/services/payment.services";
+import spinner from "../../shared/components/spinner.vue";
 
 // IMPORTANT COMMENT, dodge lint error on import
 /* global Stripe */
 const stripe = Stripe(process.env.VUE_APP_STRIPE_KEY);
 
 export default {
+  components: { spinner },
   props: {
     userForm: null,
   },
@@ -35,6 +40,7 @@ export default {
       productList: [],
       stripeKey: process.env.VUE_APP_STRIPE_KEY,
       body: null,
+      loading: false,
     };
   },
 
@@ -45,16 +51,19 @@ export default {
 
   methods: {
     async initPayment() {
+      this.loading = !this.loading;
       this.createBody();
 
       await paymentService.payment(this.body).then(
         (res) => {
           this.clientSecret = res.data.client_secret;
           this.body.paymentIntent = res.data.id;
+          this.loading = !this.loading;
           console.log(`order creation successfull : `);
           console.log(res);
         },
         (err) => {
+          this.loading = !this.loading;
           console.log(`order creation error : ${err}`);
         }
       );
@@ -80,9 +89,11 @@ export default {
       paymentService.createOrder(this.body).then(
         (res) => {
           console.log(res);
+          this.loading = !this.loading;
         },
         (err) => {
           console.log(err);
+          this.loading = !this.loading;
         }
       );
 

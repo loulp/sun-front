@@ -22,7 +22,9 @@
         <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
         <span @click="showMenu('SHOP')" class="menuItem">Joaillerie</span>
         <span @click="showMenu('')" class="menuItem">Boutique</span>
-        <span @click="showMenu('')" class="menuItem">Contactez nous</span>
+        <span @click="redirectToContact()" class="menuItem"
+          >Contactez nous</span
+        >
       </div>
       <div class="iconContainer">
         <img src="@/assets/searchIcon.svg" alt="" />
@@ -125,11 +127,17 @@ export default {
         this.currentMenu = null;
       }
     },
+
+    redirectToContact() {
+      this.$router.push({
+        name: "Contact",
+      });
+    },
   },
 
   created() {
     EventBus.$on("showShopMenu", () => {
-      this.currentMenu = "SHOP"
+      this.currentMenu = "SHOP";
     });
   },
 };

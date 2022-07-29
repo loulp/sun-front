@@ -1,4 +1,6 @@
 <template>
+  <!-- TODO Changer les icon des ul/li  -->
+  <!-- TODO Mettre le contenu de boutique dans joaillerie  -->
   <div class="mobileMenuContainer">
     <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
     <div class="menuItem" v-if="currentMenu === 'HOUSE'">
@@ -56,7 +58,7 @@
         </li>
       </ul>
     </div>
-    <span @click="showMenu('')" class="menuItem">Contactez nous</span>
+    <span @click="redirectToContact()" class="menuItem">Contactez nous</span>
   </div>
 </template>
 
@@ -124,6 +126,12 @@ export default {
           this.categories.push(category);
         });
         this.$store.commit("fillCategories", this.categories);
+      });
+    },
+
+    redirectToContact() {
+      this.$router.push({
+        name: "Contact",
       });
     },
   },

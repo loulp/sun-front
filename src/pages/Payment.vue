@@ -19,6 +19,7 @@
       </div>
     </div>
     <div v-if="paymentStatus != 'TBD'">
+      <!-- TODO améliorer l'affichage -->
       <div class="viewContainer">
         <div v-if="paymentStatus === 'SUCCESS'">SUCCESS</div>
         <div v-if="paymentStatus === 'PROCESSING'">PROCESSING</div>
@@ -79,6 +80,7 @@ export default {
       switch (paymentIntent.status) {
         case "succeeded":
           console.log("Payment succeeded!");
+          // TODO vider le panier / le cache
           this.paymentStatus = "SUCCESS";
           break;
         case "processing":
