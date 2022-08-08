@@ -40,11 +40,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 .container {
   height: 70vh;
   overflow-y: scroll;
   width: 90%;
-  border: 0.5px solid #efdebd;
+  border: 0.5px solid $mainColor;
   border-radius: 15px;
 
   &::-webkit-scrollbar {

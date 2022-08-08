@@ -70,16 +70,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 .container {
+  margin-top: 3%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   padding-left: 15%;
-
-  > * {
-    margin-bottom: 1%;
-  }
 
   p {
     margin-left: 0;
@@ -117,6 +116,12 @@ export default {
 
   #editor {
     width: 75%;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   .sizeGuideLink {
@@ -124,9 +129,8 @@ export default {
   }
 
   .cartButton {
-    margin-top: 3%;
     width: fit-content;
-    background-color: #efdebd;
+    background-color: $mainColor;
     color: white;
     border: none;
     padding: 3% 10%;

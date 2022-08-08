@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <div id="banner">
-      <img id="logo" @click="toHome()" src="@/assets/logosunBAD.png" alt="" />
+      <img
+        id="logo"
+        @click="toHome()"
+        src="@/assets/logoTxtLongBlue.png"
+        alt=""
+      />
     </div>
     <div class="menuContainer">
       <div class="burgerMenu">
@@ -65,6 +70,16 @@ export default {
 
   mounted() {
     // this.manageBannerDisplay();
+    // window.onscroll = () => {
+    //   const scrollY = window.scrollY;
+    //   const logo = document.getElementById("logo");
+
+    //   if (scrollY > 80 && logo.src != "img/mainLogoBlue.png") {
+    //     logo.src = "img/mainLogoBlue.png";
+    //   } else if (scrollY < 79 && logo.src != "img/logoTxtLongBlue.png") {
+    //     logo.src = "img/logoTxtLongBlue.png";
+    //   }
+    // };
   },
 
   watch: {
@@ -144,6 +159,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../shared/styles/variables.scss";
+
 .container {
   z-index: 100;
   width: 100%;
@@ -224,7 +241,7 @@ export default {
           top: -2px;
           right: -10px;
           color: white;
-          background-color: #efdebd;
+          background-color: $mainColor;
           padding: 1px 4px;
           border-radius: 15px;
           text-align: center;

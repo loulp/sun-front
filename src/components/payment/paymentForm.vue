@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!-- TODO ajoutez loader avant affichage formulaire paiment -->
     <spinner v-if="loading" />
     <form id="payment-form" ref="paymentForm" v-if="!loading">
       <div id="payment-element">
@@ -147,6 +146,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 #payment-form {
   width: 75%;
 }
@@ -159,7 +160,7 @@ export default {
   border-radius: 15px;
   cursor: pointer;
   margin: 5% 0;
-  background-color: #efdebd;
+  background-color: $mainColor;
   color: white;
 }
 

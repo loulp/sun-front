@@ -1,9 +1,11 @@
 <template>
   <div class="container">
-    <img class="bottomCloud" src="../assets/nuage.png" alt="" />
     <div class="content">
-      <div></div>
+      <div class="logoContainer">
+        <img src="../assets/logoTxtShortBlue.png" class="logo" alt="" />
+      </div>
       <div>
+        <!-- TODO add url  -->
         <h3>AIDE</h3>
         <a href="">Livraison et retours</a>
         <a href="">Contactez nous</a>
@@ -19,10 +21,10 @@
       </div>
       <div>
         <div class="mediaIconContainer">
-          <img src="../assets/logo.png" alt="" />
-          <img src="../assets/logo.png" alt="" />
-          <img src="../assets/logo.png" alt="" />
-          <img src="../assets/logo.png" alt="" />
+          <img class="sociallogo" src="../assets/insta.svg" alt="" />
+          <img class="sociallogo" src="../assets/linkedin.svg" alt="" />
+          <img class="sociallogo" src="../assets/facebook.svg" alt="" />
+          <img class="sociallogo" src="../assets/mail.svg" alt="" />
         </div>
       </div>
     </div>
@@ -34,58 +36,67 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-.bottomCloud {
-  width: 100%;
-}
+.container {
+  background-color: #efeeec;
 
-.content {
-  margin: 3% 0;
-  display: flex;
-  flex-flow: row wrap;
-  position: relative;
-  justify-content: center;
-  gap: 3%;
-
-  & > * {
-    width: 22%;
+  .content {
+    padding: 3% 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-flow: row wrap;
+    position: relative;
+    justify-content: center;
+    gap: 3%;
+    width: 100%;
 
     & > * {
-      margin: 2%;
-    }
-
-    h3 {
-      font-size: 18px;
-
-      @media screen and (max-width: 660px) {
-        font-size: 12px;
-      }
-    }
-
-    a {
-      font-size: 16px;
-      color: black;
-      text-decoration: none;
-
-      @media screen and (max-width: 660px) {
-        font-size: 10px;
-      }
-    }
-
-    .mediaIconContainer {
+      width: 20%;
       display: flex;
-      flex-flow: row wrap;
-      justify-content: space-evenly;
-      align-items: center;
-      position: relative;
-      height: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
 
-      img {
-        margin: 0 5%;
-        width: 40%;
-        height: 20px;
+      & > * {
+        margin: 2%;
+      }
+
+      h3 {
+        font-size: 18px;
+
+        @media screen and (max-width: 660px) {
+          font-size: 12px;
+        }
+      }
+
+      a {
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+
+        @media screen and (max-width: 660px) {
+          font-size: 10px;
+        }
+      }
+
+      .mediaIconContainer {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        position: relative;
+        height: fit-content;
+        width: 66%;
+
+        .sociallogo {
+          margin: 8%;
+          width: 20%;
+        }
+      }
+    }
+
+    .logoContainer {
+      align-items: center;
+
+      & > * {
+        width: 80%;
       }
     }
   }

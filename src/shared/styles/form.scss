@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 #form {
   .formItem {
     display: flex;
@@ -18,7 +20,7 @@
 
       &:focus {
         outline: none;
-        border-color: #efdebd;
+        border-color: $mainColor;
       }
     }
 
@@ -31,7 +33,7 @@
 
       &:focus {
         outline: none;
-        border-color: #efdebd;
+        border-color: $mainColor;
       }
     }
 
@@ -44,7 +46,7 @@
   button {
     margin-top: 3%;
     width: fit-content;
-    background-color: #efdebd;
+    background-color: $mainColor;
     color: white;
     border: none;
     padding: 10px 20px;

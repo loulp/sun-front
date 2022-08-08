@@ -5,7 +5,7 @@
     <HouseBanner />
     <Collection />
     <BoutiqueBanner />
-    <!-- TODO vos preferes (favoris ou global ?) carousel PROBABLEMENT PAS A FAIRE-->
+    <!-- TODO vos preferes (favoris ou global ?)-->
     <!-- TODO zone insta -->
   </div>
 </template>

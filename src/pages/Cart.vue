@@ -3,16 +3,32 @@
     <div class="itemList">
       <h2>Votre panier</h2>
       <ItemList v-if="productList.length > 0" :productList="productList" />
+      <div class="emptyMessageContainer" v-if="productList.length === 0">
+        <p>
+          Votre panier est vide pour le moment, consultez la boutique pour
+          découvrir nos bijoux !
+        </p>
+        <button @click="sendShowMenuEvent()" class="paymentButton">
+          Boutique
+        </button>
+      </div>
     </div>
     <div class="priceAnbutton">
       <p>Prix total: {{ totalPrice }}€</p>
-      <button @click="toPayment()" class="paymentButton">Paiement</button>
+      <button
+        @click="toPayment()"
+        class="paymentButton"
+        :disabled="productList.length === 0"
+      >
+        Paiement
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import ItemList from "../components/cart/itemList.vue";
+import EventBus from "@/shared/eventBus.js";
 
 export default {
   components: { ItemList },
@@ -48,17 +64,43 @@ export default {
     toPayment() {
       this.$router.push({ name: "Payment" });
     },
+
+    sendShowMenuEvent() {
+      EventBus.$emit("showShopMenu");
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../shared/styles/variables.scss";
+
 .mainContainer {
   display: flex;
   flex-direction: row;
 
   .itemList {
     flex: 85%;
+
+    h2 {
+      margin-left: 3%;
+    }
+
+    .emptyMessageContainer {
+      width: 66%;
+      margin: 5% auto;
+
+      .paymentButton {
+        margin-top: 3%;
+        width: fit-content;
+        background-color: $mainColor;
+        color: white;
+        border: none;
+        padding: 2% 4%;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
   }
 
   .priceAnbutton {
@@ -71,15 +113,21 @@ export default {
     margin-left: auto;
 
     .paymentButton {
-     margin-top: 3%;
-    width: fit-content;
-    background-color: #efdebd;
-    color: white;
-    border: none;
-    padding: 10% 25%;
-    font-size: 18px;
-    cursor: pointer;
+      margin-top: 3%;
+      width: fit-content;
+      background-color: $mainColor;
+      color: white;
+      border: none;
+      padding: 10% 25%;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: #efeeed;
+      }
     }
   }
+
+  margin-bottom: 3%;
 }
 </style>

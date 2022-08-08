@@ -74,7 +74,7 @@
         <p>Envoi du mail...</p>
         <ring-loader
           :loading="loading"
-          :color="'#efdebd'"
+          :color="'$mainColor'"
           :size="'50px'"
         ></ring-loader>
       </div>
@@ -182,6 +182,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/shared/styles/form.scss";
+@import "../../shared/styles/variables.scss";
 
 .container {
   .icon {
@@ -190,7 +191,7 @@ export default {
 
   .header {
     width: 100%;
-    background-color: #efdebd;
+    background-color: $mainColor;
     text-align: center;
     padding: 3% 0;
 
@@ -235,7 +236,7 @@ export default {
       button {
         margin-top: 3%;
         width: fit-content;
-        background-color: #efdebd;
+        background-color: $mainColor;
         color: white;
         border: none;
         padding: 2% 3%;
@@ -256,5 +257,7 @@ export default {
       }
     }
   }
+
+  margin-bottom: 3%;
 }
 </style>

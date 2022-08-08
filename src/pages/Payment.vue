@@ -80,7 +80,7 @@ export default {
       switch (paymentIntent.status) {
         case "succeeded":
           console.log("Payment succeeded!");
-          // TODO vider le panier / le cache
+          this.$store.commit("emptyCart");
           this.paymentStatus = "SUCCESS";
           break;
         case "processing":

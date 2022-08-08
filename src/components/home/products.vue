@@ -138,6 +138,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 .container {
   margin: 5% auto;
 
@@ -149,7 +151,7 @@ export default {
       font-size: 25px;
 
       span {
-        border-top: 2px solid #efdebd;
+        border-top: 2px solid $mainColor;
       }
 
       @media screen and (max-width: 660px) {
@@ -186,9 +188,6 @@ export default {
           .imgContainer {
             width: 100%;
             height: 60vh;
-
-            // TODO DELETE
-            // border: 0.5px solid black;
 
             .productMedia {
               width: 100%;

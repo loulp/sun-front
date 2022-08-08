@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <!-- TODO afficher un message si panier vide -->
     <div
       class="productListItem"
       v-for="(item, index) in productList"
@@ -12,7 +11,6 @@
         <p>{{ item.prix }}€</p>
         <p>Taille: {{ item.size }}</p>
       </div>
-      <!-- TODO Bouton disabled si panier vide -->
       <button @click="removeItem(index)">X</button>
     </div>
   </div>
@@ -33,6 +31,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 .container {
   margin: 5%;
   height: 80vh;
@@ -45,7 +45,7 @@ export default {
     align-items: center;
 
     margin: 2%;
-    border: 0.5px solid #efdebd;
+    border: 0.5px solid $mainColor;
     border-radius: 15px;
 
     > * {

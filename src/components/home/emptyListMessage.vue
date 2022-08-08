@@ -23,6 +23,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 .emptyList {
   width: fit-content;
   margin: auto;
@@ -40,7 +42,7 @@ export default {
       cursor: pointer;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
       margin: 5%;
-      background-color: #efdebd;
+      background-color: $mainColor;
       color: white;
     }
   }

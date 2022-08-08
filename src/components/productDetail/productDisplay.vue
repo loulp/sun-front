@@ -6,9 +6,9 @@
     </div> -->
     <div class="productDetailContainer">
       <div class="productMedia">
-        <div>
+        <div class="mediaContainer">
           <img :src="mainMedia" class="mainMedia" />
-          <div>
+          <div class="secondaryMediaContainer">
             <img
               class="mediaList"
               v-for="img in medias"
@@ -67,6 +67,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../shared/styles/variables.scss";
+
 .container {
   .collectionName {
     display: flex;
@@ -99,32 +101,32 @@ export default {
         display: none;
       }
 
-      .mainMedia {
-        width: 85%;
-        height: 75vh;
+      .mediaContainer {
+        margin-left: 15%;
+        .mainMedia {
+          aspect-ratio: 3/4;
+          width: 70%;
 
-        // TODO DELETE BEFORE COMMIT
-        // border: 1px solid black;
-
-        @media screen and (max-width: 660px) {
-          height: auto;
+          @media screen and (max-width: 660px) {
+            height: auto;
+          }
         }
-      }
 
-      .mediaList {
-        width: 10%;
-        cursor: pointer;
-        margin: 5px 10px 5px 0;
+        .secondaryMediaContainer {
+          .mediaList {
+            width: 10%;
+            cursor: pointer;
+            margin: 5px 10px 5px 0;
 
-        // TODO DELETE BEFORE COMMIT
-        // border: 1px solid black;
-
-        @media screen and (max-width: 660px) {
-          width: 25%;
+            @media screen and (max-width: 660px) {
+              width: 25%;
+            }
+          }
         }
       }
     }
     .productDetail {
+      height: calc(100vh - #{$headerHeight});
       flex: 50%;
     }
 

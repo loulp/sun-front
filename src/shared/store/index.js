@@ -43,6 +43,12 @@ export default new Vuex.Store({
         state.cart = json;
       }
     },
+    emptyCart() {
+      const existingCart = Cookies.get('SUNcart');
+      if (existingCart) {
+        Cookies.set('SUNcart', []);
+      }
+    },
     updateStorage(state, token) {
       localStorage.setItem('auth_token', token);
       state.authToken = localStorage.getItem('auth_token');
