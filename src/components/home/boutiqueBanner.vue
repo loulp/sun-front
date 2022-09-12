@@ -24,7 +24,7 @@ export default {
 @import "../../shared/styles/variables.scss";
 
 .btnBannerContainer {
-  height: calc(100vh - #{$headerHeight});
+  height: calc(100vh - #{$scrolledHeaderHeight});
   background-image: url("../../assets/shopbanner.jpg");
 
   button {

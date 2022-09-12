@@ -112,9 +112,9 @@ export default {
 
       carousel.style.scrollBehavior = "smooth";
       if (side === "LEFT") {
-        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
-      } else {
         carousel.scrollLeft = carousel.scrollLeft - scrollLength;
+      } else {
+        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
       }
 
       this.scrolling = window.setTimeout(function () {
@@ -180,7 +180,7 @@ export default {
           .imgContainer {
             width: 100%;
             height: 60vh;
-            
+
             .productMedia {
               width: 100%;
               height: 100%;

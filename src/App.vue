@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- <img class="sunray" src="@/assets/sunray.png" alt=""> -->
-
     <Header />
     <div class="viewContainer">
       <router-view :key="$route.path" />
@@ -43,13 +41,5 @@ html {
 
 .viewContainer {
   margin-top: $headerHeight;
-}
-
-.sunray {
-  z-index: 100;
-  position: fixed;
-  bottom: 7%;
-  left: 5%;
-  width: 10%;
 }
 </style>

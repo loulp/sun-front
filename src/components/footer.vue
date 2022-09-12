@@ -40,7 +40,6 @@ export default {};
   background-color: #efeeec;
 
   .content {
-    padding: 3% 0;
     display: flex;
     flex-flow: row wrap;
     position: relative;

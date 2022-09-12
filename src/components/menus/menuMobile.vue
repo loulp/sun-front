@@ -1,33 +1,38 @@
 <template>
-  <!-- TODO Changer les icon des ul/li  -->
-  <!-- TODO Mettre le contenu de boutique dans joaillerie  -->
   <div class="mobileMenuContainer">
-    <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
+    <span @click="showMenu('HOUSE')" class="menuItem">LA MAISON</span>
     <div class="menuItem" v-if="currentMenu === 'HOUSE'">
-      <router-link
-        class="menuLink"
-        :to="{
-          name: 'creatrice',
-        }"
-        >La créatrice</router-link
-      >
-      <router-link
-        class="menuLink"
-        :to="{
-          name: 'savoir_faire',
-        }"
-        >Savoir faire</router-link
-      >
-      <router-link
-        class="menuLink"
-        :to="{
-          name: 'inspiration',
-        }"
-        >inspiration</router-link
-      >
+      <ul>
+        <li>
+          <router-link
+            class="menuLink"
+            :to="{
+              name: 'creatrice',
+            }"
+            >La créatrice</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            class="menuLink"
+            :to="{
+              name: 'savoir_faire',
+            }"
+            >Savoir faire</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            class="menuLink"
+            :to="{
+              name: 'inspiration',
+            }"
+            >inspiration</router-link
+          >
+        </li>
+      </ul>
     </div>
-    <span @click="showMenu('')" class="menuItem">Joaillerie</span>
-    <span @click="showMenu('SHOP')" class="menuItem">Boutique</span>
+    <span @click="showMenu('SHOP')" class="menuItem">JOAILLERIE</span>
     <div class="menuItem" v-if="currentMenu === 'SHOP'">
       <h3>Collections</h3>
       <span v-if="collections.length === 0">Pas de collection disponible</span>
@@ -58,7 +63,9 @@
         </li>
       </ul>
     </div>
-    <span @click="redirectToContact()" class="menuItem">Contactez nous</span>
+    <span @click="showMenu('')" class="menuItem">SUR-MESURE</span>
+    <span @click="showMenu('')" class="menuItem">GUIDE</span>
+    <span @click="redirectToContact()" class="menuItem">CONTACTEZ NOUS</span>
   </div>
 </template>
 
@@ -170,6 +177,11 @@ export default {
 
     h3 {
       font-size: 16px;
+    }
+
+    ul {
+      margin-top: 0;
+      list-style: url("../../assets/liTEST.jpg");
     }
 
     .menuLink {

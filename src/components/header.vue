@@ -1,8 +1,14 @@
 <template>
   <div class="container">
-    <div id="banner">
+    <div id="banner" v-if="!isScrolled">
       <img
-        id="logo"
+        class="bannerLogoMain"
+        @click="toHome()"
+        src="@/assets/mainLogoBlue.png"
+        alt=""
+      />
+      <img
+        class="bannerLogo"
         @click="toHome()"
         src="@/assets/logoTxtLongBlue.png"
         alt=""
@@ -23,12 +29,20 @@
           @click="showMobileMenu = !showMobileMenu"
         />
       </div>
+      <img
+        class="menuLogo"
+        @click="toHome()"
+        src="@/assets/mainLogoBlue.png"
+        alt=""
+        v-if="isScrolled"
+      />
       <div class="inlineMenu">
-        <span @click="showMenu('HOUSE')" class="menuItem">La Maison</span>
-        <span @click="showMenu('SHOP')" class="menuItem">Joaillerie</span>
-        <span @click="showMenu('')" class="menuItem">Boutique</span>
+        <span @click="showMenu('HOUSE')" class="menuItem">LA MAISON</span>
+        <span @click="showMenu('SHOP')" class="menuItem">JOAILLERIE</span>
+        <span @click="showMenu('')" class="menuItem">SUR-MESURE</span>
+        <span @click="showMenu('')" class="menuItem">GUIDE</span>
         <span @click="redirectToContact()" class="menuItem"
-          >Contactez nous</span
+          >CONTACTEZ NOUS</span
         >
       </div>
       <div class="iconContainer">
@@ -59,6 +73,7 @@ export default {
     return {
       currentMenu: null,
       showMobileMenu: false,
+      isScrolled: false,
     };
   },
 
@@ -69,24 +84,21 @@ export default {
   },
 
   mounted() {
-    // this.manageBannerDisplay();
-    // window.onscroll = () => {
-    //   const scrollY = window.scrollY;
-    //   const logo = document.getElementById("logo");
+    window.onscroll = () => {
+      const scrollY = window.scrollY;
 
-    //   if (scrollY > 80 && logo.src != "img/mainLogoBlue.png") {
-    //     logo.src = "img/mainLogoBlue.png";
-    //   } else if (scrollY < 79 && logo.src != "img/logoTxtLongBlue.png") {
-    //     logo.src = "img/logoTxtLongBlue.png";
-    //   }
-    // };
+      if (scrollY > 80 && !this.isScrolled) {
+        this.isScrolled = !this.isScrolled;
+      } else if (scrollY < 79 && this.isScrolled) {
+        this.isScrolled = !this.isScrolled;
+      }
+    };
   },
 
   watch: {
     $route() {
       this.currentMenu = null;
       this.showMobileMenu = false;
-      this.bannerStyle(true);
     },
   },
 
@@ -96,41 +108,6 @@ export default {
     },
     toCart() {
       this.$router.push({ path: "/panier" });
-    },
-
-    manageBannerDisplay() {
-      let previousScroll = window.scrollY;
-
-      window.onscroll = () => {
-        const scrollY = window.scrollY;
-
-        if (scrollY > 80) {
-          if (previousScroll > scrollY) {
-            this.bannerStyle(true);
-            previousScroll = scrollY;
-          } else {
-            this.bannerStyle(false);
-            previousScroll = scrollY;
-          }
-        }
-      };
-    },
-
-    bannerStyle(visible) {
-      const bannerEl = document.getElementById("banner");
-      const logoEl = document.getElementById("logo");
-      if (visible) {
-        bannerEl.style.visibility = "visible";
-        bannerEl.style.height = "80px";
-        bannerEl.style.borderBottom = "1px solid black";
-        logoEl.style.width = "10%";
-      } else {
-        bannerEl.style.visibility = "hidden";
-        bannerEl.style.height = "0px";
-        bannerEl.style.borderBottom = "none";
-
-        logoEl.style.width = "0";
-      }
     },
 
     showMenu(menu) {
@@ -183,9 +160,22 @@ export default {
     transition: all ease 0.5s;
 
     img {
-      width: 10%;
-      // min-width: 90px;
       transition: all ease 0.5s;
+    }
+
+    .bannerLogoMain {
+        width:8%;
+
+      @media screen and (max-width: 660px) {
+        width: 25%;
+      }
+    }
+
+    .bannerLogo {
+      width: 12%;
+      @media screen and (max-width: 660px) {
+        width: 33%;
+      }
     }
 
     border-bottom: 1px solid black;
@@ -206,6 +196,16 @@ export default {
     width: 100%;
     height: 80px;
 
+    .menuLogo {
+      width: 6%;
+      cursor: pointer;
+
+      @media screen and (max-width: 660px) {
+        margin-left: 15%;
+        width: 25%;
+      }
+    }
+
     .inlineMenu {
       position: relative;
       width: 75%;
@@ -213,9 +213,10 @@ export default {
       display: flex;
       justify-content: space-around;
       flex-flow: row nowrap;
+      align-items: center;
 
       .menuItem {
-        font-size: 20px;
+        font-size: 16px;
         color: #38515f;
         cursor: pointer;
       }
@@ -229,8 +230,8 @@ export default {
 
       img {
         margin: auto 10%;
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
       }
 
@@ -247,6 +248,10 @@ export default {
           text-align: center;
         }
       }
+
+      @media screen and (max-width: 660px) {
+        margin-right: 10%;
+      }
     }
 
     .burgerMenu {
@@ -259,6 +264,8 @@ export default {
     }
 
     @media screen and (max-width: 660px) {
+      justify-content: space-evenly;
+
       .burgerMenu {
         display: block;
       }

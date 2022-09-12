@@ -31,6 +31,19 @@
         >*Consulter le guide des tailles</router-link
       >
     </div>
+    <div
+      v-if="
+        product.attributes.category.data.attributes.type === 'boucle d\'oreille'
+      "
+    >
+      <div class="earingQuantityContainer">
+        <p>Commander en paire ou à l'unité :</p>
+        <select name="earingQuantity" id="earingQuantity">
+          <option class="selectOptions" value="unite">L'unité</option>
+          <option class="selectOptions" value="pair">La paire</option>
+        </select>
+      </div>
+    </div>
     <button class="cartButton" @click="addToCart()">Ajouter au panier</button>
   </div>
 </template>
@@ -59,10 +72,31 @@ export default {
 
   methods: {
     addToCart() {
-      const selectSize = document.getElementById("fingerSize");
+      let ringSize;
+
+      if (this.product.attributes.category.data.attributes.type === "Bague") {
+        const selectSize = document.getElementById("fingerSize");
+        ringSize = selectSize.value;
+      } else {
+        ringSize = 0;
+      }
+
+      this.addTostore(ringSize);
+
+      const selectEaringQuantity = document.getElementById("earingQuantity");
+      if (
+        this.product.attributes.category.data.attributes.type ===
+          "boucle d'oreille" &&
+        selectEaringQuantity.value === "pair"
+      ) {
+        this.addTostore(ringSize);
+      }
+    },
+
+    addTostore(ringSize) {
       this.$store.commit("addItemToCart", {
         product: this.product,
-        size: selectSize.value,
+        size: ringSize,
       });
     },
   },
@@ -109,6 +143,27 @@ export default {
       border-bottom: 1px solid black;
 
       .selectSizeOptions {
+        margin: 5%;
+      }
+    }
+  }
+
+  .earingQuantityContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    select {
+      height: 30px;
+      width: fit-content;
+      padding-left: 2%;
+
+      margin-left: 5%;
+
+      border: none;
+      border-bottom: 1px solid black;
+
+      .selectOptions {
         margin: 5%;
       }
     }

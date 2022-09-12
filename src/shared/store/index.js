@@ -17,6 +17,7 @@ export default new Vuex.Store({
         nom: item.product.attributes.nom,
         description: item.product.attributes.description,
         prix: item.product.attributes.prix,
+        categorie: item.product.attributes.category.data.attributes.type,
         media: item.product.attributes.photo.data[0].attributes.url,
         size: item.size,
       };

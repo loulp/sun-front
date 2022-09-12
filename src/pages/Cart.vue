@@ -129,5 +129,8 @@ export default {
   }
 
   margin-bottom: 3%;
+  @media screen and (max-width: 660px) {
+    flex-direction: column;
+  }
 }
 </style>

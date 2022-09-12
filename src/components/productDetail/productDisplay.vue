@@ -1,9 +1,5 @@
 <template>
   <div class="container">
-    <!-- <div class="collectionName">
-      <img src="@/assets/sunray.png" alt="" class="titleIcon" />
-      <h2>{{ collection.attributes.name }}</h2>
-    </div> -->
     <div class="productDetailContainer">
       <div class="productMedia">
         <div class="mediaContainer">
@@ -95,17 +91,17 @@ export default {
       flex: 50%;
       width: 100%;
       overflow-y: scroll;
-      margin-left: 5%;
 
       &::-webkit-scrollbar {
         display: none;
       }
 
       .mediaContainer {
-        margin-left: 15%;
+        display: flex;
+        flex-direction: row-reverse;
+
         .mainMedia {
-          aspect-ratio: 3/4;
-          width: 70%;
+          width: 66%;
 
           @media screen and (max-width: 660px) {
             height: auto;
@@ -113,10 +109,14 @@ export default {
         }
 
         .secondaryMediaContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
           .mediaList {
-            width: 10%;
+            width: 55%;
             cursor: pointer;
-            margin: 5px 10px 5px 0;
+            margin: 5px 0;
 
             @media screen and (max-width: 660px) {
               width: 25%;

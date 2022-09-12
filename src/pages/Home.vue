@@ -1,11 +1,13 @@
 <template>
   <div>
-    <WorkshopBanner />
+    <Top />
+    <Showcased-collection />
     <Products />
-    <HouseBanner />
-    <Collection />
-    <BoutiqueBanner />
-    <!-- TODO vos preferes (favoris ou global ?)-->
+    <WorkshopBanner />
+    <Citation />
+    <InspirationBanner />
+    <!-- <Collection /> Remplacer par showcasedCollection-->
+    <!-- <BoutiqueBanner /> Supprimé -->
     <!-- TODO zone insta -->
   </div>
 </template>
@@ -14,16 +16,22 @@
 import BoutiqueBanner from "../components/home/boutiqueBanner.vue";
 import Products from "../components/home/products.vue";
 import Collection from "../components/home/collection.vue";
-import HouseBanner from "../components/home/houseBanner.vue";
+import InspirationBanner from "../components/home/inspirationBanner.vue";
 import WorkshopBanner from "../components/home/workshopBanner.vue";
+import Top from "../components/home/top.vue";
+import Citation from "../components/home/citation.vue";
+import ShowcasedCollection from "../components/home/showcasedCollection.vue";
 
 export default {
   components: {
     WorkshopBanner,
     BoutiqueBanner,
-    HouseBanner,
+    InspirationBanner,
     Collection,
     Products,
+    Top,
+    Citation,
+    ShowcasedCollection,
   },
 };
 </script>

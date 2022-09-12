@@ -120,9 +120,9 @@ export default {
 
       carousel.style.scrollBehavior = "smooth";
       if (side === "LEFT") {
-        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
-      } else {
         carousel.scrollLeft = carousel.scrollLeft - scrollLength;
+      } else {
+        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
       }
 
       this.scrolling = window.setTimeout(function () {
@@ -141,12 +141,12 @@ export default {
 @import "../../shared/styles/variables.scss";
 
 .container {
-  margin: 5% auto;
-
   .titleContainer {
     width: 45%;
     margin: 3% auto;
     text-align: center;
+    color: $fontColor;
+
     h2 {
       font-size: 25px;
 
@@ -170,7 +170,6 @@ export default {
     .productList {
       display: flex;
       overflow-x: auto;
-      padding-bottom: 5%;
 
       &::-webkit-scrollbar {
         display: none;
@@ -265,6 +264,10 @@ export default {
             transition: all ease-in-out 1s;
           }
         }
+
+        @media screen and (max-width: 660px) {
+          min-width: 50%;
+        }
       }
     }
 
@@ -295,6 +298,7 @@ export default {
 
   @media screen and (max-width: 660px) {
     height: auto;
+    margin-bottom: 10%;
   }
 }
 </style>

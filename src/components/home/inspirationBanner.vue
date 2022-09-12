@@ -1,11 +1,11 @@
 <template>
   <div class="btnBannerContainer">
     <!-- <button class="link" @click="redirect">
-      <p class="title">L'ATELIER</p>
+      <p class="title">L'INSPIRATION</p>
       <p class="discover">Découvrir</p>
     </button> -->
     <div class="textContainer">
-      <h2>L'ATELIER</h2>
+      <h2>L'INSPIRATION</h2>
       <button @click="redirect">Découvrir</button>
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
   methods: {
     redirect() {
       this.$router.push({
-        name: "savoir_faire",
+        name: "inspiration",
       });
     },
   },
@@ -29,7 +29,7 @@ export default {
 
 .btnBannerContainer {
   height: calc(100vh - #{$scrolledHeaderHeight});
-  background-image: url("../../assets/workshop.jpg");
+  background-image: url("../../assets/housebanner.jpg");
   position: relative;
 
   .textContainer {

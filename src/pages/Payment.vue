@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div v-if="paymentStatus === 'TBD'">
-      <h2>Finalisation de votre commande</h2>
+      <h2 class="title">Finalisation de votre commande</h2>
       <div class="viewContainer">
         <div class="stepContainer">
           <UserForm
@@ -103,6 +103,10 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  .title {
+    padding-top: 5%;
+  }
+  
   .viewContainer {
     display: flex;
     flex-direction: row;

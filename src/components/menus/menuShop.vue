@@ -149,7 +149,7 @@ export default {
 @import "@/shared/styles/variables.scss";
 
 .flexContainer {
-  height: calc(100vh - #{$headerHeight});
+  height: 90vh;
   width: 100%;
 
   display: flex;
@@ -198,7 +198,7 @@ export default {
         }
 
         & :hover {
-          list-style: url("../../assets/ulicon15.jpg");
+          list-style: url("../../assets/liTEST.jpg");
         }
       }
 

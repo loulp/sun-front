@@ -100,12 +100,14 @@ export default {
       const { error } = await stripe.confirmPayment({
         elements,
         confirmParams: {
+          // TODO change to prod url
           return_url: "http://localhost:8081/payment",
           //TODO set to customer email
           receipt_email: "louislepogam@gmail.com",
         },
       });
 
+// TODO message d'erreur ici
       if (error.type === "card_error" || error.type === "validation_error") {
         console.log("SUBMIT ERROR");
       } else {

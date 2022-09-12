@@ -6,11 +6,12 @@
       v-for="(item, index) in productList"
       :key="index"
     >
-      <img :src="item.media" />
+      <img :src="item.media" @click="toProductView(item.id)" />
       <div class="itemText">
-        <h3>{{ item.nom }}</h3>
+        <h3 class="itemName" @click="toProductView(item.id)">{{ item.nom }}</h3>
+        <p v-if="item.categorie === 'boucle d\'oreille'">l'unité</p>
         <p>{{ item.prix }}€</p>
-        <p>Taille: {{ item.size }}</p>
+        <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>
       </div>
     </div>
   </div>
@@ -34,6 +35,15 @@ export default {
       }
 
       return total;
+    },
+  },
+
+  methods: {
+    toProductView(id) {
+      this.$router.push({
+        name: "productDetail",
+        params: { id: id },
+      });
     },
   },
 };
@@ -74,6 +84,13 @@ export default {
 
     .itemText {
       width: 100%;
+
+      .itemName {
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
 
       > * {
         margin: 5%;

@@ -3,12 +3,8 @@
     v-if="product"
     class="productItem"
     @click="toProductView()"
-    @mouseenter="
-      mainMedia = product.attributes.photo.data[1].attributes.url
-    "
-    @mouseleave="
-      mainMedia = product.attributes.photo.data[0].attributes.url
-    "
+    @mouseenter="mainMedia = product.attributes.photo.data[1].attributes.url"
+    @mouseleave="mainMedia = product.attributes.photo.data[0].attributes.url"
   >
     <div class="productPresentation">
       <div class="imgContainer">
@@ -47,7 +43,7 @@ export default {
     };
   },
 
-  mounted(){
+  mounted() {
     console.log("debug item");
     console.log(this.product);
   },
@@ -67,9 +63,9 @@ export default {
 
       carousel.style.scrollBehavior = "smooth";
       if (side === "LEFT") {
-        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
-      } else {
         carousel.scrollLeft = carousel.scrollLeft - scrollLength;
+      } else {
+        carousel.scrollLeft = carousel.scrollLeft + scrollLength;
       }
 
       this.scrolling = window.setTimeout(function () {

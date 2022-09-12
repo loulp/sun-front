@@ -191,7 +191,7 @@ export default {
 
   .header {
     width: 100%;
-    background-color: $mainColor;
+    background-color: #66859d;
     text-align: center;
     padding: 3% 0;
 
