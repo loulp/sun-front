@@ -33,7 +33,7 @@
     </div>
     <div
       v-if="
-        product.attributes.category.data.attributes.type === 'boucle d\'oreille'
+        product.attributes.category.data.attributes.type === 'Boucle d\'oreille'
       "
     >
       <div class="earingQuantityContainer">
@@ -86,7 +86,7 @@ export default {
       const selectEaringQuantity = document.getElementById("earingQuantity");
       if (
         this.product.attributes.category.data.attributes.type ===
-          "boucle d'oreille" &&
+          "Boucle d'oreille" &&
         selectEaringQuantity.value === "pair"
       ) {
         this.addTostore(ringSize);
