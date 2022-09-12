@@ -99,6 +99,7 @@ export default {
       .mediaContainer {
         display: flex;
         flex-direction: row-reverse;
+        height: 85vh;
 
         .mainMedia {
           width: 66%;
@@ -112,9 +113,10 @@ export default {
           display: flex;
           flex-direction: column;
           align-items: center;
+          width: 33%;
 
           .mediaList {
-            width: 55%;
+            width: 40%;
             cursor: pointer;
             margin: 5px 0;
 
