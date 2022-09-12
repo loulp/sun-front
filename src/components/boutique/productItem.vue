@@ -147,7 +147,6 @@ export default {
       height: 50px;
       width: 50px;
 
-      border: 0.5px solid;
       margin: 5px 5px 0 0;
     }
   }
