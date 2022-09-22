@@ -105,15 +105,16 @@ export default {
       height: 0;
       transition: all ease-in-out 0.5s;
 
-      background-color: rgba(239, 222, 189, 0.5);
+      background-color: rgba(255, 255, 255, 0.5);
 
       bottom: 0;
       left: 0;
       position: absolute;
 
       p {
+        opacity: 0;
         margin-left: 2%;
-        font-size: 0;
+        font-size: 16px;
         color: black;
       }
 
@@ -164,8 +165,8 @@ export default {
     }
 
     .productPresentation .productDescription p {
-      font-size: inherit;
-      transition: all ease-in-out 1s;
+      opacity: 1;
+      transition: all ease-in-out 1.5s;
     }
   }
 }

@@ -167,6 +167,7 @@ export default {
       display: flex;
       flex-direction: row;
       align-items: baseline;
+      color: $fontColor;
 
       h3 {
         flex: 40%;
@@ -186,7 +187,7 @@ export default {
 
           .menuLink {
             text-decoration: none;
-            color: black;
+            color: $fontColor;
             font-size: 20px;
           }
 

@@ -164,7 +164,7 @@ export default {
     }
 
     .bannerLogoMain {
-        width:8%;
+      width: 8%;
 
       @media screen and (max-width: 660px) {
         width: 25%;
@@ -172,13 +172,13 @@ export default {
     }
 
     .bannerLogo {
-      width: 12%;
+      width: 11%;
       @media screen and (max-width: 660px) {
         width: 33%;
       }
     }
 
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(56, 81, 95, 0.3);
 
     @media screen and (max-width: 660px) {
       img {
@@ -194,7 +194,7 @@ export default {
     flex-flow: row nowrap;
     align-items: center;
     width: 100%;
-    height: 80px;
+    height: 60px;
 
     .menuLogo {
       width: 6%;

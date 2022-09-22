@@ -154,6 +154,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/shared/styles/variables.scss";
+
 .mobileMenuContainer {
   width: 100vw;
   height: 100vh;
@@ -174,6 +176,7 @@ export default {
   .menuItem {
     display: flex;
     flex-direction: column;
+    color: $fontColor;
 
     h3 {
       font-size: 16px;
@@ -186,7 +189,7 @@ export default {
 
     .menuLink {
       text-decoration: none;
-      color: black;
+      color: $fontColor;
       font-size: 14px;
     }
   }

@@ -20,6 +20,7 @@
             </div>
           </li>
           <li>
+            <!-- TODO use :src="require(...)" for img change from assets-->
             <div
               @mouseover="changeImage('../../assets/housebanner.jpg')"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
@@ -89,6 +90,7 @@ export default {
       display: flex;
       flex-direction: row;
       align-items: baseline;
+      color: $fontColor;
 
       h3 {
         flex: 40%;
@@ -108,7 +110,7 @@ export default {
 
           .menuLink {
             text-decoration: none;
-            color: black;
+            color: $fontColor;
             font-size: 20px;
           }
 

@@ -23,6 +23,7 @@ export default {};
   background-image: url("../../assets/homeTopBig.jpg");
   background-position: center;
   background-size: contain;
+  margin-bottom: $homeElementsBottomMargin;
 
   .textContainer {
     position: absolute;

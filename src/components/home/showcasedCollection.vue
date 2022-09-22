@@ -30,6 +30,7 @@ export default {};
 
 .container {
   color: $fontColor;
+  margin-bottom: $homeElementsBottomMargin;
 
   .title {
     text-align: center;
@@ -59,6 +60,7 @@ export default {};
       p {
         font-size: 18px;
         padding: 0 25px;
+        text-align: justify;
 
         @media screen and (max-width: 660px) {
           margin: 0;

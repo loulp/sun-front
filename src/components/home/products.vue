@@ -141,6 +141,8 @@ export default {
 @import "../../shared/styles/variables.scss";
 
 .container {
+  margin-bottom: $homeElementsBottomMargin;
+
   .titleContainer {
     width: 45%;
     margin: 3% auto;
@@ -177,7 +179,7 @@ export default {
 
       .productItem {
         min-width: 21%;
-        margin: 1%;
+        margin: 1% 3%;
         position: relative;
         cursor: pointer;
 
@@ -200,15 +202,16 @@ export default {
             height: 0;
             transition: all ease-in-out 0.5s;
 
-            background-color: rgba(239, 222, 189, 0.5);
+            background-color: rgba(255, 255, 255, 0.5);
 
             bottom: 0;
             left: 0;
             position: absolute;
 
             p {
+              opacity: 0;
               margin-left: 2%;
-              font-size: 0;
+              font-size: 16px;
               color: black;
             }
 
@@ -242,7 +245,6 @@ export default {
             height: 50px;
             width: 50px;
 
-            border: 0.5px solid;
             margin: 5px 5px 0 0;
           }
         }
@@ -260,8 +262,8 @@ export default {
           }
 
           .productPresentation .productDescription p {
-            font-size: inherit;
-            transition: all ease-in-out 1s;
+            opacity: 1;
+            transition: all ease-in-out 1.5s;
           }
         }
 
@@ -279,7 +281,7 @@ export default {
       top: 0;
       bottom: 0;
 
-      background-color: rgba(193, 199, 201, 0.2);
+      background-color: rgba(255, 255, 255, 0.5);
       padding: 5px;
 
       &.left {

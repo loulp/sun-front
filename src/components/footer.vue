@@ -20,11 +20,12 @@
         <a href="">Nos revendeurs</a>
       </div>
       <div>
+        <!-- TODO redirection -->
         <div class="mediaIconContainer">
           <img class="sociallogo" src="../assets/insta.svg" alt="" />
-          <img class="sociallogo" src="../assets/linkedin.svg" alt="" />
           <img class="sociallogo" src="../assets/facebook.svg" alt="" />
           <img class="sociallogo" src="../assets/mail.svg" alt="" />
+          <!-- <img class="sociallogo" src="../assets/ulicon.jpg" alt="" /> -->
         </div>
       </div>
     </div>
@@ -44,11 +45,11 @@ export default {};
     flex-flow: row wrap;
     position: relative;
     justify-content: center;
-    gap: 3%;
+    gap: 10%;
     width: 100%;
 
     & > * {
-      width: 20%;
+      width: 15%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -59,6 +60,7 @@ export default {};
       }
 
       h3 {
+        color: #38515f;
         font-size: 18px;
 
         @media screen and (max-width: 660px) {
@@ -68,7 +70,7 @@ export default {};
 
       a {
         font-size: 16px;
-        color: black;
+        color: #38515f;
         text-decoration: none;
 
         @media screen and (max-width: 660px) {
@@ -86,7 +88,8 @@ export default {};
 
         .sociallogo {
           margin: 8%;
-          width: 20%;
+          width: 25%;
+          cursor: pointer;
         }
       }
     }

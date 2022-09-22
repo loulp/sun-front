@@ -20,13 +20,15 @@ export default {};
   height: calc(100vh - #{$scrolledHeaderHeight});
   display: flex;
   flex-direction: row;
+  margin-bottom: $homeElementsBottomMargin;
+
   img {
     flex: 33%;
     padding: 2% 10%;
 
-      @media screen and (max-width: 660px) {
-        margin-bottom: 15%;
-      }
+    @media screen and (max-width: 660px) {
+      margin-bottom: 15%;
+    }
   }
 
   p {
@@ -34,12 +36,12 @@ export default {};
     font-size: 35px;
     padding: 10%;
     color: $fontColor;
-    
-      @media screen and (max-width: 660px) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+
+    @media screen and (max-width: 660px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   @media screen and (max-width: 660px) {

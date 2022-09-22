@@ -31,6 +31,7 @@ export default {
   height: calc(100vh - #{$scrolledHeaderHeight});
   background-image: url("../../assets/workshop.jpg");
   position: relative;
+  margin-bottom: $homeElementsBottomMargin;
 
   .textContainer {
     position: absolute;
