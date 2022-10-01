@@ -101,7 +101,8 @@ export default {
         elements,
         confirmParams: {
           // TODO change to prod url
-          return_url: "http://localhost:8081/payment",
+          // return_url: "http://localhost:8081/payment",
+          return_url: "http://https://sun-test.netlify.app/payment",
           //TODO set to customer email
           receipt_email: "louislepogam@gmail.com",
         },
