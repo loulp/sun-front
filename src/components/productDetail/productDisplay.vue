@@ -66,23 +66,6 @@ export default {
 @import "../../shared/styles/variables.scss";
 
 .container {
-  .collectionName {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    margin: 15% auto 5% 5%;
-
-    font-size: 24px;
-
-    color: #707070;
-
-    .titleIcon {
-      width: 20px;
-      height: 15px;
-      margin-right: 2%;
-    }
-  }
   .productDetailContainer {
     display: flex;
     flex-direction: row;
@@ -106,6 +89,7 @@ export default {
 
           @media screen and (max-width: 660px) {
             height: auto;
+            width: 100%;
           }
         }
 
@@ -121,9 +105,17 @@ export default {
             margin: 5px 0;
 
             @media screen and (max-width: 660px) {
-              width: 25%;
+              width: 50%;
             }
           }
+          @media screen and (max-width: 660px) {
+            flex-direction: row;
+          }
+        }
+
+        @media screen and (max-width: 660px) {
+          flex-direction: column;
+          height: 100%;
         }
       }
     }

@@ -78,6 +78,7 @@ export default {
 .mainContainer {
   display: flex;
   flex-direction: row;
+  color: $fontColor;
 
   .itemList {
     flex: 85%;

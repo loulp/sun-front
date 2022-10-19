@@ -53,13 +53,11 @@ export default {
       this.loading = !this.loading;
       this.createBody();
 
-      await paymentService.payment(this.body).then(
+      await paymentService.createPaymentIntent(this.body).then(
         (res) => {
           this.clientSecret = res.data.client_secret;
           this.body.paymentIntent = res.data.id;
           this.loading = !this.loading;
-          console.log(`order creation successfull : `);
-          console.log(res);
         },
         (err) => {
           this.loading = !this.loading;
@@ -87,7 +85,6 @@ export default {
     async submit() {
       paymentService.createOrder(this.body).then(
         (res) => {
-          console.log(res);
           this.loading = !this.loading;
         },
         (err) => {
@@ -103,8 +100,7 @@ export default {
           // TODO change to prod url
           // return_url: "http://localhost:8081/payment",
           return_url: "https://sun-test.netlify.app/payment",
-          //TODO set to customer email
-          receipt_email: "louislepogam@gmail.com",
+          receipt_email: this.userForm.email,
         },
       });
 
@@ -134,7 +130,7 @@ export default {
         nom: this.userForm.lastname,
         prenom: this.userForm.firstname,
         email: this.userForm.email,
-        adresse: `${this.userForm.address} ${this.userForm.postalCode}`,
+        adresse: `${this.userForm.address}, ${this.userForm.postalCode}, ${this.userForm.city}`,
         prix_total: totalPrice(),
         produits: products,
         date: Date.now(),

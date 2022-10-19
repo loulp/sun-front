@@ -9,6 +9,7 @@ export default new Vuex.Store({
     cart: [],
     collections: [],
     categories: [],
+    latestProducts: []
   },
   mutations: {
     addItemToCart(state, item) {
@@ -47,7 +48,7 @@ export default new Vuex.Store({
     emptyCart() {
       const existingCart = Cookies.get('SUNcart');
       if (existingCart) {
-        Cookies.set('SUNcart', []);
+        Cookies.remove('SUNcart')
       }
     },
     updateStorage(state, token) {
@@ -59,6 +60,9 @@ export default new Vuex.Store({
     },
     fillCategories(state, categories) {
       state.categories = categories;
+    },
+    fillLatestProducts(state, latestProducts) {
+      state.latestProducts = latestProducts;
     },
   },
   actions: {},

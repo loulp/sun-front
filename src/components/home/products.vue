@@ -31,7 +31,6 @@
             @mouseenter="product.mainMedia = product.img[1].attributes.url"
             @mouseleave="product.mainMedia = product.img[0].attributes.url"
           >
-            <!-- TODO fix image not taking full div width -->
             <div class="productPresentation">
               <div class="imgContainer">
                 <img class="productMedia" :src="product.mainMedia" alt="" />
@@ -78,15 +77,19 @@ export default {
   },
 
   mounted() {
-    this.getProducts();
+    if (this.$store.state.latestProducts.length != 0) {
+      this.products = this.$store.state.latestProducts;
+      this.loading = !this.loading;
+    } else {
+      this.getProducts();
+    }
   },
 
   methods: {
     getProducts() {
       this.loading = true;
-      productsServices.getProducts().then(
+      productsServices.getLatestProducts().then(
         (res) => {
-          console.log(res);
           res.data.data.forEach((el) => {
             const product = {
               id: el.id,
@@ -96,8 +99,7 @@ export default {
             };
             this.products.push(product);
           });
-          //TODO requête coté back pour limité la taille de la liste
-          this.products = this.products.slice(0, 9);
+          this.$store.commit("fillLatestProducts", this.products);
           this.loading = !this.loading;
         },
         (err) => {
@@ -212,7 +214,7 @@ export default {
               opacity: 0;
               margin-left: 2%;
               font-size: 16px;
-              color: black;
+              color: $fontColor;
             }
 
             @media screen and (max-width: 660px) {

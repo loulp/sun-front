@@ -19,11 +19,40 @@
       </div>
     </div>
     <div v-if="paymentStatus != 'TBD'">
-      <!-- TODO améliorer l'affichage -->
       <div class="viewContainer">
-        <div v-if="paymentStatus === 'SUCCESS'">SUCCESS</div>
-        <div v-if="paymentStatus === 'PROCESSING'">PROCESSING</div>
-        <div v-if="paymentStatus === 'FAILED'">FAILED</div>
+        <div
+          class="stateInformations success"
+          v-if="paymentStatus === 'SUCCESS'"
+        >
+          <h2>Le paiement a bien été effectué !</h2>
+          <img src="@/assets/successIcon.svg" alt="" />
+          <p>
+            Nous vous remercions pour votre commande et votre confiance. Vous
+            recevrez sous peu un mail de confirmation à l'adresse mail indiqué
+            lors de la commande
+          </p>
+        </div>
+        <div
+          class="stateInformations loading"
+          v-if="paymentStatus === 'PROCESSING'"
+        >
+          <h2>La validation de votre paiement est toujours en cours</h2>
+          <img src="@/assets/loadingIcon.svg" alt="" />
+          <p>
+            Nous vous remercions pour votre commande et votre confiance. Vous
+            recevrez sous peu un mail vous confirmant le statut de votre
+            commande à l'adresse mail indiqué lors de la commande
+          </p>
+        </div>
+        <div class="stateInformations error" v-if="paymentStatus === 'FAILED'">
+          <h2>Une erreur est survenue lors du paiement</h2>
+          <img src="@/assets/errorIcon.svg" alt="" />
+          <p>
+            Nous vous remercions pour votre commande et votre confiance. Vous
+            recevrez sous peu un mail vous confirmant le statut de votre
+            commande à l'adresse mail indiqué lors de la commande
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -50,7 +79,6 @@ export default {
   },
 
   mounted() {
-    console.log(`Payment mounted & payment status : ${this.paymentDone}`);
     this.checkStatus();
   },
 
@@ -66,9 +94,6 @@ export default {
         "payment_intent_client_secret"
       );
 
-      console.log("CLIENT SECRET");
-      console.log(clientSecret);
-
       if (!clientSecret) {
         return;
       }
@@ -79,7 +104,6 @@ export default {
 
       switch (paymentIntent.status) {
         case "succeeded":
-          console.log("Payment succeeded!");
           this.$store.commit("emptyCart");
           this.paymentStatus = "SUCCESS";
           break;
@@ -102,11 +126,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../shared/styles/variables.scss";
+
 .container {
   .title {
     padding-top: 5%;
+    margin-left: 5%;
+    color: $fontColor;
   }
-  
+
   .viewContainer {
     display: flex;
     flex-direction: row;
@@ -118,6 +146,32 @@ export default {
     }
     .cartRecapContainer {
       width: 40%;
+    }
+
+    .stateInformations {
+      margin: 5% auto;
+      text-align: center;
+      width: 60%;
+      color: $fontColor;
+
+      img {
+        width: 65px;
+      }
+
+      p {
+        width: 60%;
+        margin: 3% auto;
+        font-size: 18px;
+
+        @media screen and (max-width: 660px) {
+          width: 90%;
+          margin: 5% auto;
+        }
+      }
+
+      @media screen and (max-width: 660px) {
+        width: 90%;
+      }
     }
 
     @media screen and (max-width: 660px) {

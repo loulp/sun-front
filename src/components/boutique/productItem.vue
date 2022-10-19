@@ -42,12 +42,7 @@ export default {
       mainMedia: this.product.attributes.photo.data[0].attributes.url,
     };
   },
-
-  mounted() {
-    console.log("debug item");
-    console.log(this.product);
-  },
-
+  
   methods: {
     toProductView() {
       this.$router.push({

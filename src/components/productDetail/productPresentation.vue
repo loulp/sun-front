@@ -11,7 +11,7 @@
     />
     <div v-if="product.attributes.category.data.attributes.type === 'Bague'">
       <div class="fingerSize">
-        <p>Taille de doigt :</p>
+        <p class="selectText">Taille de doigt :</p>
         <select name="fingerSize" id="fingerSize">
           <option
             class="selectSizeOptions"
@@ -113,6 +113,7 @@ export default {
   flex-direction: column;
   justify-content: space-evenly;
   padding-left: 15%;
+  color: $fontColor;
 
   p {
     margin-left: 0;
@@ -121,9 +122,18 @@ export default {
   .namePriceContainer {
     h3 {
       margin-top: 0;
+
+      @media screen and (max-width: 660px) {
+        font-size: 21px;
+        margin: 0;
+      }
     }
     p {
       color: #707070;
+      @media screen and (max-width: 660px) {
+        margin: 3% 0;
+        font-size: 18px;
+      }
     }
   }
 
@@ -131,6 +141,12 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    .selectText {
+      @media screen and (max-width: 660px) {
+        font-size: 18px;
+      }
+    }
 
     select {
       height: 30px;
@@ -167,6 +183,10 @@ export default {
         margin: 5%;
       }
     }
+
+    @media screen and (max-width: 660px) {
+      font-size: 18px;
+    }
   }
 
   #editor {
@@ -177,10 +197,16 @@ export default {
     &::-webkit-scrollbar {
       display: none;
     }
+    @media screen and (max-width: 660px) {
+      width: 100%;
+    }
   }
 
   .sizeGuideLink {
-    color: black;
+    color: $fontColor;
+    @media screen and (max-width: 660px) {
+      font-size: 18px;
+    }
   }
 
   .cartButton {
@@ -191,6 +217,17 @@ export default {
     padding: 3% 10%;
     font-size: 18px;
     cursor: pointer;
+
+    @media screen and (max-width: 660px) {
+      font-size: 20px;
+
+      margin: 3% 0;
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    padding-left: 0;
+    margin: 5%;
   }
 }
 </style>

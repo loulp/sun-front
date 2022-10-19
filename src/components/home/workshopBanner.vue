@@ -62,5 +62,9 @@ export default {
       color: white;
     }
   }
+
+  @media screen and (max-width: 660px) {
+    margin-bottom: 10%;
+  }
 }
 </style>

@@ -104,7 +104,6 @@ export default {
   methods: {
     submitForm() {
       if (!this.$v.$invalid) {
-        console.log(this.form);
         this.$emit("submitted", this.form);
       }
     },

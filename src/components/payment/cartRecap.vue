@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <p class="totalPrice">Prix Total: {{ totalPrice }}</p>
+    <p class="totalPrice">Prix Total: {{ totalPrice }}€</p>
     <div
       class="productListItem"
       v-for="(item, index) in productList"
@@ -58,6 +58,7 @@ export default {
   width: 90%;
   border: 0.5px solid $mainColor;
   border-radius: 15px;
+  color: $fontColor;
 
   &::-webkit-scrollbar {
     display: none;

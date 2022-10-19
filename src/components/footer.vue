@@ -8,7 +8,7 @@
         <!-- TODO add url  -->
         <h3>AIDE</h3>
         <a href="">Livraison et retours</a>
-        <a href="">Contactez nous</a>
+        <a href="/contact">Contactez nous</a>
         <a href="">CGV</a>
         <a href="">Mentions légales</a>
       </div>
@@ -20,12 +20,22 @@
         <a href="">Nos revendeurs</a>
       </div>
       <div>
-        <!-- TODO redirection -->
         <div class="mediaIconContainer">
-          <img class="sociallogo" src="../assets/insta.svg" alt="" />
-          <img class="sociallogo" src="../assets/facebook.svg" alt="" />
-          <img class="sociallogo" src="../assets/mail.svg" alt="" />
-          <!-- <img class="sociallogo" src="../assets/ulicon.jpg" alt="" /> -->
+          <a
+            class="link"
+            href="https://www.instagram.com/s.u.n.jewelry/"
+            target="_blank"
+            ><img class="sociallogo" src="../assets/insta.svg" alt=""
+          /></a>
+          <a
+            class="link"
+            href="https://www.facebook.com/search/top?q=s.u.n%20jewelry"
+            target="_blank"
+            ><img class="sociallogo" src="../assets/facebook.svg" alt=""
+          /></a>
+          <a class="link" href="/contact"
+            ><img class="sociallogo" src="../assets/mail.svg" alt=""
+          /></a>
         </div>
       </div>
     </div>
@@ -86,10 +96,14 @@ export default {};
         height: fit-content;
         width: 66%;
 
-        .sociallogo {
-          margin: 8%;
-          width: 25%;
-          cursor: pointer;
+        .link {
+          width: 35%;
+
+          .sociallogo {
+            width: 75%;
+            margin: 8%;
+            cursor: pointer;
+          }
         }
       }
     }

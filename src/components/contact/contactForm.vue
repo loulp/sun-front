@@ -74,7 +74,7 @@
         <p>Envoi du mail...</p>
         <ring-loader
           :loading="loading"
-          :color="'$mainColor'"
+          :color="'#efdebd'"
           :size="'50px'"
         ></ring-loader>
       </div>
@@ -152,14 +152,12 @@ export default {
   methods: {
     submitForm() {
       if (!this.$v.$invalid) {
-        console.log(this.form);
         this.loading = true;
         contactService.sendMail(this.form).then(
           (res) => {
             this.loading = false;
             this.mailSent = true;
             this.mailSentSuccess = true;
-            console.log(res);
           },
           (err) => {
             this.loading = false;
@@ -247,13 +245,13 @@ export default {
 
     .successContainer {
       h2 {
-        color: rgb(95, 174, 95);
+        color: #3ea84b;
       }
     }
 
     .failedContainer {
       h2 {
-        color: rgb(241, 84, 84);
+        color: #c43737;
       }
     }
   }
