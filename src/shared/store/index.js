@@ -46,6 +46,7 @@ export default new Vuex.Store({
       const existingCart = localStorage.getItem('SUNcart');
       if (existingCart) {
         localStorage.removeItem('SUNcart');
+        state.cart = []
       }
     },
 
