@@ -66,7 +66,7 @@ export default {
     },
 
     sendShowMenuEvent() {
-      EventBus.$emit("showShopMenu");
+      EventBus.$emit("showShopMenu", "SHOP");
     },
   },
 };

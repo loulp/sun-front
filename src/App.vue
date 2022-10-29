@@ -26,6 +26,7 @@ export default {
 
   mounted() {
     this.$store.commit("fillCartOnPageLoad");
+    this.$store.commit("fillFavOnPageLoad");
   },
 };
 </script>
@@ -37,6 +38,7 @@ body,
 html {
   margin: 0;
   font-family: "Abhaya Libre", serif;
+  color: $fontColor;
 }
 
 .viewContainer {

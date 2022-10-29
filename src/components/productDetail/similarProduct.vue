@@ -171,7 +171,7 @@ export default {
 
       .productItem {
         min-width: 21%;
-        margin: 1% 3%;
+        margin: 1%;
         position: relative;
         cursor: pointer;
 

@@ -2,7 +2,7 @@
   <div class="container">
     <div
       class="productListItem"
-      v-for="(item, index) in productList"
+      v-for="(item, index) in getCompactedList"
       :key="index"
     >
       <img :src="item.media" @click="toProductView(item.id)" />
@@ -12,6 +12,7 @@
         <p>{{ item.prix }}€</p>
         <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>
       </div>
+      <p class="nbItemContainer">{{ item.nbItem }}</p>
       <button @click="removeItem(index)">X</button>
     </div>
   </div>
@@ -21,6 +22,34 @@
 export default {
   props: {
     productList: null,
+  },
+
+  computed: {
+    getCompactedList() {
+      var compactedList = [];
+
+      this.productList.forEach((cartItem) => {
+        const existingIndex = compactedList.findIndex(
+          (item) => item.id === cartItem.id
+        );
+
+        if (existingIndex != -1) {
+          if (cartItem.categorie !== "Bague") {
+            compactedList[existingIndex].nbItem += 1;
+          } else if (compactedList[existingIndex].size == cartItem.size) {
+            compactedList[existingIndex].nbItem += 1;
+          } else {
+            const newProduct = { ...cartItem, nbItem: 1 };
+            compactedList.push(newProduct);
+          }
+        } else {
+          const newProduct = { ...cartItem, nbItem: 1 };
+          compactedList.push(newProduct);
+        }
+      });
+
+      return compactedList;
+    },
   },
 
   methods: {
@@ -49,23 +78,19 @@ export default {
   .productListItem {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     margin: 2%;
     border: 0.5px solid $mainColor;
     border-radius: 15px;
 
-    > * {
-      margin: auto 10%;
-    }
-
     img {
       width: 10%;
     }
 
     .itemText {
-      width: 100%;
+       min-width: 15%;
 
       .itemName {
         cursor: pointer;

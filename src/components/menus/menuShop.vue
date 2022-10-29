@@ -8,9 +8,12 @@
         >
         <ul v-if="collections.length > 0 && !loadingCollections">
           <li v-for="collection in collections" :key="collection.index">
-            <div
+            <!-- <div
               @mouseover="changeImage(collection.img)"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
+              @click="$emit('hideMenu')"
+            > -->
+            <div
               @click="$emit('hideMenu')"
             >
               <router-link
@@ -35,10 +38,13 @@
         <ul v-if="categories.length > 0 && !loadingCategories">
           <li v-for="category in categories" :key="category.index">
             <div
+              @click="$emit('hideMenu')"
+            >
+            <!-- <div
               @mouseover="changeImage(category.img)"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
-            >
+            > -->
               <router-link
                 class="menuLink"
                 :to="{
@@ -130,9 +136,9 @@ export default {
       );
     },
 
-    changeImage(url) {
-      this.$refs.imageSide.style.backgroundImage = `url(${url})`;
-    },
+    // changeImage(url) {
+    //   this.$refs.imageSide.style.backgroundImage = `url(${url})`;
+    // },
   },
 
   filters: {

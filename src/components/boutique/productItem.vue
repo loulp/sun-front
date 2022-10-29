@@ -110,7 +110,6 @@ export default {
         opacity: 0;
         margin-left: 2%;
         font-size: 16px;
-        color: black;
       }
 
       @media screen and (max-width: 660px) {

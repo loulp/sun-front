@@ -9,14 +9,12 @@
         <h3>AIDE</h3>
         <a href="">Livraison et retours</a>
         <a href="/contact">Contactez nous</a>
-        <a href="">CGV</a>
-        <a href="">Mentions légales</a>
+        <a href="">CGV & Mentions légales</a>
       </div>
       <div>
         <h3>À PROPOS</h3>
         <a href="">Joaillerie durable</a>
         <a href="">Made in France</a>
-        <a href="">Nos boutiques</a>
         <a href="">Nos revendeurs</a>
       </div>
       <div>
@@ -36,6 +34,9 @@
           <a class="link" href="/contact"
             ><img class="sociallogo" src="../assets/mail.svg" alt=""
           /></a>
+          <div @click="cuteAlert()" class="link">
+            <img class="sociallogo" src="../assets/starIcon.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -43,7 +44,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    cuteAlert() {
+      // TODO changer ça peut être
+      window.alert("HO LE SANG, LE BOSS !");
+
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -106,6 +115,16 @@ export default {};
           }
         }
       }
+      @media screen and (max-width: 660px) {
+        width: 30%;
+      }
+    }
+
+    & > :first-child,
+    & > :last-child {
+      @media screen and (max-width: 660px) {
+        width: 20%;
+      }
     }
 
     .logoContainer {
@@ -115,6 +134,16 @@ export default {};
         width: 80%;
       }
     }
+
+    @media screen and (max-width: 660px) {
+      gap: 0;
+    }
+  }
+
+  @media screen and (max-width: 660px) {
+    padding: 3%;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 </style>

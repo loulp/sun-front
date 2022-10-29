@@ -1,8 +1,24 @@
 <template>
   <div class="container">
     <div class="namePriceContainer">
-      <h3>{{ product.attributes.nom }}</h3>
-      <p>Prix: {{ product.attributes.prix }}€</p>
+      <div class="textContainer">
+        <h3>{{ product.attributes.nom }}</h3>
+        <p>Prix: {{ getValue }}€</p>
+      </div>
+      <img
+        @click="addToFav()"
+        v-if="!isFav"
+        class="favIcon"
+        :src="require('../../assets/favIcon.svg')"
+        alt=""
+      />
+      <img
+        @click="removeFromFav()"
+        v-if="isFav"
+        class="favIcon"
+        :src="require('../../assets/favIconFill.svg')"
+        alt=""
+      />
     </div>
     <vue-markdown-it
       v-if="product.attributes.description"
@@ -12,7 +28,7 @@
     <div v-if="product.attributes.category.data.attributes.type === 'Bague'">
       <div class="fingerSize">
         <p class="selectText">Taille de doigt :</p>
-        <select name="fingerSize" id="fingerSize">
+        <select name="fingerSize" id="fingerSize" v-model="ringSize">
           <option
             class="selectSizeOptions"
             v-for="size in getSizes"
@@ -38,9 +54,9 @@
     >
       <div class="earingQuantityContainer">
         <p>Commander en paire ou à l'unité :</p>
-        <select name="earingQuantity" id="earingQuantity">
-          <option class="selectOptions" value="unite">L'unité</option>
-          <option class="selectOptions" value="pair">La paire</option>
+        <select name="earingQuantity" id="earingQuantity" v-model="byUnity">
+          <option class="selectOptions" :value="true">L'unité</option>
+          <option class="selectOptions" :value="false">La paire</option>
         </select>
       </div>
     </div>
@@ -56,6 +72,13 @@ export default {
     product: null,
   },
 
+  data() {
+    return {
+      byUnity: false,
+      ringSize: "43",
+    };
+  },
+
   components: {
     VueMarkdownIt,
   },
@@ -68,36 +91,57 @@ export default {
       }
       return sizes;
     },
+
+    getValue() {
+      if (
+        this.product.attributes.category.data.attributes.type ===
+        "Boucle d'oreille"
+      ) {
+        if (this.byUnity) {
+          return this.product.attributes.prix;
+        } else {
+          return this.product.attributes.prix * 2;
+        }
+      } else {
+        return this.product.attributes.prix;
+      }
+    },
+
+    isFav() {
+      return this.$store.state.fav.some((item) => (item.id === this.product.id));
+    },
   },
 
   methods: {
     addToCart() {
-      let ringSize;
-
-      if (this.product.attributes.category.data.attributes.type === "Bague") {
-        const selectSize = document.getElementById("fingerSize");
-        ringSize = selectSize.value;
-      } else {
-        ringSize = 0;
+      if (this.product.attributes.category.data.attributes.type !== "Bague") {
+        this.ringSize = "unique";
       }
 
-      this.addTostore(ringSize);
+      this.addTostore();
 
-      const selectEaringQuantity = document.getElementById("earingQuantity");
       if (
         this.product.attributes.category.data.attributes.type ===
           "Boucle d'oreille" &&
-        selectEaringQuantity.value === "pair"
+        !this.byUnity
       ) {
-        this.addTostore(ringSize);
+        this.addTostore();
       }
     },
 
-    addTostore(ringSize) {
+    addTostore() {
       this.$store.commit("addItemToCart", {
         product: this.product,
-        size: ringSize,
+        size: this.ringSize,
       });
+    },
+
+    addToFav() {
+      this.$store.commit("addItemToFav", { product: this.product });
+    },
+
+    removeFromFav() {
+      this.$store.commit("removeItemFromFav", this.product.id);
     },
   },
 };
@@ -120,19 +164,31 @@ export default {
   }
 
   .namePriceContainer {
-    h3 {
-      margin-top: 0;
+    display: flex;
+    flex-direction: row;
 
-      @media screen and (max-width: 660px) {
-        font-size: 21px;
-        margin: 0;
-      }
+    .favIcon {
+      width: 25px;
+      align-self: flex-start;
+      margin-left: 3%;
+      cursor: pointer;
     }
-    p {
-      color: #707070;
-      @media screen and (max-width: 660px) {
-        margin: 3% 0;
-        font-size: 18px;
+
+    .textContainer {
+      h3 {
+        margin-top: 0;
+
+        @media screen and (max-width: 660px) {
+          font-size: 21px;
+          margin: 0;
+        }
+      }
+      p {
+        color: #707070;
+        @media screen and (max-width: 660px) {
+          margin: 3% 0;
+          font-size: 18px;
+        }
       }
     }
   }

@@ -36,7 +36,6 @@ export default {
       formLoad: false,
       clientSecret: null,
       elements: null,
-      productList: [],
       stripeKey: process.env.VUE_APP_STRIPE_KEY,
       body: null,
       loading: false,
@@ -44,7 +43,6 @@ export default {
   },
 
   mounted() {
-    this.productList = this.$store.state.cart;
     this.initPayment();
   },
 

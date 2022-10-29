@@ -16,7 +16,7 @@ import EventBus from "@/shared/eventBus.js";
 export default {
   methods: {
     sendShowMenuEvent() {
-      EventBus.$emit("showShopMenu");
+      EventBus.$emit("showShopMenu", "SHOP");
     },
   },
 };

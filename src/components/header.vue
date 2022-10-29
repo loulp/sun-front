@@ -47,8 +47,11 @@
       </div>
       <div class="iconContainer">
         <img src="@/assets/searchIcon.svg" alt="" />
-        <img src="@/assets/favIcon.svg" alt="" />
-        <div class="cartIcon">
+        <div class="iconWithCounter">
+          <img @click="showMenu('FAV')" src="@/assets/favIcon.svg" alt="" />
+          <span>{{ nbFavItem }}</span>
+        </div>
+        <div class="iconWithCounter">
           <img @click="toCart()" src="@/assets/cartIcon.svg" alt="" />
           <span>{{ nbCartItem }}</span>
         </div>
@@ -57,6 +60,7 @@
     <menuMobile v-if="showMobileMenu" />
     <menuShop v-if="currentMenu === 'SHOP'" @hideMenu="currentMenu = null" />
     <menuHouse v-if="currentMenu === 'HOUSE'" @hideMenu="currentMenu = null" />
+    <menuFav v-if="currentMenu === 'FAV'" @hideMenu="currentMenu = null" />
   </div>
 </template>
 
@@ -64,10 +68,11 @@
 import menuShop from "./menus/menuShop.vue";
 import menuHouse from "./menus/menuHouse.vue";
 import menuMobile from "./menus/menuMobile.vue";
+import menuFav from "./menus/menuFav.vue";
 import EventBus from "@/shared/eventBus.js";
 
 export default {
-  components: { menuShop, menuHouse, menuMobile },
+  components: { menuShop, menuHouse, menuMobile, menuFav },
 
   data() {
     return {
@@ -80,6 +85,9 @@ export default {
   computed: {
     nbCartItem() {
       return this.$store.state.cart.length;
+    },
+    nbFavItem() {
+      return this.$store.state.fav.length;
     },
   },
 
@@ -128,8 +136,8 @@ export default {
   },
 
   created() {
-    EventBus.$on("showShopMenu", () => {
-      this.currentMenu = "SHOP";
+    EventBus.$on("showShopMenu", (menu) => {
+      this.currentMenu = menu;
     });
   },
 };
@@ -190,7 +198,7 @@ export default {
   .menuContainer {
     background-color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-flow: row nowrap;
     align-items: center;
     width: 100%;
@@ -226,16 +234,17 @@ export default {
       width: 10%;
       display: flex;
       flex-direction: row;
-      margin-right: 5%;
+      margin-right: 3%;
+      justify-content: space-between;
 
       img {
-        margin: auto 10%;
+        margin: auto 5%;
         width: 25px;
         height: 25px;
         cursor: pointer;
       }
 
-      .cartIcon {
+      .iconWithCounter {
         position: relative;
         span {
           position: absolute;
@@ -250,7 +259,9 @@ export default {
       }
 
       @media screen and (max-width: 660px) {
+        width: 25%;
         margin-right: 10%;
+        gap: 10px;
       }
     }
 
@@ -264,9 +275,10 @@ export default {
     }
 
     @media screen and (max-width: 660px) {
-      justify-content: space-evenly;
+      justify-content: space-between;
 
       .burgerMenu {
+        margin-left: 5%;
         display: block;
       }
 

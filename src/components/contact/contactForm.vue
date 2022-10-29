@@ -95,7 +95,7 @@
           instagram ! <br />Typhen
         </p>
         <a href="https://www.instagram.com/s.u.n.jewelry/" target="_blank">
-          <img src="../../assets/instaMainColor.svg" class="icon" alt="" />
+          <img src="../../assets/insta.svg" class="icon" alt="" />
         </a>
         <button @click="retry()">Réessayer</button>
       </div>
@@ -184,7 +184,7 @@ export default {
 
 .container {
   .icon {
-    width: 30px;
+    width: 40px;
   }
 
   .header {

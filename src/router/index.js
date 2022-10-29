@@ -43,24 +43,24 @@ const routes = [
     component: () => import('@/pages/Product'),
   },
   {
-    path: '/lamaison',
+    path: '/la_maison',
     name: 'lamaison',
     component: () => import('@/pages/House'),
     children: [
       {
-        path: '/lamaison/creatrice',
+        path: '/la_maison/creatrice',
         name: 'creatrice',
-        component: () => import('@/components/house/creator'),
+        component: () => import('@/pages/Creatrice'),
       },
       {
-        path: '/lamaison/savoir_faire',
+        path: '/la_maison/savoir_faire',
         name: 'savoir_faire',
-        component: () => import('@/components/house/expertise'),
+        component: () => import('@/pages/Expertise'),
       },
       {
-        path: '/lamaison/inspiration',
+        path: '/la_maison/inspiration',
         name: 'inspiration',
-        component: () => import('@/components/house/inspiration'),
+        component: () => import('@/pages/Inspiration'),
       },
     ],
   },

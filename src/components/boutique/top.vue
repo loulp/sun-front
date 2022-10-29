@@ -24,9 +24,9 @@ export default {
   },
 
   mounted() {
-    if (this.subject) {
-      this.$refs.imgContainer.style.backgroundImage = `url(${this.subject.img})`;
-    }
+    // if (this.subject) {
+    //   this.$refs.imgContainer.style.backgroundImage = `url(${this.subject.img})`;
+    // }
   },
 };
 </script>
@@ -36,7 +36,7 @@ export default {
 
 .imgContainer {
   position: relative;
-  height: calc(80vh - #{$headerHeight});
+  // height: calc(80vh - #{$headerHeight});
   width: 100%;
 
   background-position: center;
@@ -52,7 +52,6 @@ export default {
 
 #editor {
   margin: 3% 10%;
-  color: black;
   width: 50%;
 }
 </style>

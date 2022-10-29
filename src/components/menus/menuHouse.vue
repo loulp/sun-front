@@ -6,8 +6,6 @@
         <ul>
           <li>
             <div
-              @mouseover="changeImage('../../assets/housebanner.jpg')"
-              @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             >
               <router-link
@@ -20,10 +18,7 @@
             </div>
           </li>
           <li>
-            <!-- TODO use :src="require(...)" for img change from assets-->
             <div
-              @mouseover="changeImage('../../assets/housebanner.jpg')"
-              @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             >
               <router-link
@@ -37,8 +32,6 @@
           </li>
           <li>
             <div
-              @mouseover="changeImage('../../assets/housebanner.jpg')"
-              @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             >
               <router-link
@@ -60,10 +53,6 @@
 <script>
 export default {
   methods: {
-    changeImage(url) {
-      //TODO image is not changing
-      this.$refs.imageSide.style.backgroundImage = `url(${url})`;
-    },
   },
 };
 </script>
@@ -142,7 +131,7 @@ export default {
 
     background-position: center;
     background-size: cover;
-    background-image: url("../../assets/housebanner.jpg");
+    // background-image: url("../../assets/housebanner.jpg");
     transition: background-image 0.3s ease-in-out;
   }
 }

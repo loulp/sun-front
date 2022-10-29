@@ -3,7 +3,7 @@
     <p class="totalPrice">Prix Total: {{ totalPrice }}€</p>
     <div
       class="productListItem"
-      v-for="(item, index) in productList"
+      v-for="(item, index) in getCompactedList"
       :key="index"
     >
       <img :src="item.media" @click="toProductView(item.id)" />
@@ -13,6 +13,7 @@
         <p>{{ item.prix }}€</p>
         <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>
       </div>
+      <p>{{ item.nbItem }}</p>
     </div>
   </div>
 </template>
@@ -26,6 +27,31 @@ export default {
   },
 
   computed: {
+      getCompactedList() {
+        var compactedList = [];
+
+        this.productList.forEach((cartItem) => {
+          const existingIndex = compactedList.findIndex(
+            (item) => item.id === cartItem.id
+          );
+
+          if (existingIndex != -1) {
+            if (cartItem.categorie !== "Bague") {
+              compactedList[existingIndex].nbItem += 1;
+            } else if (compactedList[existingIndex].size == cartItem.size) {
+              compactedList[existingIndex].nbItem += 1;
+            } else {
+              const newProduct = { ...cartItem, nbItem: 1 };
+              compactedList.push(newProduct);
+            }
+          } else {
+            const newProduct = { ...cartItem, nbItem: 1 };
+            compactedList.push(newProduct);
+          }
+        });
+
+        return compactedList;
+      },
     totalPrice() {
       let total = 0;
       if (this.productList.length > 0) {
