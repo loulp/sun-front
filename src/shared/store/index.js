@@ -42,7 +42,7 @@ export default new Vuex.Store({
         state.cart = json;
       }
     },
-    emptyCart() {
+    emptyCart(state) {
       const existingCart = localStorage.getItem('SUNcart');
       if (existingCart) {
         localStorage.removeItem('SUNcart');
