@@ -83,7 +83,7 @@ export default {
 
     margin: 2%;
     border: 0.5px solid $mainColor;
-    border-radius: 15px;
+    border-radius: 5px;
 
     img {
       width: 10%;

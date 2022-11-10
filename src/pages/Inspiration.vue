@@ -1,6 +1,6 @@
 <template>
   <div class="inspirationContainer">
-    <h1>L'inspiration</h1>
+    <h1><img src="../assets/starIcon.png" class="titleIcon" />L'inspiration</h1>
     <emotion />
     <middle-part />
     <inspi-citation />
@@ -17,27 +17,36 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../shared/styles/variables.scss";
+
 .inspirationContainer {
-  margin-top: 15%;
+  margin-top: 10%;
 
   h1 {
     width: fit-content;
     margin: auto;
     text-align: center;
-    border-bottom: 2px solid #efdebd;
+    border-bottom: 2px solid $mainColor;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 3% 10px 0 10px;
+  }
+
+  .titleIcon {
+    width: 30px;
+    margin-right: 10px;
+    margin-bottom: -5px;
   }
 
   .childContainer {
+    position: relative;
+    height: calc(100vh - #{$scrolledHeaderHeight});
     padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 30px;
 
-    margin: 5% auto;
+    margin: 1% auto;
 
     .mediaContainer {
       display: flex;
@@ -66,6 +75,10 @@ export default {
           width: 100%;
         }
       }
+
+      @media screen and (max-width: 660px) {
+        align-items: center;
+      }
     }
 
     &.mediaLeft {
@@ -79,7 +92,7 @@ export default {
       }
     }
     &.mediaRight {
-      background-color: rgba(193, 199, 201, 0.2);
+      background-color: rgb(234, 246, 246);;
 
       flex-direction: row-reverse;
       .textContainer {

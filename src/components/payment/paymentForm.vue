@@ -66,7 +66,7 @@ export default {
       const appearance = {
         theme: "stripe",
         variables: {
-          colorPrimary: "#efdebd",
+          colorPrimary: "#d44a7b",
         },
       };
 
@@ -154,7 +154,6 @@ export default {
   border: none;
   padding: 10px 20px;
   font-size: 18px;
-  border-radius: 15px;
   cursor: pointer;
   margin: 5% 0;
   background-color: $mainColor;

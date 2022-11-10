@@ -1,6 +1,7 @@
 <template>
   <div v-if="subject">
-    <div class="imgContainer" ref="imgContainer">
+    <div class="imgContainer" ref="imgContainer"></div>
+    <div class="titleContainer">
       <h1 class="subjectName">{{ subject.name }}</h1>
     </div>
     <vue-markdown-it
@@ -24,9 +25,9 @@ export default {
   },
 
   mounted() {
-    // if (this.subject) {
-    //   this.$refs.imgContainer.style.backgroundImage = `url(${this.subject.img})`;
-    // }
+    if (this.subject) {
+      this.$refs.imgContainer.style.backgroundImage = `url(${this.subject.img})`;
+    }
   },
 };
 </script>
@@ -35,23 +36,26 @@ export default {
 @import "../../shared/styles/variables.scss";
 
 .imgContainer {
-  position: relative;
-  // height: calc(80vh - #{$headerHeight});
-  width: 100%;
-
+  height: calc(80vh - #{$headerHeight});
   background-position: center;
   background-size: cover;
+}
+
+.titleContainer {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
 
   .subjectName {
     margin-left: 10%;
-    font-size: 50px;
+    margin: 3% 10% 1% 10%;
+    font-size: 45px;
   }
 }
 
 #editor {
-  margin: 3% 10%;
+  margin: 1% 10%;
   width: 50%;
 }
 </style>

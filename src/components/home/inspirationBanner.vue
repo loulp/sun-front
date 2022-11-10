@@ -1,12 +1,8 @@
 <template>
   <div class="btnBannerContainer">
-    <!-- <button class="link" @click="redirect">
-      <p class="title">L'INSPIRATION</p>
-      <p class="discover">Découvrir</p>
-    </button> -->
-    <div class="textContainer">
-      <h2>L'INSPIRATION</h2>
-      <button @click="redirect">Découvrir</button>
+    <div class="textContainer" @click="redirect">
+      <h2>L'inspiration</h2>
+      <p>Plongez au cœur de l'univers SUN Jewelry</p>
     </div>
   </div>
 </template>
@@ -24,7 +20,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../shared/styles/buttonOnBanner.scss";
 @import "../../shared/styles/variables.scss";
 
 .btnBannerContainer {
@@ -32,9 +27,14 @@ export default {
   background-image: url("../../assets/housebanner.jpg");
   position: relative;
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   .textContainer {
+    cursor: pointer;
     position: absolute;
-    width: fit-content;
+    width: 33%;
     left: 5%;
     bottom: 15%;
     padding: 20px;
@@ -42,23 +42,6 @@ export default {
 
     h2 {
       margin: 0 0 10px 0;
-      color: white;
-    }
-
-    button {
-      background: none;
-      box-shadow: none;
-      border: none;
-
-      padding: 0;
-
-      cursor: pointer;
-
-      font-size: 22px;
-      font-weight: bold;
-      border-bottom: 1px solid white;
-      font-family: "Abhaya Libre", serif;
-      color: white;
     }
   }
 }

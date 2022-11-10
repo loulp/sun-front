@@ -1,12 +1,11 @@
 <template>
   <div class="btnBannerContainer">
-    <!-- <button class="link" @click="redirect">
-      <p class="title">L'ATELIER</p>
-      <p class="discover">Découvrir</p>
-    </button> -->
-    <div class="textContainer">
-      <h2>L'ATELIER</h2>
-      <button @click="redirect">Découvrir</button>
+    <div class="textContainer" @click="redirect">
+      <h2>L'atelier</h2>
+      <p>
+        Chaque création est fabriquée au sein de l'atelier lyonnais, par des
+        mains mêlant savoir faire, passion et excellence.
+      </p>
     </div>
   </div>
 </template>
@@ -24,7 +23,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../shared/styles/buttonOnBanner.scss";
 @import "../../shared/styles/variables.scss";
 
 .btnBannerContainer {
@@ -33,33 +31,22 @@ export default {
   position: relative;
   margin-bottom: $homeElementsBottomMargin;
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   .textContainer {
+    cursor: pointer;
     position: absolute;
-    width: fit-content;
+    width: 33%;
     left: 5%;
     bottom: 15%;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.5);
+    
 
     h2 {
       margin: 0 0 10px 0;
-      color: white;
-    }
-
-    button {
-      background: none;
-      box-shadow: none;
-      border: none;
-
-      padding: 0;
-
-      cursor: pointer;
-
-      font-size: 22px;
-      font-weight: bold;
-      border-bottom: 1px solid white;
-      font-family: "Abhaya Libre", serif;
-      color: white;
     }
   }
 

@@ -47,6 +47,7 @@ export default {
   margin: 3% auto;
 
   .logoContainer {
+    flex: 1;
     .favIcon {
       width: 25px;
       cursor: pointer;
@@ -54,15 +55,17 @@ export default {
   }
 
   .mediaContainer {
+    flex: 2;
     width: 25%;
     cursor: pointer;
 
     img {
-      width: 100%;
+      width: 66%;
     }
   }
 
   .textContainer {
+    flex: 2;
     display: flex;
     flex-direction: column;
     cursor: pointer;

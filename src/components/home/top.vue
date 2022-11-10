@@ -1,10 +1,14 @@
 <template>
   <div class="bannerContainer">
     <div class="textContainer">
-      <h2>Joaillerie Poétique et Durable</h2>
+      <h2>Joaillerie Poétique et rêveuse</h2>
       <p>
-        Chaque bijou est unique, fabriqué à la main sur commande dans notre
-        atelier lyonnais
+        Plongez dans l'univers de SUN Jewelry, doux voyage aux pays des rêves et
+        des bijoux magiques.
+      </p>
+      <p>
+        Chaque bijou est unique et réalisé à la main sur commande dans notre
+        atelier lyonnais.
       </p>
     </div>
   </div>

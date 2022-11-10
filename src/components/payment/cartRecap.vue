@@ -83,7 +83,6 @@ export default {
   overflow-y: scroll;
   width: 90%;
   border: 0.5px solid $mainColor;
-  border-radius: 15px;
   color: $fontColor;
 
   &::-webkit-scrollbar {

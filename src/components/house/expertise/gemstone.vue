@@ -1,18 +1,17 @@
 <template>
   <div class="childContainer mediaRight">
     <div class="mediaContainer">
-      <img class="media" src="../../../assets/showCollTEST2.jpg" alt="" />
+      <img class="media" src="../../../assets/savoirFaire/sf4.jpg" alt="" />
     </div>
     <div class="textContainer">
       <div class="content">
         <h2>Pierres et Sertissage :</h2>
         <p>
-          Cadeau de la nature, SUN Jewelry s'attache a en prendre le plus grand
-          soin, autant pendant le sertissage du bijou à l'atelier que de son
-          origine en travaillant avec des partenaires gemmologues soucieux de
-          leur provenance
-          <br /><br />
-          Les diamants utilisé sont tous certifiés GIA et traité de kimberley
+          Dernière étape qui permettra de donner toute sa brillance et sa
+          splendeur au bijou, le polissage est un moment important de la
+          fabrication. Une fois réalisé, le bijou sera nettoyé avec le plus
+          grand soin dans un bain à ultrason puis à la vapeur pour être certain
+          qu'il ne reste plus aucun résidu d'abrasif
         </p>
       </div>
     </div>

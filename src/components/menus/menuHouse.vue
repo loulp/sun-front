@@ -2,7 +2,7 @@
   <div class="flexContainer">
     <div class="menu">
       <div class="menuDiv">
-        <h3>La maison</h3>
+        <h3>La Maison</h3>
         <ul>
           <li>
             <div
@@ -11,9 +11,9 @@
               <router-link
                 class="menuLink"
                 :to="{
-                  name: 'creatrice',
+                  name: 'history',
                 }"
-                >La créatrice</router-link
+                >Histoire</router-link
               >
             </div>
           </li>
@@ -26,7 +26,7 @@
                 :to="{
                   name: 'savoir_faire',
                 }"
-                >Le savoir faire</router-link
+                >Savoir faire</router-link
               >
             </div>
           </li>

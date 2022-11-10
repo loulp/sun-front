@@ -7,9 +7,9 @@
           <router-link
             class="menuLink"
             :to="{
-              name: 'creatrice',
+              name: 'history',
             }"
-            >La créatrice</router-link
+            >Histoire</router-link
           >
         </li>
         <li>
@@ -63,9 +63,9 @@
         </li>
       </ul>
     </div>
-    <span @click="showMenu('')" class="menuItem">SUR-MESURE</span>
+    <span @click="redirectTo('SUR-MESURE')" class="menuItem">SUR-MESURE</span>
     <span @click="showMenu('')" class="menuItem">GUIDE</span>
-    <span @click="redirectToContact()" class="menuItem">CONTACTEZ NOUS</span>
+    <span @click="redirectTo('CONTACT')" class="menuItem">CONTACTEZ NOUS</span>
   </div>
 </template>
 
@@ -136,10 +136,23 @@ export default {
       });
     },
 
-    redirectToContact() {
-      this.$router.push({
-        name: "Contact",
-      });
+    redirectTo(page) {
+      switch (page) {
+        case "CONTACT":
+          this.$router.push({
+            name: "Contact",
+          });
+          break;
+        case "SUR-MESURE":
+          this.$router.push({
+            name: "sur-mesure",
+          });
+          break;
+
+        default:
+          console.log("An error occured");
+          break;
+      }
     },
   },
 

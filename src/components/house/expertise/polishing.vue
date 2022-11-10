@@ -1,7 +1,12 @@
 <template>
   <div class="childContainer mediaLeft">
     <div class="mediaContainer">
-      <img class="media" src="../../../assets/showCollTEST.webp" alt="" />
+      <img
+        class="floatingMedia"
+        src="../../../assets/savoirFaire/sf5.png"
+        alt=""
+      />
+      <img class="media" src="../../../assets/savoirFaire/sf6.jpg" alt="" />
     </div>
     <div class="textContainer">
       <div class="content">
@@ -23,4 +28,19 @@ export default {};
 </script>
 
 <style scoped lang="scss">
+.mediaContainer {
+  position: relative;
+  .floatingMedia {
+    position: absolute;
+    width: 180px;
+    right: 40px;
+    top: -100px;
+
+    @media screen and (max-width: 660px) {
+      width: 150px;
+      right: 5px;
+      top: -60px;
+    }
+  }
+}
 </style>

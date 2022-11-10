@@ -48,9 +48,9 @@ const routes = [
     component: () => import('@/pages/House'),
     children: [
       {
-        path: '/la_maison/creatrice',
-        name: 'creatrice',
-        component: () => import('@/pages/Creatrice'),
+        path: '/la_maison/history',
+        name: 'history',
+        component: () => import('@/pages/History'),
       },
       {
         path: '/la_maison/savoir_faire',
@@ -63,6 +63,11 @@ const routes = [
         component: () => import('@/pages/Inspiration'),
       },
     ],
+  },
+  {
+    path: '/sur-mesure',
+    name: 'sur-mesure',
+    component: () => import('@/pages/CustomMade'),
   },
 ];
 

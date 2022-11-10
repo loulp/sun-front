@@ -1,6 +1,6 @@
 <template>
   <div class="loaderContainer">
-    <ring-loader :color="'#efdebd'" :size="size"></ring-loader>
+    <ring-loader :color="'#d44a7b'" :size="size"></ring-loader>
   </div>
 </template>
 

@@ -1,15 +1,15 @@
 <template>
   <div class="expertiseContainer">
-    <h1>Savoir-Faire</h1>
+    <h1><img src="../assets/starIcon.png" class="titleIcon" />Savoir-Faire</h1>
     <expertise />
     <workshop />
     <gemstone />
     <polishing />
     <p class="bottomText">
-      Comme dans les plus grande maison de joaillerie, chaque bijou SUN Jewelry
-      est contrôlé à la loupe avant la mise en écrin pour vous certifier une
-      qualité de travail en accord avec la charte de la maison car pour nous,
-      vous méritez le meilleur.
+      Comme dans les plus grandes maisons de joaillerie, chaque bijou SUN
+      Jewelry est contrôlé à la loupe avant la mise en écrin pour vous certifier
+      une qualité de travail en accord avec la charte de la maison, car pour
+      nous, vous méritez le meilleur.
     </p>
   </div>
 </template>
@@ -25,27 +25,40 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../shared/styles/variables.scss";
+
 .expertiseContainer {
-  margin-top: 15%;
+  margin-top: 10%;
 
   h1 {
     width: fit-content;
     margin: auto;
     text-align: center;
-    border-bottom: 2px solid #efdebd;
+    border-bottom: 2px solid $mainColor;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 3% 10px 0 10px;
+
+    .titleIcon {
+      width: 30px;
+      margin-right: 10px;
+      margin-bottom: -5px;
+    }
+
+    @media screen and (max-width: 660px) {
+      margin-bottom: 15%;
+    }
   }
 
   .childContainer {
+    position: relative;
+    height: calc(100vh - #{$scrolledHeaderHeight});
     padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 30px;
 
-    margin: 5% auto;
+    margin: 1% auto;
 
     .mediaContainer {
       display: flex;
@@ -79,11 +92,16 @@ export default {
           width: 100%;
         }
       }
+
+      @media screen and (max-width: 660px) {
+        align-items: center;
+        margin: 3%;
+      }
     }
 
     &.mediaLeft {
       flex-direction: row;
-      background-color: rgba(193, 199, 201, 0.2);
+      background-color: rgb(234, 246, 246);
 
       .textContainer {
         justify-content: flex-start;
@@ -101,12 +119,13 @@ export default {
 
       @media screen and (max-width: 660px) {
         flex-direction: column;
+        height: auto
       }
     }
   }
 
   .bottomText {
-    margin: -3% auto 3% auto;
+    margin: 3% auto 3% auto;
     width: 70%;
     text-align: justify;
     font-size: 18px;

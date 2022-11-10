@@ -17,6 +17,9 @@
         <a href="">Made in France</a>
         <a href="">Nos revendeurs</a>
       </div>
+      <div class="logoArtisanContainer">
+        <img class="logo" src="../assets/logoArtisan.png" alt="" />
+      </div>
       <div>
         <div class="mediaIconContainer">
           <a
@@ -27,7 +30,7 @@
           /></a>
           <a
             class="link"
-            href="https://www.facebook.com/search/top?q=s.u.n%20jewelry"
+            href="https://www.facebook.com/profile.php?id=100065676961761"
             target="_blank"
             ><img class="sociallogo" src="../assets/facebook.svg" alt=""
           /></a>
@@ -44,19 +47,22 @@
 </template>
 
 <script>
+import EventBus from "@/shared/eventBus.js";
+
 export default {
   methods: {
     cuteAlert() {
-      // TODO changer ça peut être
-      window.alert("HO LE SANG, LE BOSS !");
-
-    }
-  }
+      EventBus.$emit("showCuteMessage", "footer");
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../shared/styles/variables.scss";
+
 .container {
+  z-index: 95;
   background-color: #efeeec;
 
   .content {
@@ -64,7 +70,7 @@ export default {
     flex-flow: row wrap;
     position: relative;
     justify-content: center;
-    gap: 10%;
+    gap: 5%;
     width: 100%;
 
     & > * {
@@ -79,7 +85,7 @@ export default {
       }
 
       h3 {
-        color: #38515f;
+        color: $fontColor;
         font-size: 18px;
 
         @media screen and (max-width: 660px) {
@@ -89,7 +95,7 @@ export default {
 
       a {
         font-size: 16px;
-        color: #38515f;
+        color: $fontColor;
         text-decoration: none;
 
         @media screen and (max-width: 660px) {
@@ -117,6 +123,12 @@ export default {
       }
       @media screen and (max-width: 660px) {
         width: 30%;
+      }
+    }
+
+    .logoArtisanContainer {
+      .logo {
+        width: 50%;
       }
     }
 

@@ -5,11 +5,11 @@
       <div class="textContainer">
         <h2>Radiance</h2>
         <p>
-          Oui, ma gâtée, RS4 gris nardo, bien sûr qu'ils m'ont raté, Soleil dans
-          la bulle, sur le Prado, Shifter pro' Contre-sens , ma chérie, tu es à
-          contre-sens Puta, où tu étais quand j'mettais des sept euros d'essence
-          Tu veux nous faire la guerre, par Dieu, c'est B Ça prend ton Audi, ça
-          prend ta gadji, ça prend ta CB
+          Inspiré des étoiles filantes et de leurs dessins dans le ciel
+          nocturne, cette première collection se veut à la fois douce et forte.
+          Grâce à son design fin et son motif délicat de perle d'or, elle sera
+          ton compagnon idéal au quotidien. Et surtout n'oublie pas de faire un
+          vœu quand tu la porteras !
         </p>
         <button class="discoverButton">Découvrir</button>
       </div>

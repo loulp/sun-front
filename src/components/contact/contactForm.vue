@@ -74,7 +74,7 @@
         <p>Envoi du mail...</p>
         <ring-loader
           :loading="loading"
-          :color="'#efdebd'"
+          :color="'#d44a7b'"
           :size="'50px'"
         ></ring-loader>
       </div>

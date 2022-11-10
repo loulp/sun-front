@@ -15,6 +15,7 @@
     </div>
     <div class="mediaContainer">
       <a
+        class="mediaItem"
         v-for="media in medias"
         :key="media.index"
         :href="media.url"
@@ -78,7 +79,6 @@ export default {
 
     h2 {
       font-size: 25px;
-      padding-bottom: 7%;
 
       span {
         border-top: 2px solid $mainColor;
@@ -94,7 +94,6 @@ export default {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      padding-top: 7%;
 
       img {
         width: 33px;
@@ -104,6 +103,7 @@ export default {
       a {
         text-decoration: none;
         font-size: 20px;
+        color: $fontColor;
       }
 
       @media screen and (max-width: 660px) {
@@ -114,20 +114,25 @@ export default {
   }
 
   .mediaContainer {
-    flex: 60%;
+    flex: 55%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 15px;
 
-    .media {
-      height: 40vh;
-      cursor: pointer;
+    .mediaItem {
+      flex-basis: 30%;
+      text-align: center;
 
-      @media screen and (max-width: 660px) {
-        height: 25vh;
+      .media {
+        height: 35vh;
+        cursor: pointer;
+
+        @media screen and (max-width: 660px) {
+          height: 25vh;
+        }
       }
     }
   }

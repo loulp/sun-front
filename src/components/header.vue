@@ -39,9 +39,11 @@
       <div class="inlineMenu">
         <span @click="showMenu('HOUSE')" class="menuItem">LA MAISON</span>
         <span @click="showMenu('SHOP')" class="menuItem">JOAILLERIE</span>
-        <span @click="showMenu('')" class="menuItem">SUR-MESURE</span>
+        <span @click="redirectTo('SUR-MESURE')" class="menuItem"
+          >SUR-MESURE</span
+        >
         <span @click="showMenu('')" class="menuItem">GUIDE</span>
-        <span @click="redirectToContact()" class="menuItem"
+        <span @click="redirectTo('CONTACT')" class="menuItem"
           >CONTACTEZ NOUS</span
         >
       </div>
@@ -49,11 +51,11 @@
         <img src="@/assets/searchIcon.svg" alt="" />
         <div class="iconWithCounter">
           <img @click="showMenu('FAV')" src="@/assets/favIcon.svg" alt="" />
-          <span>{{ nbFavItem }}</span>
+          <span @click="showMenu('FAV')">{{ nbFavItem }}</span>
         </div>
         <div class="iconWithCounter">
           <img @click="toCart()" src="@/assets/cartIcon.svg" alt="" />
-          <span>{{ nbCartItem }}</span>
+          <span @click="toCart()">{{ nbCartItem }}</span>
         </div>
       </div>
     </div>
@@ -92,7 +94,7 @@ export default {
   },
 
   mounted() {
-    window.onscroll = () => {
+    window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
 
       if (scrollY > 80 && !this.isScrolled) {
@@ -100,7 +102,7 @@ export default {
       } else if (scrollY < 79 && this.isScrolled) {
         this.isScrolled = !this.isScrolled;
       }
-    };
+    });
   },
 
   watch: {
@@ -128,10 +130,23 @@ export default {
       }
     },
 
-    redirectToContact() {
-      this.$router.push({
-        name: "Contact",
-      });
+    redirectTo(page) {
+      switch (page) {
+        case "CONTACT":
+          this.$router.push({
+            name: "Contact",
+          });
+          break;
+        case "SUR-MESURE":
+          this.$router.push({
+            name: "sur-mesure",
+          });
+          break;
+
+        default:
+          console.log("An error occured");
+          break;
+      }
     },
   },
 
@@ -186,7 +201,7 @@ export default {
       }
     }
 
-    border-bottom: 1px solid rgba(56, 81, 95, 0.3);
+    border-bottom: 1px solid rgba(56, 81, 95, 0.1);
 
     @media screen and (max-width: 660px) {
       img {
@@ -225,7 +240,7 @@ export default {
 
       .menuItem {
         font-size: 16px;
-        color: #38515f;
+        color: $fontColor;
         cursor: pointer;
       }
     }
@@ -255,6 +270,7 @@ export default {
           padding: 1px 4px;
           border-radius: 15px;
           text-align: center;
+          cursor: pointer;
         }
       }
 
