@@ -155,7 +155,7 @@ export default {
       font-size: 25px;
 
       span {
-        border-top: 2px solid $mainColor;
+        border-top: 2px solid $lightBlue;
       }
 
       @media screen and (max-width: 660px) {
