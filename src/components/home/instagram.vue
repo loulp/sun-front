@@ -81,7 +81,7 @@ export default {
       font-size: 25px;
 
       span {
-        border-top: 2px solid $mainColor;
+        border-top: 2px solid $lightBlue;
       }
     }
 

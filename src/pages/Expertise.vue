@@ -1,26 +1,24 @@
 <template>
   <div class="expertiseContainer">
-    <h1><img src="../assets/starIcon.png" class="titleIcon" />Savoir-Faire</h1>
+    <h1>
+      <img src="../assets/starIcon.png" class="titleIcon" />Le Savoir-Faire
+    </h1>
     <expertise />
     <workshop />
     <gemstone />
     <polishing />
-    <p class="bottomText">
-      Comme dans les plus grandes maisons de joaillerie, chaque bijou SUN
-      Jewelry est contrôlé à la loupe avant la mise en écrin pour vous certifier
-      une qualité de travail en accord avec la charte de la maison, car pour
-      nous, vous méritez le meilleur.
-    </p>
+    <bottom />
   </div>
 </template>
 
 <script>
+import Bottom from "../components/house/expertise/bottom.vue";
 import expertise from "../components/house/expertise/expertise.vue";
 import Gemstone from "../components/house/expertise/gemstone.vue";
 import Polishing from "../components/house/expertise/polishing.vue";
 import Workshop from "../components/house/expertise/workshop.vue";
 export default {
-  components: { expertise, Workshop, Gemstone, Polishing },
+  components: { expertise, Workshop, Gemstone, Polishing, Bottom },
 };
 </script>
 
@@ -34,7 +32,7 @@ export default {
     width: fit-content;
     margin: auto;
     text-align: center;
-    border-bottom: 2px solid $mainColor;
+    border-bottom: 2px solid $lightBlue;
 
     padding: 3% 10px 0 10px;
 
@@ -65,7 +63,7 @@ export default {
       justify-content: center;
       flex: 50%;
       .media {
-        width: 50%;
+        width: 45%;
       }
     }
 
@@ -101,7 +99,7 @@ export default {
 
     &.mediaLeft {
       flex-direction: row;
-      background-color: rgb(234, 246, 246);
+      background-color: $lightBlue;
 
       .textContainer {
         justify-content: flex-start;
@@ -119,17 +117,9 @@ export default {
 
       @media screen and (max-width: 660px) {
         flex-direction: column;
-        height: auto
+        height: auto;
       }
     }
-  }
-
-  .bottomText {
-    margin: 3% auto 3% auto;
-    width: 70%;
-    text-align: justify;
-    font-size: 18px;
-    line-height: 1.6;
   }
 
   @media screen and (max-width: 660px) {

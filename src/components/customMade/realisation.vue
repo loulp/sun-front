@@ -13,9 +13,9 @@
           pour valider les courbes et volumes.
         </p>
         <p>
-          La fabrication de ton bijou est compris dans un délai de 3 semaines.
+          La fabrication de ton bijou est compris dans un délai de 3 à 6 semaines.
           Pendant cette période, si tu le souhaites, tu recevras régulièrement
-          des photos de l'avancée à l'atelier.
+          des photos de son avancée à l'atelier.
         </p>
         <p>
           Au terme de ce délai, tu recevras ton bijou rêvé dans un écrin, prêt à

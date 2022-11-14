@@ -1,10 +1,5 @@
 <template>
   <div class="childContainer mediaLeft">
-    <img
-      class="floatingImg"
-      src="../../../assets/inspiration/inspi3.png"
-      alt=""
-    />
     <div class="mediaContainer">
       <img class="media" src="../../../assets/inspiration/inspi4.jpg" alt="" />
     </div>
@@ -46,18 +41,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.floatingImg {
-  position: absolute;
-  width: 190px;
-  top: -100px;
-
-  @media screen and (max-width: 660px) {
-    width: 125px;
-    top: -90px;
-    left: 5%;
-  }
-}
-
 .mediaContainer {
   @media screen and (max-width: 660px) {
     margin-top: 15%;
@@ -78,5 +61,6 @@ p {
 
 .signature {
   margin-bottom: 15%;
+  text-align-last: end;
 }
 </style>

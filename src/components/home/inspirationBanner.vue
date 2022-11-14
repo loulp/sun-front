@@ -43,6 +43,10 @@ export default {
     h2 {
       margin: 0 0 10px 0;
     }
+
+    @media screen and (max-width: 660px) {
+      width: 45%;
+    }
   }
 }
 </style>

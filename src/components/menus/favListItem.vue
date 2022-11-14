@@ -49,7 +49,7 @@ export default {
   .logoContainer {
     flex: 1;
     .favIcon {
-      width: 25px;
+      width: 20px;
       cursor: pointer;
     }
   }

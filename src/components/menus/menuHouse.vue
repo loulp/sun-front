@@ -13,7 +13,7 @@
                 :to="{
                   name: 'history',
                 }"
-                >Histoire</router-link
+                >L'histoire</router-link
               >
             </div>
           </li>
@@ -26,7 +26,7 @@
                 :to="{
                   name: 'savoir_faire',
                 }"
-                >Savoir faire</router-link
+                >Le savoir faire</router-link
               >
             </div>
           </li>

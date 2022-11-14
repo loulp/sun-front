@@ -20,26 +20,24 @@
       <div class="logoArtisanContainer">
         <img class="logo" src="../assets/logoArtisan.png" alt="" />
       </div>
-      <div>
-        <div class="mediaIconContainer">
-          <a
-            class="link"
-            href="https://www.instagram.com/s.u.n.jewelry/"
-            target="_blank"
-            ><img class="sociallogo" src="../assets/insta.svg" alt=""
-          /></a>
-          <a
-            class="link"
-            href="https://www.facebook.com/profile.php?id=100065676961761"
-            target="_blank"
-            ><img class="sociallogo" src="../assets/facebook.svg" alt=""
-          /></a>
-          <a class="link" href="/contact"
-            ><img class="sociallogo" src="../assets/mail.svg" alt=""
-          /></a>
-          <div @click="cuteAlert()" class="link">
-            <img class="sociallogo" src="../assets/starIcon.png" alt="" />
-          </div>
+      <div class="mediaIconContainer">
+        <a
+          class="link"
+          href="https://www.instagram.com/s.u.n.jewelry/"
+          target="_blank"
+          ><img class="sociallogo" src="../assets/insta.svg" alt=""
+        /></a>
+        <a
+          class="link"
+          href="https://www.facebook.com/profile.php?id=100065676961761"
+          target="_blank"
+          ><img class="sociallogo" src="../assets/facebook.svg" alt=""
+        /></a>
+        <a class="link" href="/contact"
+          ><img class="sociallogo" src="../assets/mail.svg" alt=""
+        /></a>
+        <div @click="cuteAlert()" class="link">
+          <img class="sociallogo" src="../assets/starIcon.png" alt="" />
         </div>
       </div>
     </div>
@@ -70,8 +68,10 @@ export default {
     flex-flow: row wrap;
     position: relative;
     justify-content: center;
+    align-items: center;
     gap: 5%;
     width: 100%;
+    padding: 20px 0;
 
     & > * {
       width: 15%;
@@ -103,26 +103,29 @@ export default {
         }
       }
 
-      .mediaIconContainer {
-        display: flex;
-        flex-flow: row wrap;
-        align-items: center;
-        position: relative;
-        height: fit-content;
-        width: 66%;
-
-        .link {
-          width: 35%;
-
-          .sociallogo {
-            width: 75%;
-            margin: 8%;
-            cursor: pointer;
-          }
-        }
-      }
       @media screen and (max-width: 660px) {
         width: 30%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+      }
+    }
+
+    .mediaIconContainer {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      position: relative;
+      height: fit-content;
+      width: 10%;
+
+      .link {
+        width: 35%;
+
+        .sociallogo {
+          width: 75%;
+          margin: 8%;
+          cursor: pointer;
+        }
       }
     }
 
@@ -148,7 +151,8 @@ export default {
     }
 
     @media screen and (max-width: 660px) {
-      gap: 0;
+      gap: 10%;
+      padding: 0;
     }
   }
 

@@ -29,6 +29,16 @@
         </p>
       </div>
       <div class="formItem">
+        <span>Numéro de téléphone</span>
+        <input v-model="$v.form.phoneNumber.$model" type="text" />
+        <p
+          v-if="$v.form.phoneNumber.$invalid && $v.form.phoneNumber.$dirty"
+          class="error"
+        >
+          Champ invalide
+        </p>
+      </div>
+      <div class="formItem">
         <span>Adresse</span>
         <input v-model="$v.form.address.$model" type="text" />
         <p
@@ -70,6 +80,7 @@ export default {
         firstname: null,
         lastname: null,
         email: null,
+        phoneNumber: null,
         address: null,
         city: null,
         postalCode: null,
@@ -97,6 +108,9 @@ export default {
       email: {
         required,
         email,
+      },
+      phoneNumber: {
+        required,
       },
     },
   },

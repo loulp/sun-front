@@ -32,7 +32,7 @@ export default {
       this.changeStyle(0);
       setTimeout(() => {
         this.changeStyle('-500px');
-      }, 2000);
+      }, 4000);
     },
 
     changeStyle(pos) {

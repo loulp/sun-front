@@ -7,11 +7,10 @@
       <div class="content">
         <h2>Pierres et Sertissage :</h2>
         <p>
-          Dernière étape qui permettra de donner toute sa brillance et sa
-          splendeur au bijou, le polissage est un moment important de la
-          fabrication. Une fois réalisé, le bijou sera nettoyé avec le plus
-          grand soin dans un bain à ultrason puis à la vapeur pour être certain
-          qu'il ne reste plus aucun résidu d'abrasif
+          Cadeau de la nature, SUN Jewelry s'attache à en prendre le plus grand
+          soin, autant pendant le sertissage du bijou à l'atelier que de son
+          origine en travaillant avec des partenaires gemmologues soucieux de
+          leur provenance.
         </p>
       </div>
     </div>

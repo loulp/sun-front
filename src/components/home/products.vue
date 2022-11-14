@@ -57,7 +57,7 @@
       </div>
       <empty-list-message v-else />
     </div>
-    <spinner class="spinner" :size="'50px'" v-if="loading" />
+    <spinner class="spinner" v-if="loading" />
   </div>
 </template>
 
@@ -294,10 +294,6 @@ export default {
         right: 0;
       }
     }
-  }
-
-  .spinner {
-    margin: 10% auto 15% auto;
   }
 
   @media screen and (max-width: 660px) {

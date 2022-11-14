@@ -45,17 +45,17 @@ export default {
 <style lang="scss" scoped>
 .scrollUpContainer {
   position: fixed;
-  left: 50px;
-  bottom: 40px;
+  left: 20px;
+  bottom: 30px;
   z-index: 100;
 
   img {
-    width: 40px;
+    width: 30px;
     cursor: pointer;
   }
 
   @media screen and (max-width: 660px) {
-    left: 30px;
+    left: 15px;
     bottom: 20px;
   }
 }

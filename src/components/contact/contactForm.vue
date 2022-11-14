@@ -3,7 +3,7 @@
     <div class="header">
       <h2>Contactez-nous</h2>
       <p>
-        Pour toute demande d’information, merci de renseigner le formulaire
+        Pour toute demande d'information, merci de renseigner le formulaire
         ci-dessous. Nous vous répondrons dans les meilleurs délais.
       </p>
       <p>Vous pouvez aussi me contacter via ma page Instagram :</p>
@@ -72,11 +72,12 @@
       </form>
       <div class="loaderContainer" v-if="loading">
         <p>Envoi du mail...</p>
-        <ring-loader
+        <spinner v-if="loading" />
+        <!-- <ring-loader
           :loading="loading"
           :color="'#d44a7b'"
           :size="'50px'"
-        ></ring-loader>
+        ></ring-loader> -->
       </div>
     </div>
     <div class="informationContainer" v-if="mailSent">
@@ -106,11 +107,11 @@
 <script>
 import { email, required } from "vuelidate/lib/validators";
 import contactService from "@/shared/services/contact.services";
-import RingLoader from "vue-spinner/src/RingLoader.vue";
+import Spinner from "../../shared/components/spinner.vue";
 
 export default {
   components: {
-    RingLoader,
+    Spinner,
   },
   data() {
     return {
@@ -203,6 +204,10 @@ export default {
       margin: auto;
       margin-bottom: 15px;
       color: white;
+
+      @media screen and (max-width: 660px) {
+        width: 75%;
+      }
     }
   }
 

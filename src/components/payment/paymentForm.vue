@@ -11,7 +11,27 @@
       </button>
       <div id="payment-message" class="hidden"></div>
     </form>
-    <button class="paymentButton" @click="submit()">Payer</button>
+    <div class="CGVCheckbox">
+      <input
+        type="checkbox"
+        v-model="isCGVaccepted"
+        value="false"
+        id="cgv"
+        name="cgv"
+      />
+      <label for="cgv"
+        >En cochant cette case vous confirmez avoir lu et accepté nos
+        <a href="/contact">Conditions Générales de Ventes</a>
+      </label>
+    </div>
+    <button
+      class="paymentButton"
+      @click="submit()"
+      type="submit"
+      :disabled="!isCGVaccepted"
+    >
+      Payer
+    </button>
     <!-- TODO ajoutez message rassurant-->
     <!-- <span>Paiment sécurisé</span> -->
   </div>
@@ -39,6 +59,7 @@ export default {
       stripeKey: process.env.VUE_APP_STRIPE_KEY,
       body: null,
       loading: false,
+      isCGVaccepted: false,
     };
   },
 
@@ -102,7 +123,7 @@ export default {
         },
       });
 
-// TODO message d'erreur ici
+      // TODO message d'erreur ici
       if (error.type === "card_error" || error.type === "validation_error") {
         console.log("SUBMIT ERROR");
       } else {
@@ -128,6 +149,7 @@ export default {
         nom: this.userForm.lastname,
         prenom: this.userForm.firstname,
         email: this.userForm.email,
+        telephone: this.userForm.phoneNumber,
         adresse: `${this.userForm.address}, ${this.userForm.postalCode}, ${this.userForm.city}`,
         prix_total: totalPrice(),
         produits: products,
@@ -149,6 +171,10 @@ export default {
   width: 75%;
 }
 
+.CGVCheckbox {
+  margin-top: 5%;
+}
+
 .paymentButton {
   width: fit-content;
   border: none;
@@ -158,6 +184,10 @@ export default {
   margin: 5% 0;
   background-color: $mainColor;
   color: white;
+
+  &:disabled {
+    background-color: grey;
+  }
 }
 
 @media screen and (max-width: 660px) {

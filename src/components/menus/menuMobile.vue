@@ -9,7 +9,7 @@
             :to="{
               name: 'history',
             }"
-            >Histoire</router-link
+            >L'histoire</router-link
           >
         </li>
         <li>
@@ -18,7 +18,7 @@
             :to="{
               name: 'savoir_faire',
             }"
-            >Savoir faire</router-link
+            >Le savoir-faire</router-link
           >
         </li>
         <li>
@@ -27,7 +27,7 @@
             :to="{
               name: 'inspiration',
             }"
-            >inspiration</router-link
+            >L'inspiration</router-link
           >
         </li>
       </ul>
@@ -64,7 +64,7 @@
       </ul>
     </div>
     <span @click="redirectTo('SUR-MESURE')" class="menuItem">SUR-MESURE</span>
-    <span @click="showMenu('')" class="menuItem">GUIDE</span>
+    <!-- <span @click="showMenu('')" class="menuItem">GUIDE</span> -->
     <span @click="redirectTo('CONTACT')" class="menuItem">CONTACTEZ NOUS</span>
   </div>
 </template>

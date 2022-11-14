@@ -82,7 +82,7 @@ export default {
   height: 70vh;
   overflow-y: scroll;
   width: 90%;
-  border: 0.5px solid $mainColor;
+  border: 0.5px solid $lightBlue;
   color: $fontColor;
 
   &::-webkit-scrollbar {

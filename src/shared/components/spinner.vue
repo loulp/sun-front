@@ -1,26 +1,29 @@
 <template>
   <div class="loaderContainer">
-    <ring-loader :color="'#d44a7b'" :size="size"></ring-loader>
+    <img src="../../assets/loader.gif" alt="" />
   </div>
 </template>
 
 <script>
-import RingLoader from "vue-spinner/src/RingLoader.vue";
+// import RingLoader from "vue-spinner/src/RingLoader.vue";
 
 export default {
-  components: {
-    RingLoader,
-  },
-
-  props: {
-    size: null,
-  },
+  // components: {
+  //   RingLoader,
+  // },
+  // props: {
+  //   size: null,
+  // },
 };
 </script>
 
-<style>
+<style lang="scss">
 .loaderContainer {
   display: flex;
   justify-content: center;
+
+  img {
+    width: 140px;
+  }
 }
 </style>

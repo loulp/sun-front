@@ -8,10 +8,10 @@
           Inspiré des étoiles filantes et de leurs dessins dans le ciel
           nocturne, cette première collection se veut à la fois douce et forte.
           Grâce à son design fin et son motif délicat de perle d'or, elle sera
-          ton compagnon idéal au quotidien. Et surtout n'oublie pas de faire un
-          vœu quand tu la porteras !
+          ton compagnon idéal au quotidien.<br />Et surtout n'oublie pas de
+          faire un vœu quand tu la porteras !
         </p>
-        <button class="discoverButton">Découvrir</button>
+        <button @click="toCollection()" class="discoverButton">Découvrir</button>
       </div>
       <div class="mediaContainer">
         <img class="media" src="../../assets/showCollTEST.webp" alt="" />
@@ -22,7 +22,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    toCollection() {
+      // TODO verifier que c'est le bonne id en prod
+      this.$router.push({ path: "/boutique/collection/2" });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +41,7 @@ export default {};
 
   .title {
     text-align: center;
+    margin-bottom: 4%;
 
     @media screen and (max-width: 660px) {
       margin-top: 10%;

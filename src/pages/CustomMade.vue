@@ -32,7 +32,7 @@ export default {
       width: fit-content;
       margin: auto;
       text-align: center;
-      border-bottom: 2px solid $mainColor;
+      border-bottom: 2px solid $lightBlue;
 
       padding: 3% 10px 0 10px;
 
@@ -96,7 +96,7 @@ export default {
     }
 
     &.mediaLeft {
-      background-color: rgb(234, 246, 246);
+      background-color: $lightBlue;
 
       flex-direction: row;
       .textContainer {

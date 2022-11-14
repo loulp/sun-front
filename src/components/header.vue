@@ -42,13 +42,13 @@
         <span @click="redirectTo('SUR-MESURE')" class="menuItem"
           >SUR-MESURE</span
         >
-        <span @click="showMenu('')" class="menuItem">GUIDE</span>
+        <!-- <span @click="showMenu('')" class="menuItem">GUIDE</span> -->
         <span @click="redirectTo('CONTACT')" class="menuItem"
           >CONTACTEZ NOUS</span
         >
       </div>
       <div class="iconContainer">
-        <img src="@/assets/searchIcon.svg" alt="" />
+        <!-- <img src="@/assets/searchIcon.svg" alt="" /> -->
         <div class="iconWithCounter">
           <img @click="showMenu('FAV')" src="@/assets/favIcon.svg" alt="" />
           <span @click="showMenu('FAV')">{{ nbFavItem }}</span>
@@ -250,7 +250,7 @@ export default {
       display: flex;
       flex-direction: row;
       margin-right: 3%;
-      justify-content: space-between;
+      justify-content: space-around;
 
       img {
         margin: auto 5%;

@@ -41,6 +41,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "../../../shared/styles/variables.scss";
+
 .visionContainer {
   width: 75%;
   margin: auto;
@@ -53,7 +55,7 @@ export default {};
   }
 
   .citationContainer {
-    background-color: rgb(234, 246, 246);
+    background-color: $lightBlue;
     padding: 20px;
     margin: auto;
     text-align: center;

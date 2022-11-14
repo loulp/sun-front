@@ -29,7 +29,7 @@
           <p>
             Nous vous remercions pour votre commande et votre confiance. Vous
             recevrez sous peu un mail de confirmation à l'adresse mail indiqué
-            lors de la commande
+            lors de la commande.
           </p>
         </div>
         <div
@@ -41,16 +41,16 @@
           <p>
             Nous vous remercions pour votre commande et votre confiance. Vous
             recevrez sous peu un mail vous confirmant le statut de votre
-            commande à l'adresse mail indiqué lors de la commande
+            commande à l'adresse mail indiqué lors de la commande.
           </p>
         </div>
         <div class="stateInformations error" v-if="paymentStatus === 'FAILED'">
           <h2>Une erreur est survenue lors du paiement</h2>
           <img src="@/assets/errorIcon.svg" alt="" />
           <p>
-            Nous vous remercions pour votre commande et votre confiance. Vous
-            recevrez sous peu un mail vous confirmant le statut de votre
-            commande à l'adresse mail indiqué lors de la commande
+            Une erreur est survenue lors du paiement, celui ci n'a pas été
+            validé et la commande n'a pas pus être enregistré. merci de bien
+            vouloir réessayer.
           </p>
         </div>
       </div>

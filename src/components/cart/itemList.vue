@@ -8,7 +8,7 @@
       <img :src="item.media" @click="toProductView(item.id)" />
       <div class="itemText">
         <h3 class="itemName" @click="toProductView(item.id)">{{ item.nom }}</h3>
-        <p v-if="item.categorie === 'Boucle d\'oreille'">l'unité</p>
+        <p v-if="item.categorie === 'Boucle d\'Oreille'">l'unité</p>
         <p>{{ item.prix }}€</p>
         <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>
       </div>
@@ -82,8 +82,7 @@ export default {
     align-items: center;
 
     margin: 2%;
-    border: 0.5px solid $mainColor;
-    border-radius: 5px;
+    border: 0.5px solid $lightBlue;
 
     img {
       width: 10%;

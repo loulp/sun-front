@@ -43,10 +43,13 @@ export default {
     bottom: 15%;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.5);
-    
 
     h2 {
       margin: 0 0 10px 0;
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 45%;
     }
   }
 

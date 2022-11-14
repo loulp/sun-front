@@ -1,5 +1,6 @@
 <template>
   <div v-if="subject">
+    <!-- TODO Only if collection -->
     <div class="imgContainer" ref="imgContainer"></div>
     <div class="titleContainer">
       <h1 class="subjectName">{{ subject.name }}</h1>

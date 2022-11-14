@@ -1,12 +1,12 @@
 <template>
   <div class="childContainer mediaLeft">
+    <img
+      class="floatingMedia"
+      src="../../../assets/savoirFaire/sf3.png"
+      alt=""
+    />
     <div class="mediaContainer">
       <img class="media" src="../../../assets/savoirFaire/sf2.jpg" alt="" />
-      <img
-        class="floatingMedia"
-        src="../../../assets/savoirFaire/sf3.png"
-        alt=""
-      />
     </div>
     <div class="textContainer">
       <div class="content">
@@ -14,7 +14,7 @@
         <p>
           Scier, limer, souder autant détapes réalisées dans notre atelier
           Lyonnais ou techniques anciennes et outils modernes se côtoient. Nous
-          avons à cour l'amour du geste, du fait main et de l'outil traditionnel
+          avons à cœur l'amour du geste, du fait main et de l'outil traditionnel
           ; Néanmoins l'atelier est équipé de nouvelles technologies permettant
           au joaillier un travail toujours plus précis et minutieux.
         </p>
@@ -28,19 +28,21 @@ export default {};
 </script>
 
 <style scoped lang="scss">
+.floatingMedia {
+  position: absolute;
+  width: 180px;
+  left: 28%;
+  bottom: 10px;
+  z-index: 50;
+
+  @media screen and (max-width: 660px) {
+    width: 130px;
+    left: 50%;
+    top: 30%;
+  }
+}
+
 .mediaContainer {
   position: relative;
-  .floatingMedia {
-    position: absolute;
-    width: 180px;
-    right: 40px;
-    bottom: -100px;
-
-    @media screen and (max-width: 660px) {
-      width: 150px;
-      right: 5px;
-      bottom: -60px;
-    }
-  }
 }
 </style>

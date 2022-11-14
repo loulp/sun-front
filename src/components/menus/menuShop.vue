@@ -13,9 +13,7 @@
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
             > -->
-            <div
-              @click="$emit('hideMenu')"
-            >
+            <div @click="$emit('hideMenu')">
               <router-link
                 class="menuLink"
                 :to="{
@@ -27,7 +25,7 @@
             </div>
           </li>
         </ul>
-        <spinner v-if="loadingCollections" class="spinner" :size="'25px'" />
+        <spinner v-if="loadingCollections" class="spinner" />
       </div>
 
       <div class="menuDiv">
@@ -37,10 +35,8 @@
         >
         <ul v-if="categories.length > 0 && !loadingCategories">
           <li v-for="category in categories" :key="category.index">
-            <div
-              @click="$emit('hideMenu')"
-            >
-            <!-- <div
+            <div @click="$emit('hideMenu')">
+              <!-- <div
               @mouseover="changeImage(category.img)"
               @mouseleave="$refs.imageSide.style.backgroundImage = 'none'"
               @click="$emit('hideMenu')"
@@ -56,7 +52,7 @@
             </div>
           </li>
         </ul>
-        <spinner v-if="loadingCategories" class="spinner" :size="'25px'" />
+        <spinner v-if="loadingCategories" class="spinner" />
       </div>
     </div>
     <div class="image" ref="imageSide" @click="$emit('hideMenu')"></div>
@@ -214,6 +210,7 @@ export default {
       }
       .spinner {
         flex: 60%;
+        align-self: center;
       }
     }
 

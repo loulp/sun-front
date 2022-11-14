@@ -39,13 +39,13 @@
           </option>
         </select>
       </div>
-      <router-link
+      <!-- <router-link
         :to="{
           name: 'Home',
         }"
         class="sizeGuideLink"
         >*Consulter le guide des tailles</router-link
-      >
+      > -->
     </div>
     <div
       v-if="
@@ -108,7 +108,7 @@ export default {
     },
 
     isFav() {
-      return this.$store.state.fav.some((item) => (item.id === this.product.id));
+      return this.$store.state.fav.some((item) => item.id === this.product.id);
     },
   },
 
@@ -168,7 +168,7 @@ export default {
     flex-direction: row;
 
     .favIcon {
-      width: 25px;
+      width: 20px;
       align-self: flex-start;
       margin-left: 3%;
       cursor: pointer;

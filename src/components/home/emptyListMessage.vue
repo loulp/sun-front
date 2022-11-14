@@ -38,7 +38,6 @@ export default {
       border: none;
       padding: 10px 20px;
       font-size: 18px;
-      border-radius: 15px;
       cursor: pointer;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
       margin: 5%;

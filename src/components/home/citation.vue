@@ -2,8 +2,8 @@
   <div class="container">
     <img src="../../assets/showCollTEST2.jpg" alt="" />
     <p>
-      La seule chose qu'on est sûr de ne pas réussir est celle que l'on ne tente
-      pas
+      « La seule chose qu'on est sûr de ne pas réussir est celle que l'on ne
+      tente pas »
     </p>
   </div>
 </template>

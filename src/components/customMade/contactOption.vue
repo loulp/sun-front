@@ -23,7 +23,7 @@ export default {};
 @import "../../shared/styles/variables.scss";
 
 .contactOptionContainer {
-  background-color: rgb(234, 246, 246);
+  background-color: $lightBlue;
   padding: 20px;
   margin: 3% auto;
   text-align: center;

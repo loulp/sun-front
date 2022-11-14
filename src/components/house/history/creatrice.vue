@@ -16,16 +16,16 @@
         </div>
         <div class="text">
           <p>
-            Après un stage découverte, à 15 ans je pars suivre une formation de
+            Après un stage découverte, à 15 ans, je pars suivre une formation de
             bijouterie. J'y ressortirai 4 ans plus tard, diplômée d'un CAP et
             d'un BMA Art du bijou et du joyau. Plus qu'une formation, une
             rencontre : celle d'un métier qui deviendra ma passion.
           </p>
           <p>
-            Après 10 ans au sein de plusieurs ateliers travaillant pour les
-            grands noms de la place Vendôme en tant que joaillière et après
-            avoir rejoint l'atelier d'une célèbre maison française ; L'envie de
-            créer et de liberté se fait plus pressante.
+            Ainsi, c'est au bout de 10 ans au sein de plusieurs ateliers,
+            travaillant pour les grands noms de la place Vendôme en tant que
+            joaillière et après avoir rejoint l'atelier d'une célèbre maison
+            française ; L'envie de créer et de liberté se fait plus pressante.
           </p>
           <p>
             Comme une évidence sur le chemin que je devais emprunter, je décide
@@ -53,6 +53,8 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+@import "../../../shared/styles/variables.scss";
+
 .historyContainer {
   display: flex;
   flex-direction: row;
@@ -64,7 +66,7 @@ export default {};
     margin-top: 3%;
 
     .media {
-      margin: 2% 5%;
+      margin: 2% 15%;
       width: 30%;
     }
   }
@@ -72,7 +74,7 @@ export default {};
   .textContainer {
     flex: 1;
     padding-right: 10%;
-    margin-top: 3%;
+    margin-top: 10%;
 
     .titleContainer {
       width: 66%;
@@ -90,7 +92,8 @@ export default {};
     .text {
       font-size: 20px;
       p {
-        margin: 4% auto;
+        margin: 7% auto;
+        line-height: 1.5;
       }
     }
     @media screen and (max-width: 660px) {
@@ -105,7 +108,7 @@ export default {};
 }
 
 .citationContainer {
-  background-color: rgb(234, 246, 246);
+  background-color: $lightBlue;
   width: 80%;
   padding: 20px;
   margin: auto;
