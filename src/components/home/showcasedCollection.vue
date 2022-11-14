@@ -14,8 +14,8 @@
         <button @click="toCollection()" class="discoverButton">Découvrir</button>
       </div>
       <div class="mediaContainer">
-        <img class="media" src="../../assets/showCollTEST.webp" alt="" />
-        <img class="media" src="../../assets/showCollTEST2.jpg" alt="" />
+        <img class="media" src="../../assets/liseDEV.jpg" alt="" />
+        <img class="media" src="../../assets/liseDEV.jpg" alt="" />
       </div>
     </div>
   </div>
