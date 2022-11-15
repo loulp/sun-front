@@ -41,7 +41,9 @@ export default {};
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0;
+      text-align: justify;
+      padding: 0;
+      margin: 5%;
     }
   }
 

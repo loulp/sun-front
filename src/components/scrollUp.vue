@@ -31,12 +31,7 @@ export default {
 
   methods: {
     scrollUp() {
-      var audio = new Audio(require("../assets/elevatorBell.mp3"));
-
       window.scrollTo({ top: 0, behavior: "smooth" });
-      setTimeout(() => {
-        audio.play();
-      }, 800);
     },
   },
 };
