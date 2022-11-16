@@ -49,7 +49,7 @@
     </div>
     <div
       v-if="
-        product.attributes.category.data.attributes.type === 'Boucle d\'oreille'
+        product.attributes.category.data.attributes.type === 'Boucle d\'Oreille'
       "
     >
       <div class="earingQuantityContainer">
@@ -95,7 +95,7 @@ export default {
     getValue() {
       if (
         this.product.attributes.category.data.attributes.type ===
-        "Boucle d'oreille"
+        "Boucle d'Oreille"
       ) {
         if (this.byUnity) {
           return this.product.attributes.prix;
@@ -122,7 +122,7 @@ export default {
 
       if (
         this.product.attributes.category.data.attributes.type ===
-          "Boucle d'oreille" &&
+          "Boucle d'Oreille" &&
         !this.byUnity
       ) {
         this.addTostore();

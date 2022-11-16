@@ -48,7 +48,7 @@
         >
       </div>
       <div class="iconContainer">
-        <!-- <img src="@/assets/searchIcon.svg" alt="" /> -->
+        <img src="@/assets/searchIcon.svg" @click="showMenu('SEARCH')" alt="" />
         <div class="iconWithCounter">
           <img @click="showMenu('FAV')" src="@/assets/favIcon.svg" alt="" />
           <span @click="showMenu('FAV')">{{ nbFavItem }}</span>
@@ -63,6 +63,7 @@
     <menuShop v-if="currentMenu === 'SHOP'" @hideMenu="currentMenu = null" />
     <menuHouse v-if="currentMenu === 'HOUSE'" @hideMenu="currentMenu = null" />
     <menuFav v-if="currentMenu === 'FAV'" @hideMenu="currentMenu = null" />
+    <search-tab v-if="currentMenu === 'SEARCH'" @hideMenu="currentMenu = null" />
   </div>
 </template>
 
@@ -72,9 +73,10 @@ import menuHouse from "./menus/menuHouse.vue";
 import menuMobile from "./menus/menuMobile.vue";
 import menuFav from "./menus/menuFav.vue";
 import EventBus from "@/shared/eventBus.js";
+import SearchTab from "./menus/searchTab.vue";
 
 export default {
-  components: { menuShop, menuHouse, menuMobile, menuFav },
+  components: { menuShop, menuHouse, menuMobile, menuFav, SearchTab },
 
   data() {
     return {
