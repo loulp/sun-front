@@ -179,6 +179,11 @@ export default {
         display: none;
       }
 
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       .productItem {
         min-width: 21%;
         margin: 1%;
@@ -190,11 +195,10 @@ export default {
 
           .imgContainer {
             width: 100%;
-            height: 60vh;
 
             .productMedia {
               width: 100%;
-              height: 100%;
+              aspect-ratio: 3/4;
             }
           }
 
@@ -233,12 +237,22 @@ export default {
         }
 
         .relevantContainer {
-          width: 80%;
+          max-width: fit-content;
           display: flex;
           flex-direction: row;
           align-items: center;
 
           visibility: hidden;
+
+          overflow-x: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          & {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
 
           .relevantItem {
             cursor: pointer;

@@ -42,7 +42,7 @@ export default {
       mainMedia: this.product.attributes.photo.data[0].attributes.url,
     };
   },
-  
+
   methods: {
     toProductView() {
       this.$router.push({
@@ -78,7 +78,7 @@ export default {
 <style lang="scss" scoped>
 .productItem {
   margin: 1%;
-  flex-basis: 21%;
+  width: 25%;
   cursor: pointer;
 
   .productPresentation {
@@ -86,11 +86,18 @@ export default {
 
     .imgContainer {
       width: 100%;
-      height: 60vh;
+      max-height: 430px;
+      overflow: hidden;
 
       .productMedia {
         width: 100%;
-        height: 100%;
+      }
+
+      @media screen and (min-width: 1440px) {
+        max-height: 500px;
+      }
+      @media screen and (min-width: 1800px) {
+        max-height: 650px;
       }
     }
 
@@ -128,12 +135,23 @@ export default {
   }
 
   .relevantContainer {
-    width: 80%;
+    width: fit-content;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     visibility: hidden;
+
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
     .relevantItem {
       cursor: pointer;
@@ -163,5 +181,9 @@ export default {
       transition: all ease-in-out 1.5s;
     }
   }
+
+     @media screen and (max-width: 660px) {
+        width: 75%;
+      }
 }
 </style>

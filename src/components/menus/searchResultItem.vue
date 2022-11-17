@@ -34,12 +34,11 @@ export default {
 
   margin: 3% auto;
   .mediaContainer {
-    flex: 2;
-    width: 25%;
+    flex: 1;
     cursor: pointer;
 
     img {
-      width: 66%;
+      width: 55%;
     }
   }
 

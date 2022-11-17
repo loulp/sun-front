@@ -89,6 +89,11 @@ export default {
     display: none;
   }
 
+  & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
   .totalPrice {
     font-size: 21px;
     margin-left: 5%;

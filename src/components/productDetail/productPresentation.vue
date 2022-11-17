@@ -253,6 +253,11 @@ export default {
     &::-webkit-scrollbar {
       display: none;
     }
+
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
     @media screen and (max-width: 660px) {
       width: 100%;
     }

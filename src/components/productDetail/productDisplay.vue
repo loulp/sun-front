@@ -3,7 +3,9 @@
     <div class="productDetailContainer">
       <div class="productMedia">
         <div class="mediaContainer">
-          <img :src="mainMedia" class="mainMedia" />
+          <div class="mainMedia">
+            <img :src="mainMedia" />
+          </div>
           <div class="secondaryMediaContainer">
             <img
               class="mediaList"
@@ -79,25 +81,48 @@ export default {
         display: none;
       }
 
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       .mediaContainer {
         display: flex;
         flex-direction: row-reverse;
-        height: 85vh;
 
         .mainMedia {
-          width: 66%;
+          flex: 2;
+          text-align: center;
 
-          @media screen and (max-width: 660px) {
-            height: auto;
-            width: 100%;
+          img {
+            width: 90%;
+
+            @media screen and (max-width: 660px) {
+              height: auto;
+              width: 100%;
+            }
           }
         }
 
         .secondaryMediaContainer {
           display: flex;
+          flex: 1;
           flex-direction: column;
           align-items: center;
-          width: 33%;
+
+          gap: 10px;
+
+          max-height: 85vh;
+          overflow-y: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          & {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
 
           .mediaList {
             width: 40%;
@@ -105,7 +130,7 @@ export default {
             margin: 5px 0;
 
             @media screen and (max-width: 660px) {
-              width: 50%;
+              width: 25%;
             }
           }
           @media screen and (max-width: 660px) {

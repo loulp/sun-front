@@ -169,6 +169,11 @@ export default {
         display: none;
       }
 
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       .productItem {
         min-width: 21%;
         margin: 1%;
@@ -184,7 +189,11 @@ export default {
 
             .productMedia {
               width: 100%;
-              height: 100%;
+              height: inherit;
+
+              @media screen and (max-width: 660px) {
+                height: auto;
+              }
             }
           }
 
@@ -217,18 +226,29 @@ export default {
             min-width: 66%;
 
             .imgContainer {
-              height: auto;
+              max-height: 30vh;
+              overflow: hidden;
             }
           }
         }
 
         .relevantContainer {
-          width: 80%;
+          max-width: fit-content;
           display: flex;
           flex-direction: row;
           align-items: center;
 
           visibility: hidden;
+
+          overflow-x: scroll;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          & {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
 
           .relevantItem {
             cursor: pointer;

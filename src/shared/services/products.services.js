@@ -121,12 +121,7 @@ export default {
 
   getSearchResult(input) {
     return axios.get(
-      `${process.env.VUE_APP_BACK_URL_API}fuzzy-search/search?query=${input}`,
-      // {
-      //   headers: {
-      //     Authorization: `Bearer ${process.env.VUE_APP_TOKEN}`,
-      //   },
-      // }
+      `${process.env.VUE_APP_BACK_URL_API}fuzzy-search/search?query=${input}`
     );
   },
 };
