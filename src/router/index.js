@@ -69,6 +69,21 @@ const routes = [
     name: 'sur-mesure',
     component: () => import('@/pages/CustomMade'),
   },
+  {
+    path: '/retours-et-livraison',
+    name: 'delivery',
+    component: () => import('@/pages/DeliveryAndReturn'),
+  },
+  {
+    path: '/revendeurs',
+    name: 'reseller',
+    component: () => import('@/pages/Reseller'),
+  },
+  {
+    path: '/test',
+    name: 'cgv',
+    component: () => import('@/pages/CGV'),
+  },
 ];
 
 const router = new VueRouter({

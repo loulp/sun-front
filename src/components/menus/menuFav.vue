@@ -1,6 +1,7 @@
 <template>
   <div class="flexContainer">
     <div class="favContainer">
+      <h2>Vos favoris :</h2>
       <fav-list-item v-for="(fav, index) in favList" :key="index" :fav="fav" />
     </div>
     <div class="image" ref="imageSide" @click="$emit('hideMenu')"></div>

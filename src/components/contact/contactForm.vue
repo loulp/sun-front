@@ -44,6 +44,10 @@
           </p>
         </div>
         <div class="formItem">
+          <span>Numéro de téléphone</span>
+          <input v-model="$v.form.phoneNumber.$model" type="text" />
+        </div>
+        <div class="formItem">
           <span>Sujet</span>
           <input v-model="$v.form.subject.$model" type="text" />
           <p
@@ -123,6 +127,7 @@ export default {
         firstname: null,
         lastname: null,
         email: null,
+        phoneNumber: null,
         subject: null,
         message: null,
       },
@@ -147,6 +152,7 @@ export default {
         required,
         email,
       },
+      phoneNumber: {},
     },
   },
 
@@ -154,6 +160,11 @@ export default {
     submitForm() {
       if (!this.$v.$invalid) {
         this.loading = true;
+
+        if (!this.$v.form.phoneNumber.$model) {
+          this.$v.form.phoneNumber.$model = "N/A";
+        }
+
         contactService.sendMail(this.form).then(
           (res) => {
             this.loading = false;

@@ -13,7 +13,8 @@
     </div>
     <div class="textContainer" @click="toProductPage(fav.id)">
       <p class="name">{{ fav.nom }}</p>
-      <p class="collection">{{ fav.collection }}</p>
+      <p class="collection">Collection : {{ fav.collection }}</p>
+      <p class="collection">Matière : {{ fav.matiere }}</p>
     </div>
   </div>
 </template>

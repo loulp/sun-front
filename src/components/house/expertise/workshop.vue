@@ -30,19 +30,25 @@ export default {};
 <style scoped lang="scss">
 .floatingMedia {
   position: absolute;
-  width: 180px;
-  left: 28%;
-  bottom: 10px;
+  width: 165px;
+  left: 30%;
+  bottom: -35px;
   z-index: 50;
 
   @media screen and (max-width: 660px) {
     width: 130px;
-    left: 50%;
-    top: 30%;
+    left: 55%;
+    top: 40%;
   }
 }
 
 .mediaContainer {
   position: relative;
+
+  .media {
+    @media screen and (max-width: 660px) {
+      width: 60%;
+    }
+  }
 }
 </style>

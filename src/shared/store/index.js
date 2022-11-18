@@ -20,6 +20,7 @@ export default new Vuex.Store({
         categorie: item.product.attributes.category.data.attributes.type,
         media: item.product.attributes.photo.data[0].attributes.url,
         size: item.size,
+        matiere: item.product.attributes.matiere,
       };
 
       state.cart.push(newItem);
@@ -46,7 +47,7 @@ export default new Vuex.Store({
       const existingCart = localStorage.getItem('SUNcart');
       if (existingCart) {
         localStorage.removeItem('SUNcart');
-        state.cart = []
+        state.cart = [];
       }
     },
 
@@ -57,6 +58,7 @@ export default new Vuex.Store({
         categorie: item.product.attributes.category.data.attributes.type,
         collection: item.product.attributes.collection.data.attributes.name,
         media: item.product.attributes.photo.data[0].attributes.url,
+        matiere: item.product.attributes.matiere,
       };
 
       state.fav.push(newItem);

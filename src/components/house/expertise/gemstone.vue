@@ -1,5 +1,5 @@
 <template>
-  <div class="childContainer mediaRight">
+  <div class="childContainer mediaRight moreMargin">
     <div class="mediaContainer">
       <img class="media" src="../../../assets/savoirFaire/sf4.jpg" alt="" />
     </div>
@@ -22,4 +22,7 @@ export default {};
 </script>
 
 <style scoped lang="scss">
+.moreMargin {
+  margin: 5% auto !important;
+}
 </style>

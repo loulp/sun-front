@@ -5,6 +5,13 @@
     </div>
     <div class="textContainer">
       <div class="content">
+        <div class="iconContainer">
+          <img
+            class="starIcon"
+            src="../../../assets/inspiration/inspiStar.png"
+            alt=""
+          />
+        </div>
         <p>
           Comme dans les plus grandes maisons de joaillerie, chaque bijou SUN
           Jewelry est contrôlé à la loupe avant la mise en écrin pour vous
@@ -21,4 +28,10 @@ export default {};
 </script>
 
 <style scoped lang="scss">
+.iconContainer {
+  text-align: center;
+  .starIcon {
+    width: 33%;
+  }
+}
 </style>

@@ -5,17 +5,16 @@
         <img src="../assets/logoTxtShortBlue.png" class="logo" alt="" />
       </div>
       <div>
-        <!-- TODO add url  -->
         <h3>AIDE</h3>
-        <a href="">Livraison et retours</a>
+        <a href="/retours-et-livraison">Livraison et retours</a>
         <a href="/contact">Contactez nous</a>
-        <a href="">CGV & Mentions légales</a>
+        <a href="/test">CGV & Mentions légales</a>
       </div>
       <div>
         <h3>À PROPOS</h3>
         <a href="">Joaillerie durable</a>
         <a href="">Made in France</a>
-        <a href="">Nos revendeurs</a>
+        <a href="/revendeurs">Nos revendeurs</a>
       </div>
       <div class="logoArtisanContainer">
         <img class="logo" src="../assets/logoArtisan.png" alt="" />

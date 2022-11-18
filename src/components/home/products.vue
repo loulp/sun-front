@@ -36,7 +36,8 @@
                 <img class="productMedia" :src="product.mainMedia" alt="" />
               </div>
               <div class="productDescription">
-                <p>{{ product.attr.nom }}</p>
+                <p class="name">{{ product.attr.nom }}</p>
+                <p>{{ product.attr.matiere }}</p>
                 <p>{{ product.attr.prix }}€</p>
               </div>
             </div>
@@ -221,6 +222,11 @@ export default {
               color: $fontColor;
             }
 
+            .name {
+              font-size: 18px;
+              font-weight: bold;
+            }
+
             @media screen and (max-width: 660px) {
               visibility: visible;
               width: 100%;
@@ -273,7 +279,7 @@ export default {
 
           .productPresentation .productDescription {
             visibility: visible;
-            height: 25%;
+            height: 33%;
             transition: all ease-in-out 1s;
           }
 

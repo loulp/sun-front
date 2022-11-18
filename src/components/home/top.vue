@@ -1,7 +1,7 @@
 <template>
   <div class="bannerContainer">
     <div class="textContainer">
-      <h2>Joaillerie Poétique et rêveuse</h2>
+      <h2>Joaillerie Poétique et Rêveuse</h2>
       <p>
         Plongez dans l'univers de SUN Jewelry, doux voyage aux pays des rêves et
         des bijoux magiques.
@@ -24,9 +24,9 @@ export default {};
 .bannerContainer {
   position: relative;
   height: calc(100vh - #{$headerHeight});
-  background-image: url("../../assets/homeTopBig.jpg");
+  background-image: url("../../assets/banniere.png");
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   margin-bottom: $homeElementsBottomMargin;
 
   .textContainer {

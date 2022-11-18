@@ -11,7 +11,8 @@
         <img class="productMedia" :src="mainMedia" alt="" />
       </div>
       <div class="productDescription">
-        <p>{{ product.attributes.nom }}</p>
+        <p class="name">{{ product.attributes.nom }}</p>
+        <p>{{ product.attributes.matiere }}</p>
         <p>{{ product.attributes.prix }}€</p>
       </div>
     </div>
@@ -86,7 +87,7 @@ export default {
 
     .imgContainer {
       width: 100%;
-      max-height: 430px;
+      max-height: 435px;
       overflow: hidden;
 
       .productMedia {
@@ -117,6 +118,11 @@ export default {
         opacity: 0;
         margin-left: 2%;
         font-size: 16px;
+      }
+
+      .name {
+        font-size: 18px;
+        font-weight: bold;
       }
 
       @media screen and (max-width: 660px) {
@@ -172,7 +178,7 @@ export default {
 
     .productPresentation .productDescription {
       visibility: visible;
-      height: 25%;
+      height: 30%;
       transition: all ease-in-out 1s;
     }
 
@@ -182,8 +188,8 @@ export default {
     }
   }
 
-     @media screen and (max-width: 660px) {
-        width: 75%;
-      }
+  @media screen and (max-width: 660px) {
+    width: 75%;
+  }
 }
 </style>

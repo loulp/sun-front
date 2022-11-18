@@ -9,6 +9,7 @@
       <img :src="item.media" @click="toProductView(item.id)" />
       <div class="itemText">
         <h3 class="itemName" @click="toProductView(item.id)">{{ item.nom }}</h3>
+        <p>Matière: {{ item.matiere }}</p>
         <p v-if="item.categorie === 'Boucle d\'Oreille'">l'unité</p>
         <p>{{ item.prix }}€</p>
         <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>
@@ -27,31 +28,31 @@ export default {
   },
 
   computed: {
-      getCompactedList() {
-        var compactedList = [];
+    getCompactedList() {
+      var compactedList = [];
 
-        this.productList.forEach((cartItem) => {
-          const existingIndex = compactedList.findIndex(
-            (item) => item.id === cartItem.id
-          );
+      this.productList.forEach((cartItem) => {
+        const existingIndex = compactedList.findIndex(
+          (item) => item.id === cartItem.id
+        );
 
-          if (existingIndex != -1) {
-            if (cartItem.categorie !== "Bague") {
-              compactedList[existingIndex].nbItem += 1;
-            } else if (compactedList[existingIndex].size == cartItem.size) {
-              compactedList[existingIndex].nbItem += 1;
-            } else {
-              const newProduct = { ...cartItem, nbItem: 1 };
-              compactedList.push(newProduct);
-            }
+        if (existingIndex != -1) {
+          if (cartItem.categorie !== "Bague") {
+            compactedList[existingIndex].nbItem += 1;
+          } else if (compactedList[existingIndex].size == cartItem.size) {
+            compactedList[existingIndex].nbItem += 1;
           } else {
             const newProduct = { ...cartItem, nbItem: 1 };
             compactedList.push(newProduct);
           }
-        });
+        } else {
+          const newProduct = { ...cartItem, nbItem: 1 };
+          compactedList.push(newProduct);
+        }
+      });
 
-        return compactedList;
-      },
+      return compactedList;
+    },
     totalPrice() {
       let total = 0;
       if (this.productList.length > 0) {
@@ -90,9 +91,9 @@ export default {
   }
 
   & {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
   .totalPrice {
     font-size: 21px;
@@ -106,11 +107,12 @@ export default {
     align-items: center;
 
     > * {
-      margin: auto 10%;
+      margin: auto 7%;
     }
 
     img {
-      width: 10%;
+      width: 15%;
+      cursor: pointer;
     }
 
     .itemText {

@@ -9,7 +9,7 @@
       <div class="textContainer">
         <div class="titleContainer">
           <h1>
-            <img src="../../../assets/starIcon.png" style="width: 20px" />
+            <img class="titleIcon" src="../../../assets/starIcon.png" />
             Typhen LE ROMANCER
           </h1>
           <p>Fondatrice de SUN Jewelry</p>
@@ -80,9 +80,23 @@ export default {};
       width: 66%;
 
       h1 {
-        margin-bottom: 5px;
-      }
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+        border-bottom: 2px solid $lightBlue;
 
+        padding: 3% 10px 0 10px;
+
+        .titleIcon {
+          width: 30px;
+          margin-right: 10px;
+          margin-bottom: -5px;
+        }
+
+        @media screen and (max-width: 660px) {
+          margin-bottom: 15%;
+        }
+      }
       p {
         margin: 0;
         text-align: end;

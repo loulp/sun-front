@@ -3,6 +3,7 @@
     <div class="namePriceContainer">
       <div class="textContainer">
         <h3>{{ product.attributes.nom }}</h3>
+        <p>Matière: {{ product.attributes.matiere }}</p>
         <p>Prix: {{ getValue }}€</p>
       </div>
       <img

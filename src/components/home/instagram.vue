@@ -7,7 +7,7 @@
       </h2>
 
       <div class="logoAndLink">
-        <img src="../../assets/insta.svg" alt="" />
+        <img src="../../assets/instaViolet.svg" alt="" />
         <a href="https://www.instagram.com/s.u.n.jewelry/" target="_blank"
           >@S.U.N. jewelry</a
         >
@@ -66,7 +66,7 @@ export default {
 @import "../../shared/styles/variables.scss";
 
 .instaContainer {
-  margin: 3%;
+  margin: 5% 3%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -97,7 +97,7 @@ export default {
 
       img {
         width: 33px;
-        margin-right: 5%;
+        margin-right: 2%;
       }
 
       a {
