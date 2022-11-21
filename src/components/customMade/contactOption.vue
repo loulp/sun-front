@@ -8,8 +8,8 @@
     </p>
     <p>
       Ou par mail :
-      <a class="link" href="mailto:s.u.n.jewelry@hotmail.com">
-        s.u.n.jewelry@hotmail.com
+      <a class="link" href="mailto:contact@sunjewelry.fr">
+       contact@sunjewelry.fr
       </a>
     </p>
   </div>

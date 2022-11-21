@@ -7,7 +7,7 @@
     <p>
       Pour toute question concernant nos mentions légales et conditions
       générales de vente, veuillez nous contacter par téléphone au +33 6 27 95
-      56 64 ou par e-mail à l’adresse s.u.n.jewelry@hotmail.com pour que nous
+      56 64 ou par e-mail à l’adresse contact@sunjewelry.fr pour que nous
       puissions répondre à vos questions.
     </p>
     <h2>Mentions légales</h2>
@@ -252,7 +252,7 @@
       Le Client est tenu de vérifier l’état des produits livrés. Il dispose d’un
       délai de quatorze jours calendaires à compter de la livraison pour
       formuler des réclamations par voie électronique à l’adresse
-      s.u.n.jewelry@hotmail.com en rappelant la référence et la date de la
+      contact@sunjewelry.fr en rappelant la référence et la date de la
       Commande, accompagnées de tous les justificatifs y afférents (photos
       notamment). Passé ce délai et à défaut d’avoir respecté ces formalités,
       les Produits seront réputés conformes et exempts de tout vice apparent et
@@ -580,7 +580,7 @@
     <p>
       Ces droits, dès lors qu’ils ne s’opposent pas à la finalité du traitement,
       peuvent être exercé en écrivant à l’adresse électronique
-      s.u.n.jewelry@hotmail.com
+      contact@sunjewelry.fr
     </p>
     <p>
       Le responsable de traitement doit apporter une réponse dans un délai
