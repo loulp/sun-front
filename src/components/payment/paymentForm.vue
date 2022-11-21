@@ -101,7 +101,6 @@ export default {
     },
 
     async submit() {
-
       paymentService.createOrder(this.body).then(
         (res) => {
           this.loading = !this.loading;
@@ -117,8 +116,8 @@ export default {
         elements,
         confirmParams: {
           // TODO change to prod url
-          return_url: "http://localhost:8081/payment",
-          // return_url: "https://sun-test.netlify.app/payment",
+          // return_url: "http://localhost:8081/payment",
+          return_url: "https://sun-test.netlify.app/payment",
           receipt_email: this.deliveryForm.email,
         },
       });
