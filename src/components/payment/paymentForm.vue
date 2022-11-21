@@ -117,7 +117,8 @@ export default {
         confirmParams: {
           // TODO change to prod url
           // return_url: "http://localhost:8081/payment",
-          return_url: "https://sun-test.netlify.app/payment",
+          // return_url: "https://sun-test.netlify.app/payment",
+          return_url: "https://sunjewelry.fr/payment",
           receipt_email: this.deliveryForm.email,
         },
       });
