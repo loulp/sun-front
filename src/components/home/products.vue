@@ -175,7 +175,8 @@ export default {
     .productList {
       display: flex;
       overflow-x: auto;
-
+      overflow-y: hidden;
+      
       &::-webkit-scrollbar {
         display: none;
       }

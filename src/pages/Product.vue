@@ -1,25 +1,28 @@
 <template>
   <div class="container" v-if="product">
     <ProductDisplay :product="product" />
-    <SimilarProduct :data="data"/>
+    <warn-and-info />
+    <SimilarProduct :data="data" />
   </div>
 </template>
 
 <script>
 import productService from "../shared/services/products.services";
 import ProductDisplay from "../components/productDetail/productDisplay.vue";
-import SimilarProduct from '../components/productDetail/similarProduct.vue';
+import SimilarProduct from "../components/productDetail/similarProduct.vue";
+import WarnAndInfo from "../components/productDetail/warnAndInfo.vue";
 
 export default {
   components: {
     ProductDisplay,
     SimilarProduct,
+    WarnAndInfo,
   },
 
   data() {
     return {
       product: null,
-      data: "test"
+      data: "test",
     };
   },
 

@@ -1,5 +1,25 @@
 <template>
   <div class="container">
+    <div class="checkboxContainer">
+      <p>
+        SUN Jewelry vous propose la possibilité de récupérer votre commande
+        directement de main en main sur Lyon.<br />
+        Une adresse de livraison vous sera tout de même demandé, au cas ou.
+      </p>
+      <div>
+        <input type="checkbox" name="homeDelivery" v-model="handPickup" />
+        <label for="homeDelivery"
+          >Je souhaite récupérer ma commande directement sur Lyon</label
+        >
+      </div>
+      <div>
+        <input type="checkbox" name="followup" v-model="followupChoice" />
+        <label for="followup"
+          >Je souhaite recevoir des informations et des photos sur l'avancé de
+          ma commande.</label
+        >
+      </div>
+    </div>
     <form id="form" @submit.prevent="submitForm">
       <div class="formItem">
         <span>Prénom</span>
@@ -74,8 +94,13 @@
 import { email, required } from "vuelidate/lib/validators";
 
 export default {
+  props: {
+    deliveryForm: null,
+  },
   data() {
     return {
+      handPickup: false,
+      followupChoice: false,
       form: {
         firstname: null,
         lastname: null,
@@ -115,10 +140,23 @@ export default {
     },
   },
 
+  mounted() {
+    if (this.deliveryForm) {
+      this.form = this.deliveryForm;
+      this.handPickup = this.deliveryForm.handPickup;
+    }
+  },
+
   methods: {
     submitForm() {
       if (!this.$v.$invalid) {
-        this.$emit("submitted", this.form);
+        const form = {
+          ...this.form,
+          handPickup: this.handPickup,
+          followupChoice: this.followupChoice,
+        };
+
+        this.$emit("submitted", form);
       }
     },
   },
@@ -127,4 +165,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/shared/styles/form.scss";
+
+.checkboxContainer {
+  width: 66%;
+  margin: 5% auto;
+  text-align: center;
+
+  & > * {
+    margin: 16px 0;
+  }
+
+  @media screen and (max-width: 660px) {
+    width: 100%;
+  }
+}
 </style>

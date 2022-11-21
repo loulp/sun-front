@@ -14,7 +14,20 @@
       </div>
     </div>
     <div class="priceAnbutton">
-      <p>Prix total: {{ totalPrice }}€</p>
+      <div class="flexContainer">
+        <p>sous-total:</p>
+        <p>{{ totalPrice }}€</p>
+      </div>
+      <div class="flexContainer">
+        <p>Livraison:</p>
+        <p>Gratuite</p>
+      </div>
+      <hr />
+      <div class="flexContainer">
+        <p>Total:</p>
+        <p>{{ totalPrice }}€</p>
+      </div>
+
       <button
         @click="toPayment()"
         class="paymentButton"
@@ -22,6 +35,9 @@
       >
         Paiement
       </button>
+      <p class="secure">
+        <img src="../assets/lock.svg" alt="" />Paiement sécurisé
+      </p>
     </div>
   </div>
 </template>
@@ -81,7 +97,7 @@ export default {
   color: $fontColor;
 
   .itemList {
-    flex: 85%;
+    flex: 3;
 
     h2 {
       margin-left: 3%;
@@ -105,27 +121,49 @@ export default {
   }
 
   .priceAnbutton {
-    flex: 15%;
+    flex: 1;
     font-size: 22px;
+    text-align: center;
 
     width: fit-content;
     margin-right: 5%;
     margin-top: 10%;
     margin-left: auto;
 
+    .flexContainer {
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        margin: 10px 0;
+      }
+    }
+
     .paymentButton {
-      margin-top: 3%;
+      margin-top: 5%;
       width: fit-content;
       background-color: $mainColor;
       color: white;
       border: none;
-      padding: 10% 25%;
+      padding: 15px 50px;
       font-size: 18px;
       cursor: pointer;
 
       &:disabled {
         background-color: #efeeed;
       }
+    }
+
+    .secure {
+      font-size: 20px;
+      img {
+        width: 15px;
+      }
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 90%;
+      margin: 5%;
     }
   }
 

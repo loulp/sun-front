@@ -4,18 +4,19 @@
       <img src="../../assets/liseDEV.jpg" alt="" />
     </div>
     <div class="textContainer">
-      <p class="citation">
-        «La seule chose qu'on est sûr de ne pas réussir est celle qu'on ne tente
-        pas» – Paul-Emile Victor
+      <p>Célébrons l'Amour</p>
+      <p>
+        De l'amour à s'offrir, de l'amour à offrir, pour marquer votre amour ou
+        pour célébrer l'Amour tout simplement.<br />
+        Rien de tel qu'un bijou pour se dire : Je t'aime.
       </p>
       <p>
-        Croire en ses rêves: c’est notre mantra.<br />
-        Nous croyons en vous et votre capacité à réaliser tout ce que vous
-        désirez ! Dans cette quête, parfois, on a besoin d’un coup de pouce ou
-        de réconfort. Nos bijoux sont conçus pour ça, ils sont votre meilleur
-        ami, gardien de vos souhaits, réconfortant, mais également là pour
-        décupler votre lumière intérieure et montrer au monde à quel point vous
-        êtes rayonnant.e
+        Chez SUN Jewelry,nous militons pour l'Amour, tous les Amours. C'est pour
+        cela que de la réalisation au message, nos bijoux en sont le reflet.
+      </p>
+      <p class="lightText">
+        Une légende raconte que si on zoom beaucoup sur nos créations, on peut y
+        voir des petites paillettes de love incrustées.
       </p>
     </div>
   </div>
@@ -32,7 +33,8 @@ export default {};
 .container {
   height: calc(100vh - #{$scrolledHeaderHeight});
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
+  margin-top: $homeElementsBottomMargin;
   margin-bottom: $homeElementsBottomMargin;
 
   .mediaContainer {
@@ -43,9 +45,12 @@ export default {};
       height: calc(100vh - #{$scrolledHeaderHeight});
       @media screen and (max-width: 660px) {
         height: auto;
-        width: 90%;
+        width: 66%;
         margin-bottom: 15%;
       }
+    }
+    @media screen and (max-width: 660px) {
+      margin-top: 6%;
     }
   }
 
@@ -72,8 +77,9 @@ export default {};
       }
     }
 
-    .citation {
-      font-size: 22px;
+    .lightText {
+      font-size: 16px;
+      color: $lightBlue;
     }
   }
 

@@ -3,7 +3,7 @@
     <div class="namePriceContainer">
       <div class="textContainer">
         <h3>{{ product.attributes.nom }}</h3>
-        <p>Matière: {{ product.attributes.matiere }}</p>
+        <p>{{ product.attributes.matiere }}</p>
         <p>Prix: {{ getValue }}€</p>
       </div>
       <img
@@ -26,6 +26,15 @@
       :source="product.attributes.description"
       id="editor"
     />
+    <div class="customMessage">
+      <img src="../../assets/starIcon.png" alt="" />
+      <p>
+        Vous aimez ce modèle mais vous voulez le personnalisez ? contactez nous
+        via <a href="/contact">Le formulaire de contact</a> pour créer ensemble
+        le bijou de vos rêves
+      </p>
+    </div>
+
     <div v-if="product.attributes.category.data.attributes.type === 'Bague'">
       <div class="fingerSize">
         <p class="selectText">Taille de doigt :</p>
@@ -67,6 +76,7 @@
 
 <script>
 import VueMarkdownIt from "vue-markdown-it";
+import EventBus from "@/shared/eventBus.js";
 
 export default {
   props: {
@@ -128,6 +138,8 @@ export default {
       ) {
         this.addTostore();
       }
+
+      EventBus.$emit("showCuteMessage", "cart");
     },
 
     addTostore() {
@@ -191,6 +203,26 @@ export default {
           font-size: 18px;
         }
       }
+    }
+  }
+
+  .customMessage {
+    display: flex;
+    text-align: center;
+    align-items: center;
+
+    img {
+      width: 40px;
+      height: fit-content;
+      margin-right: 5px;
+    }
+
+    p {
+      width: 80%;
+    }
+
+    a {
+      color: $fontColor;
     }
   }
 

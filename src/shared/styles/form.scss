@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 #form {
   .formItem {
@@ -65,6 +65,10 @@
 
     &:focus {
       outline: none;
+    }
+
+    @media screen and (max-width: 660px) {
+      margin: 6% auto;
     }
   }
 }

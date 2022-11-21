@@ -2,78 +2,96 @@
   <div class="container">
     <div v-if="paymentStatus === 'TBD'">
       <h2 class="title">Finalisation de votre commande</h2>
+
       <div class="viewContainer">
         <div class="stepContainer">
-          <UserForm
-            v-if="step === 'USER_FORM'"
+          <div class="stepTitleContainer">
+            <h2 class="stepTitle">1. Livraison</h2>
+            <p
+              class="editButton"
+              v-if="deliveryForm"
+              @click="step = 'DELIVERY_FORM'"
+            >
+              Modifier
+            </p>
+          </div>
+
+          <DeliveryForm
+            v-if="step === 'DELIVERY_FORM'"
+            :deliveryForm="deliveryForm"
             @submitted="
-              userForm = $event;
+              deliveryForm = $event;
+              step = 'BILLING_FORM';
+            "
+          />
+
+          <div class="stepTitleContainer">
+            <h2 class="stepTitle">2. Facturation</h2>
+            <p
+              class="editButton"
+              v-if="billingForm"
+              @click="step = 'BILLING_FORM'"
+            >
+              Modifier
+            </p>
+          </div>
+
+          <BillingForm
+            v-if="step === 'BILLING_FORM'"
+            :deliveryForm="deliveryForm"
+            :billingForm="billingForm"
+            @submitted="
+              billingForm = $event;
               step = 'PAYMENT_FORM';
             "
           />
-          <PaymentForm v-if="step === 'PAYMENT_FORM'" :userForm="userForm" />
+
+          <div class="stepTitleContainer">
+            <h2 class="stepTitle">3. Paiement</h2>
+          </div>
+          <PaymentForm
+            v-if="step === 'PAYMENT_FORM'"
+            :deliveryForm="deliveryForm"
+            :billingForm="billingForm"
+          />
         </div>
         <div class="cartRecapContainer">
           <CartRecap />
         </div>
       </div>
     </div>
+
     <div v-if="paymentStatus != 'TBD'">
-      <div class="viewContainer">
-        <div
-          class="stateInformations success"
-          v-if="paymentStatus === 'SUCCESS'"
-        >
-          <h2>Le paiement a bien été effectué !</h2>
-          <img src="@/assets/successIcon.svg" alt="" />
-          <p>
-            Nous vous remercions pour votre commande et votre confiance. Vous
-            recevrez sous peu un mail de confirmation à l'adresse mail indiqué
-            lors de la commande.
-          </p>
-        </div>
-        <div
-          class="stateInformations loading"
-          v-if="paymentStatus === 'PROCESSING'"
-        >
-          <h2>La validation de votre paiement est toujours en cours</h2>
-          <img src="@/assets/loadingIcon.svg" alt="" />
-          <p>
-            Nous vous remercions pour votre commande et votre confiance. Vous
-            recevrez sous peu un mail vous confirmant le statut de votre
-            commande à l'adresse mail indiqué lors de la commande.
-          </p>
-        </div>
-        <div class="stateInformations error" v-if="paymentStatus === 'FAILED'">
-          <h2>Une erreur est survenue lors du paiement</h2>
-          <img src="@/assets/errorIcon.svg" alt="" />
-          <p>
-            Une erreur est survenue lors du paiement, celui ci n'a pas été
-            validé et la commande n'a pas pus être enregistré. merci de bien
-            vouloir réessayer.
-          </p>
-        </div>
-      </div>
+      <payment-status :paymentStatus="paymentStatus" />
     </div>
   </div>
 </template>
 
 <script>
-import UserForm from "../components/payment/userForm.vue";
+import DeliveryForm from "../components/payment/deliveryForm.vue";
+import BillingForm from "../components/payment/billingForm.vue";
 import CartRecap from "../components/payment/cartRecap.vue";
 import PaymentForm from "../components/payment/paymentForm.vue";
+import PaymentStatus from "../components/payment/paymentStatus.vue";
 
 // IMPORTANT COMMENT, dodge lint error on import
 /* global Stripe */
 const stripe = Stripe(process.env.VUE_APP_STRIPE_KEY);
 
 export default {
-  components: { CartRecap, PaymentForm, UserForm },
+  components: {
+    CartRecap,
+    PaymentForm,
+    DeliveryForm,
+    BillingForm,
+    PaymentStatus,
+  },
 
   data() {
     return {
-      step: "USER_FORM",
-      userForm: null,
+      step: "DELIVERY_FORM",
+      deliveryForm: null,
+      billingForm: null,
       paymentStatus: "TBD",
     };
   },
@@ -139,39 +157,32 @@ export default {
     display: flex;
     flex-direction: row;
     width: 90%;
-    margin: 5% auto;
+    margin: 2% auto;
 
     .stepContainer {
       width: 60%;
-    }
-    .cartRecapContainer {
-      width: 40%;
-    }
 
-    .stateInformations {
-      margin: 5% auto;
-      text-align: center;
-      width: 60%;
-      color: $fontColor;
-
-      img {
-        width: 65px;
-      }
-
-      p {
-        width: 60%;
-        margin: 3% auto;
-        font-size: 18px;
-
+      .stepTitleContainer {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .stepTitle {
+          border-bottom: 1px solid #707070;
+          width: 60%;
+          margin: 3% 0;
+        }
+        .editButton {
+          cursor: pointer;
+        }
         @media screen and (max-width: 660px) {
-          width: 90%;
-          margin: 5% auto;
+          width: 85%;
         }
       }
+    }
 
-      @media screen and (max-width: 660px) {
-        width: 90%;
-      }
+    .cartRecapContainer {
+      width: 40%;
     }
 
     @media screen and (max-width: 660px) {

@@ -8,7 +8,7 @@
       <img :src="item.media" @click="toProductView(item.id)" />
       <div class="itemText">
         <h3 class="itemName" @click="toProductView(item.id)">{{ item.nom }}</h3>
-        <p>Matière: {{ item.matiere }}</p>
+        <p>{{ item.matiere }}</p>
         <p v-if="item.categorie === 'Boucle d\'Oreille'">l'unité</p>
         <p>{{ item.prix }}€</p>
         <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>

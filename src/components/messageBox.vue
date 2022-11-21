@@ -14,6 +14,10 @@
         Tu resplendis de mille feux
       </p>
     </div>
+    <div v-if="from == 'cart'">
+      <img src="../assets/cartIcon.svg" style="margin-top: 20px" alt="" />
+      <p>Le produit a été ajouté à votre panier.</p>
+    </div>
   </div>
 </template>
 
@@ -31,7 +35,7 @@ export default {
     showMessage() {
       this.changeStyle(0);
       setTimeout(() => {
-        this.changeStyle('-500px');
+        this.changeStyle("-500px");
       }, 4000);
     },
 

@@ -6,6 +6,8 @@
     <WorkshopBanner />
     <Citation />
     <InspirationBanner />
+    <CitationAmour />
+    <div class="banner"></div>
     <Instagram />
   </div>
 </template>
@@ -18,6 +20,7 @@ import Top from "../components/home/top.vue";
 import Citation from "../components/home/citation.vue";
 import ShowcasedCollection from "../components/home/showcasedCollection.vue";
 import Instagram from "../components/home/instagram.vue";
+import CitationAmour from "../components/home/citationAmour.vue";
 
 export default {
   components: {
@@ -28,9 +31,20 @@ export default {
     Citation,
     ShowcasedCollection,
     Instagram,
+    CitationAmour,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../shared/styles/variables.scss";
+.banner {
+  height: calc(100vh - #{$scrolledHeaderHeight});
+  background-image: url("../assets/coupleBanner.jpg");
+  position: relative;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>

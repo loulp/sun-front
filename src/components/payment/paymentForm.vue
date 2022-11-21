@@ -32,8 +32,6 @@
     >
       Payer
     </button>
-    <!-- TODO ajoutez message rassurant-->
-    <!-- <span>Paiment sécurisé</span> -->
   </div>
 </template>
 
@@ -48,7 +46,8 @@ const stripe = Stripe(process.env.VUE_APP_STRIPE_KEY);
 export default {
   components: { spinner },
   props: {
-    userForm: null,
+    deliveryForm: null,
+    billingForm: null,
   },
 
   data() {
@@ -102,6 +101,7 @@ export default {
     },
 
     async submit() {
+
       paymentService.createOrder(this.body).then(
         (res) => {
           this.loading = !this.loading;
@@ -117,9 +117,9 @@ export default {
         elements,
         confirmParams: {
           // TODO change to prod url
-          // return_url: "http://localhost:8081/payment",
-          return_url: "https://sun-test.netlify.app/payment",
-          receipt_email: this.userForm.email,
+          return_url: "http://localhost:8081/payment",
+          // return_url: "https://sun-test.netlify.app/payment",
+          receipt_email: this.deliveryForm.email,
         },
       });
 
@@ -146,11 +146,17 @@ export default {
       };
 
       const body = {
-        nom: this.userForm.lastname,
-        prenom: this.userForm.firstname,
-        email: this.userForm.email,
-        telephone: this.userForm.phoneNumber,
-        adresse: `${this.userForm.address}, ${this.userForm.postalCode}, ${this.userForm.city}`,
+        LIVR_nom: this.deliveryForm.lastname,
+        LIVR_prenom: this.deliveryForm.firstname,
+        LIVR_telephone: this.deliveryForm.phoneNumber,
+        LIVR_adresse: `${this.deliveryForm.address}, ${this.deliveryForm.postalCode}, ${this.deliveryForm.city}`,
+        LIVR_retrait_atelier: this.deliveryForm.handPickup,
+        FACT_nom: this.billingForm.lastname,
+        FACT_prenom: this.billingForm.firstname,
+        FACT_telephone: this.billingForm.phoneNumber,
+        FACT_adresse: `${this.billingForm.address}, ${this.billingForm.postalCode}, ${this.billingForm.city}`,
+        suivi_commande: this.deliveryForm.followupChoice,
+        email: this.deliveryForm.email,
         prix_total: totalPrice(),
         produits: products,
         date: Date.now(),
@@ -169,6 +175,7 @@ export default {
 
 #payment-form {
   width: 75%;
+  margin: 5% 0;
 }
 
 .CGVCheckbox {
