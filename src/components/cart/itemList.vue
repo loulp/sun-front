@@ -35,7 +35,10 @@ export default {
         );
 
         if (existingIndex != -1) {
-          if (cartItem.categorie !== "Bague") {
+          if (
+            cartItem.categorie !== "Bague" &&
+            compactedList[existingIndex].goldColor == cartItem.goldColor
+          ) {
             compactedList[existingIndex].nbItem += 1;
           } else if (
             compactedList[existingIndex].size == cartItem.size &&

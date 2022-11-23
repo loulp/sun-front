@@ -5,12 +5,12 @@
       <div id="payment-element">
         <!--Stripe.js injects the Payment Element-->
       </div>
-      <button v-if="formLoad" id="submit">
-        <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text" @click="submit()">Pay now</span>
-      </button>
       <div id="payment-message" class="hidden"></div>
     </form>
+    <div class="errorContainer" v-if="!loading && paymentFailed">
+      <p>Une erreur est survenue lors du paiement, veuillez réessayer.</p>
+      <button @click="initPayment()" class="paymentButton">Réessayer</button>
+    </div>
     <div class="CGVCheckbox">
       <input
         type="checkbox"
@@ -59,6 +59,7 @@ export default {
       body: null,
       loading: false,
       isCGVaccepted: false,
+      paymentFailed: false,
     };
   },
 
@@ -69,6 +70,8 @@ export default {
   methods: {
     async initPayment() {
       this.loading = !this.loading;
+      if (this.paymentFailed) this.paymentFailed = false;
+
       this.createBody();
 
       await paymentService.createPaymentIntent(this.body).then(
@@ -124,8 +127,12 @@ export default {
 
       // TODO message d'erreur ici
       if (error.type === "card_error" || error.type === "validation_error") {
+        this.paymentFailed = !this.paymentFailed;
+        this.loading = !this.loading;
         console.log("SUBMIT ERROR");
       } else {
+        this.paymentFailed = !this.paymentFailed;
+        this.loading = !this.loading;
         console.log("SUBMIT UNEXPECTED");
       }
     },

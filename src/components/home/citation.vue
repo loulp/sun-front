@@ -96,7 +96,8 @@ export default {};
         position: absolute;
         width: 15px;
         height: 15px;
-        bottom: 5px;
+        bottom: -30px;
+        transform: rotate(180deg);
       }
     }
     .name {
