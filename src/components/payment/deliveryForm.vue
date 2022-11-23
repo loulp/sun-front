@@ -3,13 +3,13 @@
     <div class="checkboxContainer">
       <p>
         SUN Jewelry vous propose la possibilité de récupérer votre commande
-        directement de main en main sur Lyon.<br />
+        directement de main en main à Lyon.<br />
         Une adresse de livraison vous sera tout de même demandé, au cas ou.
       </p>
       <div>
         <input type="checkbox" name="homeDelivery" v-model="handPickup" />
         <label for="homeDelivery"
-          >Je souhaite récupérer ma commande directement sur Lyon</label
+          >Je souhaite récupérer ma commande directement à Lyon</label
         >
       </div>
       <div>

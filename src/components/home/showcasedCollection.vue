@@ -8,8 +8,8 @@
           Inspiré des étoiles filantes et de leurs dessins dans le ciel
           nocturne, cette première collection se veut à la fois douce et forte.
           Grâce à son design fin et son motif délicat de perle d'or, elle sera
-          ton compagnon idéal au quotidien.<br /><br />Et surtout n'oublie pas
-          de faire un vœu quand tu la porteras !
+          votre compagnon idéal au quotidien.<br /><br />Et surtout n'oubliez pas
+          de faire un vœu quand vous la porterez !
         </p>
         <button @click="toCollection()" class="discoverButton">
           Découvrir

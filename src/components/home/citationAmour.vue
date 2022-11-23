@@ -13,15 +13,15 @@
       />
     </div>
     <div class="textContainer">
-      <p>Célébrons l'Amour</p>
+      <p class="title">Célébrons l'Amour</p>
       <p>
         De l'amour à s'offrir, de l'amour à offrir, pour marquer votre amour ou
         pour célébrer l'Amour tout simplement.<br />
-        Rien de tel qu'un bijou pour se dire : Je t'aime.
+        Rien de tel qu'un bijou pour se dire : Je t'aime
       </p>
       <p>
-        Chez SUN Jewelry,nous militons pour l'Amour, tous les Amours. C'est pour
-        cela que de la réalisation au message, nos bijoux en sont le reflet.
+        Chez SUN Jewelry, nous militons pour l'Amour, tous les Amours. C'est pour
+        cela que de la réalisation au message qu'ils délivrent, nos bijoux en sont le reflet.
       </p>
       <p class="lightText">
         Une légende raconte que si on zoom beaucoup sur nos créations, on peut y
@@ -29,7 +29,7 @@
       </p>
     </div>
   </div>
-</template>
+</template> 
 
 <script>
 export default {};
@@ -91,6 +91,11 @@ export default {};
         padding: 0;
         margin: 5%;
       }
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: bold;
     }
 
     .lightText {

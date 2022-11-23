@@ -44,9 +44,9 @@
     </p>
     <ul>
       <li>
-        Vous bénéficiez d’un délai de 14 jours pour nous retourner le bijou que
-        vous souhaitez pour laquelle vous souhaitez être remboursé. Les frais de
-        retour sont à votre charge.
+        Vous bénéficiez d’un délai de 14 jours pour nous retourner le bijou pour
+        lequel vous souhaitez être remboursé. Les frais de retour sont à votre
+        charge.
       </li>
       <li>Le bijou ne doit pas avoir été personnalisé et/ou gravé.</li>
       <li>
@@ -70,10 +70,10 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-    margin: 5% 10%;
+  margin: 5% 10%;
 
-    .firstTitle {
-        padding-top: 3%;
-    }
+  .firstTitle {
+    padding-top: 3%;
+  }
 }
 </style>

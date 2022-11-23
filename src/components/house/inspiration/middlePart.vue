@@ -10,6 +10,8 @@
     </div>
     <div class="textContainer">
       <div class="content">
+        <h2>Les pierres :</h2>
+
         <p>
           Choisie pour sa couleur, sa forme ou ses propriétés en lithothérapie ;
           chaque pierre est source d'inspiration, car comme son futur porteur,

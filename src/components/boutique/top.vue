@@ -49,13 +49,13 @@ export default {
 
   .subjectName {
     margin-left: 10%;
-    margin: 3% 10% 1% 10%;
+    margin: 3% auto 1% auto;
     font-size: 45px;
   }
 }
 
 #editor {
-  margin: 1% 10%;
-  width: 50%;
+  margin: 1% auto;
+  width: 60%;
 }
 </style>

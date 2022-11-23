@@ -9,7 +9,7 @@
           La seule chose qu'on est sûr de ne pas réussir est celle qu'on ne
           tente pas
         </p>
-        <p class="name">- Paul-Emile Victor</p>
+        <p class="name">Paul-Emile Victor</p>
       </div>
 
       <p class="text">
@@ -18,7 +18,9 @@
         Nous croyons en vous et votre capacité à réaliser tout ce que vous
         désirez ! Dans cette quête, parfois, on a besoin d'un coup de pouce ou
         de réconfort. Nos bijoux sont conçus pour ça, ils sont votre meilleur
-        ami.
+        ami, gardien de vos souhaits, réconfortant, mais également là pour
+        décupler votre lumière intérieure et montrer au monde à quel point vous
+        êtes rayonnant.e
       </p>
     </div>
   </div>
@@ -96,7 +98,7 @@ export default {};
         position: absolute;
         width: 15px;
         height: 15px;
-        bottom: -30px;
+        bottom: -35px;
         transform: rotate(180deg);
       }
     }

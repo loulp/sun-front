@@ -4,7 +4,7 @@
       <h1>
         <img src="../assets/starIcon.png" class="titleIcon" />Le Sur-Mesure
       </h1>
-      <p>Et si on créait ensemble le bijou de tes rêves ?</p>
+      <p>Et si on créait ensemble le bijou de vos rêves ?</p>
     </div>
     <meeting />
     <realisation />
