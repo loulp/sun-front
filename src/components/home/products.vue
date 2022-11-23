@@ -294,7 +294,7 @@ export default {
 
           .productPresentation .productDescription {
             visibility: visible;
-            height: 33%;
+            height: 35%;
             transition: all ease-in-out 1s;
           }
 

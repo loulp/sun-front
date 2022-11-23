@@ -13,7 +13,14 @@
       <div class="productDescription">
         <p class="name">{{ product.attributes.nom }}</p>
         <p>{{ product.attributes.matiere }}</p>
-        <p>{{ product.attributes.prix }}€</p>
+        <p>
+          {{
+            calculPrice(
+              product.attributes.prix,
+              product.attributes.category.data.attributes.type
+            )
+          }}€
+        </p>
       </div>
     </div>
     <div class="relevantContainer">
@@ -45,6 +52,13 @@ export default {
   },
 
   methods: {
+    calculPrice(prix, type) {
+      if (type === "Boucle d'Oreille") {
+        return prix * 2;
+      } else {
+        return prix;
+      }
+    },
     toProductView() {
       this.$router.push({
         name: "productDetail",
