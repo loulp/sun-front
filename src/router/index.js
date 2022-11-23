@@ -10,7 +10,7 @@ const routes = [
     component: () => import('@/pages/Home'),
   },
   {
-    path: '/Contact',
+    path: '/contact',
     name: 'Contact',
     component: () => import('@/pages/Contact'),
   },
@@ -48,7 +48,7 @@ const routes = [
     component: () => import('@/pages/House'),
     children: [
       {
-        path: '/la_maison/history',
+        path: '/la_maison/histoire',
         name: 'history',
         component: () => import('@/pages/History'),
       },
@@ -80,7 +80,7 @@ const routes = [
     component: () => import('@/pages/Reseller'),
   },
   {
-    path: '/test',
+    path: '/cgv',
     name: 'cgv',
     component: () => import('@/pages/CGV'),
   },

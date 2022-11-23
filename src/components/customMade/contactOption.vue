@@ -4,7 +4,7 @@
     <p>Pour prendre rendez-vous ou pour me poser des questions :</p>
     <p>
       Directement via notre
-      <a href="/Contact" target="_blank" class="link">formulaire de contact</a>
+      <a href="/contact" target="_blank" class="link">formulaire de contact</a>
     </p>
     <p>
       Ou par mail :
