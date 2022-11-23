@@ -1,7 +1,7 @@
 <template>
   <div class="childContainer mediaRight">
     <div class="mediaContainer">
-      <img class="media" src="../../assets/customMade/custom2.jpg" alt="" />
+      <img class="media" loading="lazy" src="../../assets/customMade/custom2.jpg" alt="" />
     </div>
     <div class="textContainer">
       <div class="content">

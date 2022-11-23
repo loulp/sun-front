@@ -1,10 +1,11 @@
 <template>
   <div class="childContainer mediaRight">
     <div class="mediaContainer">
-      <img class="media" src="../../../assets/inspiration/inspi2.jpg" alt="" />
+      <img class="media" src="../../../assets/inspiration/inspi2.jpg" loading="lazy" alt="" />
       <img
         class="floatingImg"
         src="../../../assets/inspiration/inspi3.png"
+        loading="lazy"
         alt=""
       />
     </div>

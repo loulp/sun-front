@@ -33,7 +33,7 @@
           >
             <div class="productPresentation">
               <div class="imgContainer">
-                <img class="productMedia" :src="product.mainMedia" alt="" />
+                <img class="productMedia" :src="product.mainMedia" alt="" loading="lazy" />
               </div>
               <div class="productDescription">
                 <p class="name">{{ product.attr.nom }}</p>
@@ -56,6 +56,7 @@
                 :src="media.attributes.url"
                 alt=""
                 class="relevantItem"
+                loading="lazy"
                 @mouseenter="product.mainMedia = media.attributes.url"
                 @mouseleave="product.mainMedia = product.img[0].attributes.url"
               />

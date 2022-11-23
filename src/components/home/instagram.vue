@@ -21,7 +21,7 @@
         :href="media.url"
         target="_blank"
       >
-        <img class="media" :src="media.src" alt="" />
+        <img class="media" :src="media.src" loading="lazy" alt="" />
       </a>
     </div>
   </div>

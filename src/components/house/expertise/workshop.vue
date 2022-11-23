@@ -3,10 +3,11 @@
     <img
       class="floatingMedia"
       src="../../../assets/savoirFaire/sf3.png"
+      loading="lazy"
       alt=""
     />
     <div class="mediaContainer">
-      <img class="media" src="../../../assets/savoirFaire/sf2.jpg" alt="" />
+      <img class="media" src="../../../assets/savoirFaire/sf2.jpg" loading="lazy" alt="" />
     </div>
     <div class="textContainer">
       <div class="content">

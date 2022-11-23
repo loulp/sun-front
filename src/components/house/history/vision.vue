@@ -5,11 +5,13 @@
         <img
           class="media"
           src="../../../assets/photoCollection/vision1.jpg"
+          loading="lazy"
           alt=""
         />
         <img
           class="media"
           src="../../../assets/photoCollection/vision2.jpg"
+          loading="lazy"
           alt=""
         />
       </div>

@@ -32,7 +32,7 @@
         >
           <div class="productPresentation">
             <div class="imgContainer">
-              <img class="productMedia" :src="product.mainMedia" alt="" />
+              <img class="productMedia" :src="product.mainMedia" loading="lazy" alt="" />
             </div>
             <div class="productDescription">
               <p class="name">{{ product.attr.nom }}</p>
@@ -53,6 +53,7 @@
               v-for="(media, index) in product.img"
               :key="index"
               :src="media.attributes.url"
+              loading="lazy"
               alt=""
               class="relevantItem"
               @mouseenter="product.mainMedia = media.attributes.url"

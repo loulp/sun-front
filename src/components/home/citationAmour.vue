@@ -4,11 +4,13 @@
       <img
         class="media"
         src="../../assets/photoCollection/homeAmourLeft.jpg"
+        loading="lazy"
         alt=""
       />
       <img
         class="media"
         src="../../assets/photoCollection/homeAmourRight.jpg"
+        loading="lazy"
         alt=""
       />
     </div>

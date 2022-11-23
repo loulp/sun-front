@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="mediaContainer">
-      <img src="../../assets/photoCollection/homeLifestyle.jpg" alt="" />
+      <img src="../../assets/photoCollection/homeLifestyle.jpg" loading="lazy" alt="" />
     </div>
     <div class="textContainer">
       <div class="citationContainer">

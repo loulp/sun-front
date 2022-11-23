@@ -1,7 +1,7 @@
 <template>
   <div class="childContainer mediaLeft">
     <div class="mediaContainer">
-      <img class="media" src="../../../assets/inspiration/inspi4.jpg" alt="" />
+      <img class="media" src="../../../assets/inspiration/inspi4.jpg" loading="lazy" alt="" />
     </div>
     <div class="textContainer">
       <div class="content">
@@ -10,6 +10,7 @@
             @click="cuteAlert()"
             class="starIcon"
             src="../../../assets/inspiration/inspiStar.png"
+            loading="lazy"
             alt=""
           />
         </div>

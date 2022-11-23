@@ -18,11 +18,13 @@
       <div class="mediaContainer">
         <img
           class="media"
+          loading="lazy"
           src="../../assets/photoCollection/homeRadianceLeft.jpg"
           alt=""
         />
         <img
           class="media"
+          loading="lazy"
           src="../../assets/photoCollection/homeRadianceRight.jpg"
           alt=""
         />

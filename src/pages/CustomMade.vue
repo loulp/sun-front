@@ -10,7 +10,7 @@
     <realisation />
     <contact-option />
     <div class="mediaHolder">
-      <img src="../assets/photoCollection/customBottom.jpg" alt="" />
+      <img src="../assets/photoCollection/customBottom.jpg" loading="lazy" alt="" />
     </div>
   </div>
 </template>
