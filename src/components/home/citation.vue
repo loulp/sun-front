@@ -17,8 +17,8 @@
         mantra<br /><br />
         Nous croyons en vous et votre capacité à réaliser tout ce que vous
         désirez ! Dans cette quête, parfois, on a besoin d'un coup de pouce ou
-        de réconfort. Nos bijoux sont conçus pour ça, ils sont votre meilleur
-        ami, gardien de vos souhaits, réconfortant, mais également là pour
+        de réconfort. Nos bijoux sont conçus pour ça, ils sont vos meilleurs
+        amis. Gardiens de vos souhaits, réconfortants, mais également créés pour
         décupler votre lumière intérieure et montrer au monde à quel point vous
         êtes rayonnant.e
       </p>
@@ -99,6 +99,7 @@ export default {};
         width: 15px;
         height: 15px;
         bottom: -35px;
+        padding-right: 10px;
         transform: rotate(180deg);
       }
     }

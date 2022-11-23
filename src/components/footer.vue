@@ -12,8 +12,8 @@
       </div>
       <div>
         <h3>À PROPOS</h3>
-        <a href="">Joaillerie durable</a>
-        <a href="">Made in France</a>
+        <a>Joaillerie durable</a>
+        <a>Made in France</a>
         <a href="/revendeurs">Nos revendeurs</a>
       </div>
       <div class="logoArtisanContainer">
