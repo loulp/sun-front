@@ -68,6 +68,10 @@ export default {};
     .media {
       margin: 2% 15%;
       width: 30%;
+
+      @media screen and (max-width: 660px) {
+        width: 45%;
+      }
     }
   }
 

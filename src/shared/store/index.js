@@ -21,6 +21,7 @@ export default new Vuex.Store({
         media: item.product.attributes.photo.data[0].attributes.url,
         size: item.size,
         matiere: item.product.attributes.matiere,
+        goldColor: item.goldColor,
       };
 
       state.cart.push(newItem);

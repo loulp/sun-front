@@ -31,7 +31,7 @@ export default {};
 .iconContainer {
   text-align: center;
   .starIcon {
-    width: 33%;
+    width: 90px;
   }
 }
 </style>

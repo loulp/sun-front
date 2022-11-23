@@ -27,7 +27,7 @@
           <h3 class="itemName" @click="toProductView(item.id)">
             {{ item.nom }}
           </h3>
-          <p>{{ item.matiere }}</p>
+          <p>{{ item.matiere }} - {{ item.goldColor }}</p>
           <p v-if="item.categorie === 'Boucle d\'Oreille'">l'unité</p>
           <p>{{ item.prix }}€</p>
           <p v-if="item.categorie === 'Bague'">Taille: {{ item.size }}</p>
@@ -70,7 +70,10 @@ export default {
         if (existingIndex != -1) {
           if (cartItem.categorie !== "Bague") {
             compactedList[existingIndex].nbItem += 1;
-          } else if (compactedList[existingIndex].size == cartItem.size) {
+          } else if (
+            compactedList[existingIndex].size == cartItem.size &&
+            compactedList[existingIndex].goldColor == cartItem.goldColor
+          ) {
             compactedList[existingIndex].nbItem += 1;
           } else {
             const newProduct = { ...cartItem, nbItem: 1 };

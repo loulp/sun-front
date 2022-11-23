@@ -9,6 +9,9 @@
     <meeting />
     <realisation />
     <contact-option />
+    <div class="mediaHolder">
+      <img src="../assets/photoCollection/customBottom.jpg" alt="" />
+    </div>
   </div>
 </template>
 
@@ -126,6 +129,17 @@ export default {
   @media screen and (max-width: 660px) {
     h1 {
       padding-top: 5%;
+    }
+  }
+
+  .mediaHolder {
+    margin: 3% auto;
+    text-align: center;
+    img {
+      width: 50%;
+      @media screen and (max-width: 660px) {
+        width: 75%;
+      }
     }
   }
 }

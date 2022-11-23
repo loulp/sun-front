@@ -2,7 +2,6 @@
   <div>
     <div class="pageTitle">
       <h1>
-        <!-- TODO bonne photo a mettre -->
         <img src="../assets/starIcon.png" class="titleIcon" />Nos Revendeurs
       </h1>
       <p>
@@ -14,7 +13,7 @@
     <div class="resellerList">
       <div class="reseller">
         <div class="mediaContainer">
-          <img src="../assets/liseDEV.jpg" alt="" />
+          <img src="../assets/photoCollection/revendeur1.png" alt="" />
         </div>
         <div class="textContainer">
           <h2>Joy d'Or</h2>

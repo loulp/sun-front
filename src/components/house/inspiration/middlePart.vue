@@ -27,7 +27,7 @@ export default {};
 <style scoped lang="scss">
 .floatingImg {
   position: absolute;
-  width: 190px;
+  width: 165px;
   bottom: 5px;
   right: 30%;
 

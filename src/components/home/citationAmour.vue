@@ -1,7 +1,16 @@
 <template>
   <div class="container">
     <div class="mediaContainer">
-      <img src="../../assets/liseDEV.jpg" alt="" />
+      <img
+        class="media"
+        src="../../assets/photoCollection/homeAmourLeft.jpg"
+        alt=""
+      />
+      <img
+        class="media"
+        src="../../assets/photoCollection/homeAmourRight.jpg"
+        alt=""
+      />
     </div>
     <div class="textContainer">
       <p>Célébrons l'Amour</p>
@@ -39,10 +48,15 @@ export default {};
 
   .mediaContainer {
     flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     text-align: center;
 
-    img {
-      height: calc(100vh - #{$scrolledHeaderHeight});
+    .media {
+      height: calc(100vh - #{$headerHeight});
+      margin: 5px;
+
       @media screen and (max-width: 660px) {
         height: auto;
         width: 66%;
@@ -51,6 +65,8 @@ export default {};
     }
     @media screen and (max-width: 660px) {
       margin-top: 6%;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -79,7 +95,8 @@ export default {};
 
     .lightText {
       font-size: 16px;
-      color: $lightBlue;
+      color: #7fb6b8;
+      font-style: italic;
     }
   }
 

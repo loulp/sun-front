@@ -26,13 +26,14 @@
       :source="product.attributes.description"
       id="editor"
     />
-    <div class="customMessage">
-      <img src="../../assets/starIcon.png" alt="" />
-      <p>
-        Vous aimez ce modèle mais vous voulez le personnalisez ? contactez nous
-        via <a href="/contact">Le formulaire de contact</a> pour créer ensemble
-        le bijou de vos rêves
-      </p>
+
+    <div class="goldSelectorContainer">
+      <label for="goldSelector">Or:</label>
+      <select name="goldSelector" v-model="goldColor">
+        <option class="selectOptions">Blanc</option>
+        <option class="selectOptions">Jaune</option>
+        <option class="selectOptions">Rose</option>
+      </select>
     </div>
 
     <div v-if="product.attributes.category.data.attributes.type === 'Bague'">
@@ -87,6 +88,7 @@ export default {
     return {
       byUnity: false,
       ringSize: "43",
+      goldColor: "Blanc",
     };
   },
 
@@ -146,6 +148,7 @@ export default {
       this.$store.commit("addItemToCart", {
         product: this.product,
         size: this.ringSize,
+        goldColor: `Or ${this.goldColor}`,
       });
     },
 
@@ -206,26 +209,6 @@ export default {
     }
   }
 
-  .customMessage {
-    display: flex;
-    text-align: center;
-    align-items: center;
-
-    img {
-      width: 40px;
-      height: fit-content;
-      margin-right: 5px;
-    }
-
-    p {
-      width: 80%;
-    }
-
-    a {
-      color: $fontColor;
-    }
-  }
-
   .fingerSize {
     display: flex;
     flex-direction: row;
@@ -238,6 +221,7 @@ export default {
     }
 
     select {
+      color: $fontColor;
       height: 30px;
       width: 50px;
       padding-left: 2%;
@@ -253,12 +237,31 @@ export default {
     }
   }
 
+  .goldSelectorContainer {
+    select {
+      color: $fontColor;
+      height: 30px;
+      width: 80px;
+      padding-left: 2%;
+
+      margin-left: 5%;
+
+      border: none;
+      border-bottom: 1px solid black;
+
+      .selectOptions {
+        margin: 5%;
+      }
+    }
+  }
+
   .earingQuantityContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
 
     select {
+      color: $fontColor;
       height: 30px;
       width: fit-content;
       padding-left: 2%;

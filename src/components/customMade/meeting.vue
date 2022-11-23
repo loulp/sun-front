@@ -8,12 +8,12 @@
         <h2>Le Rendez-vous :</h2>
         <p>
           Lors d'un échange téléphonique ou autour d'un café à Lyon, nous
-          discuterons de tes attentes et tes souhaits.
+          discuterons de vos attentes et vos souhaits.
         </p>
         <p>
-          Je mettrai tout mon savoir-faire à ton service, nous évoquerons
-          ensemble les formes de ton futur bijou, des pierres qui viendront
-          l'orner, et bien sûr toute la symbolique qui gravite autour
+          Je mettrai tout mon savoir-faire à votre service, nous évoquerons
+          ensemble les formes de votre futur bijou, des pierres qui viendront
+          l'orner, et bien sûr toute la symbolique qui gravite autour.
         </p>
         <p>
           Si c'est un bijou à offrir, j'aime m'appuyer sur l'histoire et la
