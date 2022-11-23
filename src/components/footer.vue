@@ -73,7 +73,7 @@ export default {
     padding: 20px 0;
 
     & > * {
-      width: 15%;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -101,12 +101,6 @@ export default {
           font-size: 10px;
         }
       }
-
-      @media screen and (max-width: 660px) {
-        width: 30%;
-        margin-top: 2%;
-        margin-bottom: 2%;
-      }
     }
 
     .mediaIconContainer {
@@ -115,15 +109,20 @@ export default {
       align-items: center;
       position: relative;
       height: fit-content;
-      width: 10%;
+      justify-content: flex-start;
 
       .link {
         width: 35%;
+        text-align: center;
 
         .sociallogo {
-          width: 75%;
+          width: 55%;
           margin: 8%;
           cursor: pointer;
+
+          @media screen and (max-width: 660px) {
+            width: 75%;
+          }
         }
       }
     }
@@ -131,6 +130,12 @@ export default {
     .logoArtisanContainer {
       .logo {
         width: 50%;
+      }
+      @media screen and (max-width: 660px) {
+        align-items: center;
+        .logo {
+          width: 75%;
+        }
       }
     }
 
@@ -150,7 +155,6 @@ export default {
     }
 
     @media screen and (max-width: 660px) {
-      gap: 10%;
       padding: 0;
     }
   }

@@ -106,6 +106,9 @@ export default {
           photo: {
             populate: '*',
           },
+          category: {
+            populate: 'type',
+          },
         },
       },
       {

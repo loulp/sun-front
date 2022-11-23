@@ -38,7 +38,14 @@
               <div class="productDescription">
                 <p class="name">{{ product.attr.nom }}</p>
                 <p>{{ product.attr.matiere }}</p>
-                <p>{{ product.attr.prix }}€</p>
+                <p>
+                  {{
+                    calculPrice(
+                      product.attr.prix,
+                      product.attr.category.data.attributes.type
+                    )
+                  }}€
+                </p>
               </div>
             </div>
 
@@ -87,6 +94,13 @@ export default {
   },
 
   methods: {
+    calculPrice(prix, type) {
+      if (type === "Boucle d'Oreille") {
+        return prix * 2;
+      } else {
+        return prix;
+      }
+    },
     getProducts() {
       this.loading = true;
       productsServices.getLatestProducts().then(
@@ -176,7 +190,7 @@ export default {
       display: flex;
       overflow-x: auto;
       overflow-y: hidden;
-      
+
       &::-webkit-scrollbar {
         display: none;
       }
