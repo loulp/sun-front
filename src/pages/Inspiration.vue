@@ -103,6 +103,9 @@ export default {
         flex-direction: column;
       }
     }
+    @media screen and (max-width: 660px) {
+      height: auto;
+    }
   }
 
   @media screen and (max-width: 660px) {

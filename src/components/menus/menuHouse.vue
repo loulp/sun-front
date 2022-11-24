@@ -5,9 +5,7 @@
         <h3>La Maison</h3>
         <ul>
           <li>
-            <div
-              @click="$emit('hideMenu')"
-            >
+            <div @click="$emit('hideMenu')">
               <router-link
                 class="menuLink"
                 :to="{
@@ -18,9 +16,7 @@
             </div>
           </li>
           <li>
-            <div
-              @click="$emit('hideMenu')"
-            >
+            <div @click="$emit('hideMenu')">
               <router-link
                 class="menuLink"
                 :to="{
@@ -31,9 +27,7 @@
             </div>
           </li>
           <li>
-            <div
-              @click="$emit('hideMenu')"
-            >
+            <div @click="$emit('hideMenu')">
               <router-link
                 class="menuLink"
                 :to="{
@@ -52,8 +46,7 @@
 
 <script>
 export default {
-  methods: {
-  },
+  methods: {},
 };
 </script>
 
@@ -61,7 +54,7 @@ export default {
 @import "@/shared/styles/variables.scss";
 
 .flexContainer {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 
   display: flex;
@@ -111,7 +104,7 @@ export default {
         }
 
         & :hover {
-          list-style: url("../../assets/liTEST.jpg");
+          list-style: url("../../assets/liStar.jpg");
         }
       }
     }
@@ -128,11 +121,7 @@ export default {
 
   .image {
     flex: 40%;
-
-    background-position: center;
-    background-size: cover;
-    // background-image: url("../../assets/housebanner.jpg");
-    transition: background-image 0.3s ease-in-out;
+    background-color: rgba(234, 246, 246, 0.8);
   }
 }
 </style>

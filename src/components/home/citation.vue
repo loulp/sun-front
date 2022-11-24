@@ -84,7 +84,7 @@ export default {};
       position: relative;
 
       &::before {
-        content: url("../../assets/quote.svg");
+        content: url("../../assets/icon/quote.svg");
         display: inline-block;
         position: absolute;
         width: 15px;
@@ -93,7 +93,7 @@ export default {};
         left: -25px;
       }
       &::after {
-        content: url("../../assets/quote.svg");
+        content: url("../../assets/icon/quote.svg");
         display: inline-block;
         position: absolute;
         width: 15px;

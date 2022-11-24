@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container customScrollbar">
     <div class="priceInfoContainer">
       <div class="flexContainer">
         <p>sous-total:</p>
@@ -43,7 +43,7 @@
         >
       </p>
       <p class="secure">
-        <img src="../../assets/lock.svg" alt="" />SUN Jewelry utilise un système
+        <img src="../../assets/icon/lock.svg" alt="" />SUN Jewelry utilise un système
         de paiement sécurisé.
       </p>
     </div>
@@ -112,6 +112,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../shared/styles/variables.scss";
+@import "../../shared/styles/customScrollbar.scss";
 
 .container {
   width: 90%;
@@ -136,14 +137,14 @@ export default {
     height: 30vh;
     overflow-y: scroll;
 
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
 
-    & {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+    // & {
+    //   -ms-overflow-style: none;
+    //   scrollbar-width: none;
+    // }
     .productListItem {
       display: flex;
       flex-direction: row;

@@ -15,7 +15,7 @@
         </p>
         <p>
           Dessinateur 3D, gemmologue, sertisseur : C'est en s'entourant de
-          personne de confiance que nous irons au bout de nos envies créatives
+          personnes de confiance que nous irons au bout de nos envies créatives
           et même au-delà.
         </p>
       </div>

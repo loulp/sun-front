@@ -5,15 +5,13 @@
       <div class="textContainer">
         <h2>Radiance</h2>
         <p>
-          Inspiré des étoiles filantes et de leurs dessins dans le ciel
+          Inspirée des étoiles filantes et de leurs dessins dans le ciel
           nocturne, cette première collection se veut à la fois douce et forte.
           Grâce à son design fin et son motif délicat de perle d'or, elle sera
-          votre compagnon idéal au quotidien.<br /><br />Et surtout n'oubliez pas
-          de faire un vœu quand vous la porterez !
+          votre compagnon idéal au quotidien.<br /><br />Et surtout n'oubliez
+          pas de faire un vœu quand vous la porterez !
         </p>
-        <button @click="toCollection()" class="discoverButton">
-          Découvrir
-        </button>
+        <button @click="toCollection()" class="mainButton">Découvrir</button>
       </div>
       <div class="mediaContainer">
         <img
@@ -45,6 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../shared/styles/variables.scss";
+@import "../../shared/styles/mainButton.scss";
 
 .container {
   color: $fontColor;
@@ -70,7 +69,7 @@ export default {
     margin: auto 5%;
 
     .textContainer {
-      flex-basis: 33%;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -86,16 +85,7 @@ export default {
         }
       }
 
-      .discoverButton {
-        margin-top: 3%;
-        width: fit-content;
-        background-color: $mainColor;
-        color: white;
-        border: none;
-        padding: 2% 3%;
-        font-size: 18px;
-        cursor: pointer;
-
+      .mainButton {
         @media screen and (max-width: 660px) {
           margin: 10% 0;
         }
@@ -103,18 +93,17 @@ export default {
     }
 
     .mediaContainer {
-      flex-basis: 66%;
+      flex: 2;
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
 
       .media {
         height: calc(100vh - #{$headerHeight});
-
         margin: 5px;
 
         @media screen and (max-width: 660px) {
-          width: 90%;
+          width: 80%;
           height: unset;
         }
       }

@@ -20,7 +20,7 @@ const routes = [
     component: () => import('@/pages/Cart'),
   },
   {
-    path: '/payment',
+    path: '/paiement',
     name: 'Payment',
     component: () => import('@/pages/Payment'),
   },
@@ -83,6 +83,11 @@ const routes = [
     path: '/cgv',
     name: 'cgv',
     component: () => import('@/pages/CGV'),
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/pages/404'),
   },
 ];
 

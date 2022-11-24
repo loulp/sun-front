@@ -8,7 +8,7 @@
       </p>
       <p>Vous pouvez aussi me contacter via ma page Instagram :</p>
       <a href="https://www.instagram.com/s.u.n.jewelry/" target="_blank">
-        <img src="../../assets/instaWhite.svg" class="icon" alt="" />
+        <img src="../../assets/icon/instaWhite.svg" class="icon" alt="" />
       </a>
     </div>
     <div class="formContainer" v-if="!mailSent">
@@ -72,23 +72,18 @@
             Champ invalide
           </p>
         </div>
-        <button :disabled="$v.$invalid" type="submit">Envoyer</button>
+        <button :disabled="$v.$invalid" class="mainButton" type="submit">Envoyer</button>
       </form>
       <div class="loaderContainer" v-if="loading">
         <p>Envoi du mail...</p>
         <spinner v-if="loading" />
-        <!-- <ring-loader
-          :loading="loading"
-          :color="'#d44a7b'"
-          :size="'50px'"
-        ></ring-loader> -->
       </div>
     </div>
     <div class="informationContainer" v-if="mailSent">
       <div class="info successContainer" v-if="mailSentSuccess">
         <h2>Message envoyé !</h2>
         <p>
-          Votre message m'a bien été envoyé ! Je vous répondrais dans les plus
+          Votre message m'a bien été envoyé ! Je vous répondrai dans les plus
           brefs délais. <br />Typhen
         </p>
       </div>
@@ -100,9 +95,9 @@
           instagram ! <br />Typhen
         </p>
         <a href="https://www.instagram.com/s.u.n.jewelry/" target="_blank">
-          <img src="../../assets/insta.svg" class="icon" alt="" />
+          <img src="../../assets/icon/insta.svg" class="icon" alt="" />
         </a>
-        <button @click="retry()">Réessayer</button>
+        <button @click="retry()" class="mainButton">Réessayer</button>
       </div>
     </div>
   </div>

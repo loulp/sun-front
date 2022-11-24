@@ -11,14 +11,14 @@
         <img
           @mouseover="scrollCarousel('LEFT')"
           @mouseout="stopScroll"
-          src="@/assets/control_left.svg"
+          src="@/assets/icon/control_left.svg"
           alt=""
           class="controls left"
         />
         <img
           @mouseover="scrollCarousel('RIGHT')"
           @mouseout="stopScroll"
-          src="@/assets/control_right.svg"
+          src="@/assets/icon/control_right.svg"
           alt=""
           class="controls right"
         />
@@ -33,7 +33,12 @@
           >
             <div class="productPresentation">
               <div class="imgContainer">
-                <img class="productMedia" :src="product.mainMedia" alt="" loading="lazy" />
+                <img
+                  class="productMedia"
+                  :src="product.mainMedia"
+                  alt=""
+                  loading="lazy"
+                />
               </div>
               <div class="productDescription">
                 <p class="name">{{ product.attr.nom }}</p>
@@ -328,6 +333,10 @@ export default {
 
       &.right {
         right: 0;
+      }
+
+      @media screen and (max-width: 660px) {
+        display: none;
       }
     }
   }

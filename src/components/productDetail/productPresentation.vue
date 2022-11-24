@@ -9,14 +9,14 @@
         @click="addToFav()"
         v-if="!isFav"
         class="favIcon"
-        :src="require('../../assets/favIcon.svg')"
+        :src="require('../../assets/icon/favIcon.svg')"
         alt=""
       />
       <img
         @click="removeFromFav()"
         v-if="isFav"
         class="favIcon"
-        :src="require('../../assets/favIconFill.svg')"
+        :src="require('../../assets/icon/favIconFill.svg')"
         alt=""
       />
     </div>
@@ -70,7 +70,7 @@
         </select>
       </div>
     </div>
-    <button class="cartButton" @click="addToCart()">Ajouter au panier</button>
+    <button class="mainButton" @click="addToCart()">Ajouter au panier</button>
   </div>
 </template>
 
@@ -164,6 +164,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../shared/styles/variables.scss";
+@import "../../shared/styles/mainButton.scss";
 
 .container {
   margin-top: 3%;
@@ -302,22 +303,6 @@ export default {
     color: $fontColor;
     @media screen and (max-width: 660px) {
       font-size: 18px;
-    }
-  }
-
-  .cartButton {
-    width: fit-content;
-    background-color: $mainColor;
-    color: white;
-    border: none;
-    padding: 3% 10%;
-    font-size: 18px;
-    cursor: pointer;
-
-    @media screen and (max-width: 660px) {
-      font-size: 20px;
-
-      margin: 3% 0;
     }
   }
 

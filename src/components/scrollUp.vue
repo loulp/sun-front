@@ -3,7 +3,7 @@
     <img
       v-if="isScrolled"
       @click="scrollUp()"
-      src="../assets/scrollUpIcon.svg"
+      src="../assets/icon/scrollUpIcon.svg"
       alt=""
     />
   </div>

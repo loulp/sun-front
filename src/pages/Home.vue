@@ -40,7 +40,7 @@ export default {
 @import "../shared/styles/variables.scss";
 .banner {
   height: calc(100vh - #{$scrolledHeaderHeight});
-  background-image: url("../assets/coupleBanner.jpg");
+  background-image: url("../assets/banner/coupleBanner.jpg");
   position: relative;
 
   background-position: center;

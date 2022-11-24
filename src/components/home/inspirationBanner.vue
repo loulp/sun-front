@@ -24,7 +24,7 @@ export default {
 
 .btnBannerContainer {
   height: calc(100vh - #{$scrolledHeaderHeight});
-  background-image: url("../../assets/housebanner.jpg");
+  background-image: url("../../assets/banner/housebanner.jpg");
   position: relative;
 
   background-position: center;

@@ -5,7 +5,7 @@
         <img src="../assets/starIcon.png" class="titleIcon" />Nos Revendeurs
       </h1>
       <p>
-        Par ce que voir, toucher, essayer est aussi important, Retrouvez les
+        Par-ce que voir, toucher, essayer est aussi important, Retrouvez les
         bijoux SUN Jewelry en boutique !
       </p>
     </div>

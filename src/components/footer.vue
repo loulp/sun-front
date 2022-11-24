@@ -8,7 +8,7 @@
         <h3>AIDE</h3>
         <a href="/retours-et-livraison">Livraison et retours</a>
         <a href="/contact">Contactez nous</a>
-        <a href="/test">CGV & Mentions légales</a>
+        <a href="/cgv">CGV & Mentions légales</a>
       </div>
       <div>
         <h3>À PROPOS</h3>
@@ -24,16 +24,16 @@
           class="link"
           href="https://www.instagram.com/s.u.n.jewelry/"
           target="_blank"
-          ><img class="sociallogo" src="../assets/insta.svg" alt=""
+          ><img class="sociallogo" src="../assets/icon/insta.svg" alt=""
         /></a>
         <a
           class="link"
           href="https://www.facebook.com/profile.php?id=100065676961761"
           target="_blank"
-          ><img class="sociallogo" src="../assets/facebook.svg" alt=""
+          ><img class="sociallogo" src="../assets/icon/facebook.svg" alt=""
         /></a>
         <a class="link" href="/contact"
-          ><img class="sociallogo" src="../assets/mail.svg" alt=""
+          ><img class="sociallogo" src="../assets/icon/mail.svg" alt=""
         /></a>
         <div @click="cuteAlert()" class="link">
           <img class="sociallogo" src="../assets/starIcon.png" alt="" />

@@ -2,9 +2,9 @@
   <div class="mainContainer">
     <div class="historyContainer">
       <div class="mediaContainer">
-        <img class="media" src="../../../assets/crea1.png" alt="" />
-        <img class="media" src="../../../assets/crea2.png" alt="" />
-        <img class="media" src="../../../assets/crea3.png" alt="" />
+        <img class="media" src="../../../assets/creatrice/crea1.png" alt="" />
+        <img class="media" src="../../../assets/creatrice/crea2.png" alt="" />
+        <img class="media" src="../../../assets/creatrice/crea3.png" alt="" />
       </div>
       <div class="textContainer">
         <div class="titleContainer">

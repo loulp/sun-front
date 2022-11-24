@@ -7,7 +7,7 @@
       </h2>
 
       <div class="logoAndLink">
-        <img src="../../assets/instaViolet.svg" alt="" />
+        <img src="../../assets/icon/instaViolet.svg" alt="" />
         <a href="https://www.instagram.com/s.u.n.jewelry/" target="_blank"
           >@S.U.N. jewelry</a
         >

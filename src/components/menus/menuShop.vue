@@ -151,7 +151,7 @@ export default {
 @import "@/shared/styles/variables.scss";
 
 .flexContainer {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 
   display: flex;
@@ -201,7 +201,7 @@ export default {
         }
 
         & :hover {
-          list-style: url("../../assets/liTEST.jpg");
+          list-style: url("../../assets/liStar.jpg");
         }
       }
 
@@ -226,10 +226,7 @@ export default {
 
   .image {
     flex: 40%;
-
-    background-position: center;
-    background-size: cover;
-    transition: background-image 0.3s ease-in-out;
+    background-color: rgba(234, 246, 246, 0.8);
   }
 }
 </style>

@@ -7,7 +7,12 @@
       alt=""
     />
     <div class="mediaContainer">
-      <img class="media" src="../../../assets/savoirFaire/sf2.jpg" loading="lazy" alt="" />
+      <img
+        class="media"
+        src="../../../assets/savoirFaire/sf2.jpg"
+        loading="lazy"
+        alt=""
+      />
     </div>
     <div class="textContainer">
       <div class="content">
@@ -39,7 +44,7 @@ export default {};
   @media screen and (max-width: 660px) {
     width: 130px;
     left: 55%;
-    top: 40%;
+    top: 30%;
   }
 }
 

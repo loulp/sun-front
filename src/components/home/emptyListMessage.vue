@@ -5,7 +5,9 @@
       créations !
     </p>
     <div>
-      <button @click="sendShowMenuEvent">Montrez moi la Boutique</button>
+      <button @click="sendShowMenuEvent" class="mainButton">
+        Montrez moi la Boutique
+      </button>
     </div>
   </div>
 </template>
@@ -24,6 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../shared/styles/variables.scss";
+@import "../../shared/styles/mainButton.scss";
 
 .emptyList {
   width: fit-content;
@@ -32,18 +35,10 @@ export default {
   div {
     margin: 2% auto;
     text-align: center;
+  }
 
-    button {
-      width: fit-content;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-      margin: 5%;
-      background-color: $mainColor;
-      color: white;
-    }
+  @media screen and (max-width: 660px) {
+    width: 80%;
   }
 }
 </style>

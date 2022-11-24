@@ -36,7 +36,7 @@ export default {};
 
   @media screen and (max-width: 660px) {
     width: 125px;
-    bottom: 40%;
+    bottom: 30%;
     right: 55%;
   }
 }

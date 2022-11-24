@@ -31,7 +31,7 @@ export default {
 @import "@/shared/styles/variables.scss";
 
 .flexContainer {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
 
   display: flex;
@@ -63,11 +63,7 @@ export default {
 
   .image {
     flex: 40%;
-
-    background-position: center;
-    background-size: cover;
-    // background-image: url("../../assets/housebanner.jpg");
-    transition: background-image 0.3s ease-in-out;
+    background-color: rgba(234, 246, 246, 0.8);
 
     @media screen and (max-width: 660px) {
       display: none;

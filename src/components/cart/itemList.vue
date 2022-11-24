@@ -117,7 +117,7 @@ export default {
   @media screen and (max-width: 660px) {
     width: auto;
     margin: auto;
-    height: auto;
+    height: 60vh;
   }
 }
 </style>

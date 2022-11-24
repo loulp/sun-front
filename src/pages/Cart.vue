@@ -1,6 +1,6 @@
 <template>
   <div class="mainContainer">
-    <div class="itemList">
+    <div class="itemList customScrollbar">
       <h2>Votre panier</h2>
       <ItemList v-if="productList.length > 0" :productList="productList" />
       <div class="emptyMessageContainer" v-if="productList.length === 0">
@@ -8,7 +8,7 @@
           Votre panier est vide pour le moment, consultez la boutique pour
           découvrir nos bijoux !
         </p>
-        <button @click="sendShowMenuEvent()" class="paymentButton">
+        <button @click="sendShowMenuEvent()" class="mainButton">
           Boutique
         </button>
       </div>
@@ -30,13 +30,13 @@
 
       <button
         @click="toPayment()"
-        class="paymentButton"
+        class="mainButton"
         :disabled="productList.length === 0"
       >
         Paiement
       </button>
       <p class="secure">
-        <img src="../assets/lock.svg" alt="" />Paiement sécurisé
+        <img src="../assets/icon/lock.svg" alt="" />Paiement sécurisé
       </p>
     </div>
   </div>
@@ -90,6 +90,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "../shared/styles/variables.scss";
+@import "../shared/styles/customScrollbar.scss";
+@import "../shared/styles/mainButton.scss";
 
 .mainContainer {
   display: flex;
@@ -106,17 +108,6 @@ export default {
     .emptyMessageContainer {
       width: 66%;
       margin: 5% auto;
-
-      .paymentButton {
-        margin-top: 3%;
-        width: fit-content;
-        background-color: $mainColor;
-        color: white;
-        border: none;
-        padding: 2% 4%;
-        font-size: 14px;
-        cursor: pointer;
-      }
     }
   }
 
@@ -136,21 +127,6 @@ export default {
 
       p {
         margin: 10px 0;
-      }
-    }
-
-    .paymentButton {
-      margin-top: 5%;
-      width: fit-content;
-      background-color: $mainColor;
-      color: white;
-      border: none;
-      padding: 15px 50px;
-      font-size: 18px;
-      cursor: pointer;
-
-      &:disabled {
-        background-color: #efeeed;
       }
     }
 

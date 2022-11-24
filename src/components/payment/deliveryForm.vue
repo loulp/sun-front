@@ -85,7 +85,7 @@
           Champ invalide
         </p>
       </div>
-      <button :disabled="$v.$invalid" type="submit">Valider</button>
+      <button :disabled="$v.$invalid" type="submit" class="mainButton">Valider</button>
     </form>
   </div>
 </template>

@@ -1,0 +1,24 @@
+@import url('/variables.scss');
+
+.mainButton {
+  margin: 4% 0;
+  width: fit-content;
+  background-color: $mainColor;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: grey;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media screen and (max-width: 660px) {
+    font-size: 20px;
+  }
+}

@@ -39,13 +39,7 @@ export default {};
   @media screen and (max-width: 660px) {
     width: 130px;
     left: 55%;
-    top: 40%;
-  }
-}
-
-.media {
-  @media screen and (max-width: 660px) {
-    width: 60%;
+    top: 30%;
   }
 }
 </style>

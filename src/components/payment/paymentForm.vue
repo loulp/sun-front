@@ -9,7 +9,7 @@
     </form>
     <div class="errorContainer" v-if="!loading && paymentFailed">
       <p>Une erreur est survenue lors du paiement, veuillez réessayer.</p>
-      <button @click="initPayment()" class="paymentButton">Réessayer</button>
+      <button @click="initPayment()" class="mainButton">Réessayer</button>
     </div>
     <div class="CGVCheckbox">
       <input
@@ -25,7 +25,7 @@
       </label>
     </div>
     <button
-      class="paymentButton"
+      class="mainButton"
       @click="submit()"
       type="submit"
       :disabled="!isCGVaccepted"
@@ -120,7 +120,7 @@ export default {
         confirmParams: {
           // return_url: "http://localhost:8081/payment",
           // return_url: "https://sun-test.netlify.app/payment",
-          return_url: "https://sunjewelry.fr/payment",
+          return_url: "https://sunjewelry.fr/paiement",
           receipt_email: this.deliveryForm.email,
         },
       });
@@ -178,6 +178,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../shared/styles/variables.scss";
+@import "../../shared/styles/mainButton.scss";
 
 #payment-form {
   width: 75%;
@@ -186,21 +187,6 @@ export default {
 
 .CGVCheckbox {
   margin-top: 5%;
-}
-
-.paymentButton {
-  width: fit-content;
-  border: none;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  margin: 5% 0;
-  background-color: $mainColor;
-  color: white;
-
-  &:disabled {
-    background-color: grey;
-  }
 }
 
 @media screen and (max-width: 660px) {

@@ -4,18 +4,18 @@
       <p>
         Tu viens de trouver une étoile !<br />Fais un vœu et il se réalisera
       </p>
-      <img src="../assets/favIconFill.svg" alt="" />
+      <img src="../assets/icon/favIconFill.svg" alt="" />
       <p>Ps : Tu es incroyable</p>
     </div>
     <div v-if="from == 'inspiration'">
-      <img src="../assets/favIconFill.svg" style="margin-top: 20px" alt="" />
+      <img src="../assets/icon/favIconFill.svg" style="margin-top: 20px" alt="" />
       <p>
         Tel l'éclat de l'étoile polaire<br />
         Tu resplendis de mille feux
       </p>
     </div>
     <div v-if="from == 'cart'">
-      <img src="../assets/cartIcon.svg" style="margin-top: 20px" alt="" />
+      <img src="../assets/icon/cartIcon.svg" style="margin-top: 20px" alt="" />
       <p>Le produit a été ajouté à votre panier.</p>
     </div>
   </div>

@@ -18,15 +18,21 @@
       <div class="burgerMenu">
         <img
           v-if="!showMobileMenu"
-          src="@/assets/menuIcon.svg"
+          src="@/assets/icon/menuIcon.svg"
           alt=""
-          @click="showMobileMenu = !showMobileMenu"
+          @click="
+            showMobileMenu = !showMobileMenu;
+            currentMenu = null;
+          "
         />
         <img
           v-if="showMobileMenu"
-          src="@/assets/cross.svg"
+          src="@/assets/icon/cross.svg"
           alt=""
-          @click="showMobileMenu = !showMobileMenu"
+          @click="
+            showMobileMenu = !showMobileMenu;
+            currentMenu = null;
+          "
         />
       </div>
       <img
@@ -48,13 +54,21 @@
         >
       </div>
       <div class="iconContainer">
-        <img src="@/assets/searchIcon.svg" @click="showMenu('SEARCH')" alt="" />
+        <img
+          src="@/assets/icon/searchIcon.svg"
+          @click="showMenu('SEARCH')"
+          alt=""
+        />
         <div class="iconWithCounter">
-          <img @click="showMenu('FAV')" src="@/assets/favIcon.svg" alt="" />
+          <img
+            @click="showMenu('FAV')"
+            src="@/assets/icon/favIcon.svg"
+            alt=""
+          />
           <span @click="showMenu('FAV')">{{ nbFavItem }}</span>
         </div>
         <div class="iconWithCounter">
-          <img @click="toCart()" src="@/assets/cartIcon.svg" alt="" />
+          <img @click="toCart()" src="@/assets/icon/cartIcon.svg" alt="" />
           <span @click="toCart()">{{ nbCartItem }}</span>
         </div>
       </div>
@@ -63,7 +77,10 @@
     <menuShop v-if="currentMenu === 'SHOP'" @hideMenu="currentMenu = null" />
     <menuHouse v-if="currentMenu === 'HOUSE'" @hideMenu="currentMenu = null" />
     <menuFav v-if="currentMenu === 'FAV'" @hideMenu="currentMenu = null" />
-    <search-tab v-if="currentMenu === 'SEARCH'" @hideMenu="currentMenu = null" />
+    <search-tab
+      v-if="currentMenu === 'SEARCH'"
+      @hideMenu="currentMenu = null"
+    />
   </div>
 </template>
 
@@ -123,12 +140,17 @@ export default {
     },
 
     showMenu(menu) {
-      if (this.currentMenu === null) {
-        this.currentMenu = menu;
-      } else if (this.currentMenu != null && this.currentMenu != menu) {
-        this.currentMenu = menu;
-      } else {
+      if (window.innerWidth <= 660 && menu === "SHOP") {
+        this.showMobileMenu = !this.showMobileMenu;
         this.currentMenu = null;
+      } else {
+        if (this.currentMenu === null) {
+          this.currentMenu = menu;
+        } else if (this.currentMenu != null && this.currentMenu != menu) {
+          this.currentMenu = menu;
+        } else {
+          this.currentMenu = null;
+        }
       }
     },
 
@@ -154,7 +176,8 @@ export default {
 
   created() {
     EventBus.$on("showShopMenu", (menu) => {
-      this.currentMenu = menu;
+      // this.currentMenu = menu;
+      this.showMenu(menu);
     });
   },
 };
@@ -252,7 +275,7 @@ export default {
       display: flex;
       flex-direction: row;
       margin-right: 3%;
-      justify-content: space-around;
+      justify-content: space-between;
 
       img {
         margin: auto 5%;

@@ -39,6 +39,12 @@ export default {
   height: calc(80vh - #{$headerHeight});
   background-position: center;
   background-size: cover;
+
+  @media screen and (max-width: 660px) {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
+  }
 }
 
 .titleContainer {
@@ -55,7 +61,7 @@ export default {
 }
 
 #editor {
-  margin: 1% auto;
+  margin: 1% auto 3% auto;
   width: 60%;
 }
 </style>

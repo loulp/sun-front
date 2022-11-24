@@ -7,14 +7,14 @@
       <div class="content">
         <h2>La Réalisation :</h2>
         <p>
-          Suite à nos échanges, je vous proposerais plusieurs dessins qui seront
+          Suite à nos échanges, je vous proposerai plusieurs dessins qui seront
           modifiables et ajustables jusqu'à ce que vous soyez complètement
           satisfait.<br />Une fois réalisé, une vue 3D de votre bijou vous sera
           envoyé pour valider les courbes et volumes.
         </p>
         <p>
           La fabrication de votre bijou est compris dans un délai de 3 à 6
-          semaines. Pendant cette période, si vous le souhaites, vous recevrez
+          semaines. Pendant cette période, si vous le souhaitez, vous recevrez
           régulièrement des photos de l'avancée à l'atelier.
         </p>
         <p>

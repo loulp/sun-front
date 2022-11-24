@@ -4,7 +4,7 @@
       <img
         @click="removeFromFav()"
         class="favIcon"
-        :src="require('../../assets/favIconFill.svg')"
+        :src="require('../../assets/icon/favIconFill.svg')"
         alt=""
       />
     </div>

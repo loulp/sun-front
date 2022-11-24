@@ -64,6 +64,10 @@ export default {
       flex: 50%;
       .media {
         width: 45%;
+
+        @media screen and (max-width: 660px) {
+          width: 60%;
+        }
       }
     }
 
@@ -119,6 +123,10 @@ export default {
         flex-direction: column;
         height: auto;
       }
+    }
+
+    @media screen and (max-width: 660px) {
+      height: auto;
     }
   }
 

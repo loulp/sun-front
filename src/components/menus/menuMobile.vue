@@ -197,7 +197,7 @@ export default {
 
     ul {
       margin-top: 0;
-      list-style: url("../../assets/liTEST.jpg");
+      list-style: url("../../assets/liStar.jpg");
     }
 
     .menuLink {

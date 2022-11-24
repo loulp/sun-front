@@ -2,7 +2,7 @@
   <div class="viewContainer">
     <div class="stateInformations success" v-if="paymentStatus === 'SUCCESS'">
       <h2>Le paiement a bien été effectué !</h2>
-      <img src="@/assets/successIcon.svg" alt="" />
+      <img src="@/assets/icon/successIcon.svg" alt="" />
       <p>
         Nous vous remercions pour votre commande et votre confiance. Vous
         recevrez sous peu un mail de confirmation à l'adresse mail indiqué lors
@@ -14,7 +14,7 @@
       v-if="paymentStatus === 'PROCESSING'"
     >
       <h2>La validation de votre paiement est toujours en cours</h2>
-      <img src="@/assets/loadingIcon.svg" alt="" />
+      <img src="@/assets/icon/loadingIcon.svg" alt="" />
       <p>
         Nous vous remercions pour votre commande et votre confiance. Vous
         recevrez sous peu un mail vous confirmant le statut de votre commande à
@@ -23,7 +23,7 @@
     </div>
     <div class="stateInformations error" v-if="paymentStatus === 'FAILED'">
       <h2>Une erreur est survenue lors du paiement</h2>
-      <img src="@/assets/errorIcon.svg" alt="" />
+      <img src="@/assets/icon/errorIcon.svg" alt="" />
       <p>
         Une erreur est survenue lors du paiement, celui ci n'a pas été validé et
         la commande n'a pas pus être enregistré. merci de bien vouloir

@@ -5,7 +5,7 @@
         <img src="../../assets/starIcon.png" alt="" />
         <p>
           Votre bijou étant réalisé à la commande, Nous vous rappelons que le
-          délai de fabrication est comprise entre 3 et 6 semaines.
+          délai de fabrication est compris entre 3 et 6 semaines.
         </p>
       </div>
       <div class="customMessage">
