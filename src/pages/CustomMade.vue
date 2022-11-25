@@ -10,7 +10,11 @@
     <realisation />
     <contact-option />
     <div class="mediaHolder">
-      <img src="../assets/photoCollection/customBottom.jpg" loading="lazy" alt="" />
+      <img
+        src="../assets/photoCollection/customBottom.jpg"
+        loading="lazy"
+        alt=""
+      />
     </div>
   </div>
 </template>
@@ -20,8 +24,9 @@ import ContactOption from "../components/customMade/contactOption.vue";
 import meeting from "../components/customMade/meeting.vue";
 import Realisation from "../components/customMade/realisation.vue";
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Sur-mesure",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/sur-mesure" }],
   },
   components: { meeting, Realisation, ContactOption },
 };

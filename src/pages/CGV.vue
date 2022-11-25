@@ -12,11 +12,14 @@
     </p>
     <h2>Mentions légales</h2>
     <p>
-      Le Site www.sunjewelry.fr est édité par Typhen LE ROMANCER - SUN Jewelry,Auto-entreprise
-      immatriculée sous le N°SIRET 90756792900027, ayant son siège social au 2
-      rue de l'oiselière 69009 Lyon.
+      Le Site www.sunjewelry.fr est édité par Typhen LE ROMANCER - SUN
+      Jewelry,Auto-entreprise immatriculée sous le N°SIRET 90756792900027, ayant
+      son siège social au 2 rue de l'oiselière 69009 Lyon.
     </p>
-    <p>L'hébergement technique du Site est assuré par la société OVH, SAS, 2 rue Kellermann, 59100 Roubaix.</p>
+    <p>
+      L'hébergement technique du Site est assuré par la société OVH, SAS, 2 rue
+      Kellermann, 59100 Roubaix.
+    </p>
     <p>Le Site a été réalisé par Louis LE POGAM</p>
     <h2>CONDITIONS GÉNÉRALES DE VENTE</h2>
     <h3>ARTICLE 1 - Champ d'application</h3>
@@ -25,14 +28,14 @@
       sans restriction ni réserve à l'ensemble des ventes conclues par le
       Vendeur auprès d'acheteurs non professionnels (« Les Clients ou le Client
       »), désirant acquérir les produits proposés à la vente (« Les Produits »)
-      par le Vendeur sur le site www.sunjewelry.fr. Le Vendeur a pour activité la
-      vente de bijoux.
+      par le Vendeur sur le site www.sunjewelry.fr. Le Vendeur a pour activité
+      la vente de bijoux.
     </p>
     <p>
       Les caractéristiques principales des Produits et notamment les
       spécifications, illustrations et indications de dimensions ou de capacité
-      des Produits, sont présentées sur le site www.sunjewelry.fr ce dont le client
-      est tenu de prendre connaissance avant de commander.
+      des Produits, sont présentées sur le site www.sunjewelry.fr ce dont le
+      client est tenu de prendre connaissance avant de commander.
     </p>
     <p>
       Le choix et l'achat d'un Produit sont de la seule responsabilité du
@@ -65,8 +68,8 @@
     <p>e-mail : contact@sunjewelry.fr</p>
     <p>téléphone : +33 6 27 95 56 64</p>
     <p>
-      Les Produits présentés sur le site www.sunjewelry.fr sont proposés à la vente
-      pour tous les pays du monde.
+      Les Produits présentés sur le site www.sunjewelry.fr sont proposés à la
+      vente pour tous les pays du monde.
     </p>
     <p>
       En cas de commande vers un pays autre que la France métropolitaine, le
@@ -158,8 +161,8 @@
       de signaler immédiatement toute erreur.
     </p>
     <p>
-      Toute commande passée sur le site www.sunjewelry.fr constitue la formation d'un
-      contrat conclu à distance entre le Client et le Vendeur.
+      Toute commande passée sur le site www.sunjewelry.fr constitue la formation
+      d'un contrat conclu à distance entre le Client et le Vendeur.
     </p>
     <p>
       Le Vendeur se réserve le droit d'annuler ou de refuser toute commande d'un
@@ -252,11 +255,11 @@
       Le Client est tenu de vérifier l'état des produits livrés. Il dispose d'un
       délai de quatorze jours calendaires à compter de la livraison pour
       formuler des réclamations par voie électronique à l'adresse
-      contact@sunjewelry.fr en rappelant la référence et la date de la
-      Commande, accompagnées de tous les justificatifs y afférents (photos
-      notamment). Passé ce délai et à défaut d'avoir respecté ces formalités,
-      les Produits seront réputés conformes et exempts de tout vice apparent et
-      aucune réclamation ne pourra être valablement acceptée par le Vendeur.
+      contact@sunjewelry.fr en rappelant la référence et la date de la Commande,
+      accompagnées de tous les justificatifs y afférents (photos notamment).
+      Passé ce délai et à défaut d'avoir respecté ces formalités, les Produits
+      seront réputés conformes et exempts de tout vice apparent et aucune
+      réclamation ne pourra être valablement acceptée par le Vendeur.
     </p>
     <p>
       Le Vendeur remboursera ou remplacera dans les plus brefs délais et à ses
@@ -546,8 +549,8 @@
     <h4>9.7 Mise en œuvre des droits des Clients et utilisateurs</h4>
     <p>
       En application de la règlementation applicable aux données à caractère
-      personnel, les Clients et utilisateurs du site www.sunjewelry.fr disposent des
-      droits suivants :
+      personnel, les Clients et utilisateurs du site www.sunjewelry.fr disposent
+      des droits suivants :
     </p>
     <ul>
       <li>
@@ -604,8 +607,8 @@
     </p>
     <h3>ARTICLE 10 - Propriété intellectuelle</h3>
     <p>
-      Le contenu du site www.sunjewelry.fr est la propriété du Vendeur et de
-      ses partenaires et est protégé par les lois françaises et internationales
+      Le contenu du site www.sunjewelry.fr est la propriété du Vendeur et de ses
+      partenaires et est protégé par les lois françaises et internationales
       relatives à la propriété intellectuelle.
     </p>
     <p>
@@ -661,9 +664,9 @@
     <p>Date ______________________</p>
     <p>
       Le présent formulaire doit être complété et renvoyé uniquement si le
-      Client souhaite se rétracter de la commande passée sur www.sunjewelry.fr sauf
-      exclusions ou limites à l'exercice du droit de rétractation suivant les
-      Conditions Générales de Vente applicables.
+      Client souhaite se rétracter de la commande passée sur www.sunjewelry.fr
+      sauf exclusions ou limites à l'exercice du droit de rétractation suivant
+      les Conditions Générales de Vente applicables.
     </p>
     <p>A l'attention de Typhen LE ROMANCER - SUN Jewelry</p>
     <p>2 rue de l'oiselère, 69009 Lyon</p>
@@ -684,8 +687,9 @@
 
 <script>
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "CGV",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/cgv" }],
   },
 };
 </script>

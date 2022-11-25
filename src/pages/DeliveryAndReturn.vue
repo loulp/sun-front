@@ -66,8 +66,9 @@
 
 <script>
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Retours et livraison",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/retours-et-livraison" }],
   },
 };
 </script>

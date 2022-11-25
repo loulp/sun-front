@@ -85,7 +85,7 @@ const routes = [
     component: () => import('@/pages/CGV'),
   },
   {
-    path: '/:pathMatch(.*)*',
+    path: '/:pathMatch(.*)',
     name: 'NotFound',
     component: () => import('@/pages/404'),
   },

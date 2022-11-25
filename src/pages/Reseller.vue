@@ -37,8 +37,9 @@
 
 <script>
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Revendeurs",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/revendeurs" }],
   },
 };
 </script>
@@ -61,14 +62,13 @@ export default {
       margin-right: 10px;
       margin-bottom: -5px;
     }
-
   }
 
   p {
     text-align: center;
-    
+
     @media screen and (max-width: 660px) {
-        margin: 3% 10%;
+      margin: 3% 10%;
     }
   }
 }

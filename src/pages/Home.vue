@@ -23,8 +23,9 @@ import Instagram from "../components/home/instagram.vue";
 import CitationAmour from "../components/home/citationAmour.vue";
 
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Accueil",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr" }],
   },
   components: {
     WorkshopBanner,

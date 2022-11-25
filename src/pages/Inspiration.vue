@@ -12,8 +12,9 @@ import emotion from "../components/house/inspiration/emotion.vue";
 import InspiCitation from "../components/house/inspiration/inspiCitation.vue";
 import MiddlePart from "../components/house/inspiration/middlePart.vue";
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Inspiration",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/inspiration" }],
   },
   components: { emotion, MiddlePart, InspiCitation },
 };

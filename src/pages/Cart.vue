@@ -49,6 +49,7 @@ import EventBus from "@/shared/eventBus.js";
 export default {
   metaInfo: {
     title: "Panier",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/panier" }],
   },
   components: { ItemList },
 

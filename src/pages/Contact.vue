@@ -5,8 +5,9 @@
 <script>
 import contactForm from "../components/contact/contactForm.vue";
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Contact",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/contact" }],
   },
   components: { contactForm },
 };

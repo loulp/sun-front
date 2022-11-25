@@ -79,10 +79,11 @@ import PaymentStatus from "../components/payment/paymentStatus.vue";
 const stripe = Stripe(process.env.VUE_APP_STRIPE_KEY);
 
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Paiement",
+    link: [{ rel: "canonical", href: "https://sunjewelry.fr/paiement" }],
   },
-  
+
   components: {
     CartRecap,
     PaymentForm,
