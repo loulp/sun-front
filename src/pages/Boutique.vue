@@ -12,6 +12,9 @@ import top from "../components/boutique/top.vue";
 import productService from "../shared/services/products.services";
 
 export default {
+    metaInfo: {
+    title: "Boutique",
+  },
   components: { top, ProductList },
 
   data() {

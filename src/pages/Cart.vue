@@ -47,6 +47,9 @@ import ItemList from "../components/cart/itemList.vue";
 import EventBus from "@/shared/eventBus.js";
 
 export default {
+  metaInfo: {
+    title: "Panier",
+  },
   components: { ItemList },
 
   data() {

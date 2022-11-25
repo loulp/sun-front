@@ -9,6 +9,9 @@
 import Creatrice from "../components/house/history/creatrice.vue";
 import Vision from "../components/house/history/vision.vue";
 export default {
+    metaInfo: {
+    title: "L'histoire",
+  },
   components: { Creatrice, Vision },
 };
 </script>

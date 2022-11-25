@@ -65,7 +65,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+    metaInfo: {
+    title: "Retours et livraison",
+  },
+};
 </script>
 
 <style lang="scss" scoped>

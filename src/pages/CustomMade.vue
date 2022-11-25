@@ -20,6 +20,9 @@ import ContactOption from "../components/customMade/contactOption.vue";
 import meeting from "../components/customMade/meeting.vue";
 import Realisation from "../components/customMade/realisation.vue";
 export default {
+    metaInfo: {
+    title: "Sur-mesure",
+  },
   components: { meeting, Realisation, ContactOption },
 };
 </script>

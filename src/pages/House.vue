@@ -5,7 +5,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+    metaInfo: {
+    title: "La maison",
+  },
+};
 </script>
 
 <style scoped lang="scss">

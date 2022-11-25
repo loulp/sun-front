@@ -12,6 +12,9 @@ import emotion from "../components/house/inspiration/emotion.vue";
 import InspiCitation from "../components/house/inspiration/inspiCitation.vue";
 import MiddlePart from "../components/house/inspiration/middlePart.vue";
 export default {
+    metaInfo: {
+    title: "Inspiration",
+  },
   components: { emotion, MiddlePart, InspiCitation },
 };
 </script>

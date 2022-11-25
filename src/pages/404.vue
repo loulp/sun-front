@@ -17,6 +17,9 @@
 
 <script>
 export default {
+    metaInfo: {
+    title: "404",
+  },
   methods: {
     redirectToHome() {
       this.$router.push({

@@ -683,7 +683,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+    metaInfo: {
+    title: "CGV",
+  },
+};
 </script>
 
 <style lang="scss" scoped>

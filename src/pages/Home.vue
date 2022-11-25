@@ -23,6 +23,9 @@ import Instagram from "../components/home/instagram.vue";
 import CitationAmour from "../components/home/citationAmour.vue";
 
 export default {
+    metaInfo: {
+    title: "Accueil",
+  },
   components: {
     WorkshopBanner,
     InspirationBanner,

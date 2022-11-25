@@ -79,6 +79,10 @@ import PaymentStatus from "../components/payment/paymentStatus.vue";
 const stripe = Stripe(process.env.VUE_APP_STRIPE_KEY);
 
 export default {
+    metaInfo: {
+    title: "Paiement",
+  },
+  
   components: {
     CartRecap,
     PaymentForm,

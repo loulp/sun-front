@@ -36,7 +36,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+    metaInfo: {
+    title: "Revendeurs",
+  },
+};
 </script>
 
 <style lang="scss">

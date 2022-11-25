@@ -18,6 +18,9 @@ import Gemstone from "../components/house/expertise/gemstone.vue";
 import Polishing from "../components/house/expertise/polishing.vue";
 import Workshop from "../components/house/expertise/workshop.vue";
 export default {
+    metaInfo: {
+    title: "Le savoir faire",
+  },
   components: { expertise, Workshop, Gemstone, Polishing, Bottom },
 };
 </script>

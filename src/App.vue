@@ -17,6 +17,11 @@ import ScrollUp from "./components/scrollUp.vue";
 import MessageBox from "./components/messageBox.vue";
 
 export default {
+  metaInfo: {
+    title: "Songe D'Une Nuit - Jewelry",
+    titleTemplate: "%s | Songe D'Une Nuit - Jewelry",
+  },
+
   components: {
     Header,
     Footer,
