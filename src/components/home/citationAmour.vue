@@ -59,13 +59,13 @@ export default {};
       height: calc(100vh - #{$headerHeight});
       margin: 5px;
 
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         height: auto;
         width: 80%;
         margin-bottom: 15%;
       }
     }
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       margin-top: 6%;
       flex-direction: column;
       align-items: center;
@@ -107,7 +107,7 @@ export default {};
     }
   }
 
-  @media screen and (max-width: 660px) {
+  @media screen and (max-width: 1000px) {
     height: auto;
     flex-direction: column-reverse;
   }

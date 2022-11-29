@@ -108,13 +108,13 @@ export default {
         }
       }
 
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         flex-direction: column;
         align-items: center;
       }
     }
 
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       flex-direction: column;
     }
   }

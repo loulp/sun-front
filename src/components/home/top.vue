@@ -35,7 +35,7 @@ export default {};
     left: 3%;
     bottom: 8%;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     color: $fontColor;
 
     h2 {
@@ -45,12 +45,12 @@ export default {};
     p {
       font-size: 18px;
     }
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       width: 50%;
     }
   }
 
-  @media screen and (max-width: 660px) {
+  @media screen and (max-width: 1000px) {
     background-size: cover;
   }
 }

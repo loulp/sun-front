@@ -106,7 +106,7 @@ export default {
         color: $fontColor;
       }
 
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         padding-top: 0;
         margin-bottom: 10%;
       }
@@ -130,14 +130,14 @@ export default {
         height: 35vh;
         cursor: pointer;
 
-        @media screen and (max-width: 660px) {
+        @media screen and (max-width: 1000px) {
           height: 25vh;
         }
       }
     }
   }
 
-  @media screen and (max-width: 660px) {
+  @media screen and (max-width: 1000px) {
     flex-direction: column;
   }
 }

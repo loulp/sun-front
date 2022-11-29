@@ -12,8 +12,15 @@ import top from "../components/boutique/top.vue";
 import productService from "../shared/services/products.services";
 
 export default {
-    metaInfo: {
+  metaInfo: {
     title: "Boutique",
+    meta: [
+      {
+        name: "description",
+        content:
+          "Découvrez Radiance, collection de bijoux en or recyclé de la maison de joaillerie SUN Jewelry, Atelier de joaillerie Lyonnais",
+      },
+    ],
   },
   components: { top, ProductList },
 

@@ -52,7 +52,7 @@ export default {};
   position: relative;
 
   .media {
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       width: 60%;
     }
   }

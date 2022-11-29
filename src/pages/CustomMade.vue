@@ -27,6 +27,13 @@ export default {
   metaInfo: {
     title: "Sur-mesure",
     link: [{ rel: "canonical", href: "https://sunjewelry.fr/sur-mesure" }],
+    meta: [
+      {
+        name: "description",
+        content:
+          "Découvrez le sur-mesure, réalisons ensemble les bijoux de vos rêves. Créations uniques de la maison de joaillerie SUN Jewelry, Atelier de joaillerie à Lyon",
+      },
+    ],
   },
   components: { meeting, Realisation, ContactOption },
 };
@@ -129,7 +136,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       height: auto;
     }
   }
@@ -145,7 +152,7 @@ export default {
     text-align: center;
     img {
       width: 50%;
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         width: 75%;
       }
     }

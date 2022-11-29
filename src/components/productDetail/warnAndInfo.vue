@@ -66,7 +66,7 @@ export default {};
 
       img {
         width: 40px;
-        height: fit-content;
+        height: 40px;
         margin-right: 5px;
       }
 

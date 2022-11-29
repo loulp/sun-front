@@ -46,7 +46,7 @@ export default {};
 
     img {
       height: calc(100vh - #{$scrolledHeaderHeight});
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         height: auto;
         width: 90%;
         margin-bottom: 15%;
@@ -71,7 +71,7 @@ export default {};
       color: $fontColor;
       width: 75%;
 
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         padding: 0;
         margin: 5%;
       }
@@ -110,7 +110,7 @@ export default {};
     }
   }
 
-  @media screen and (max-width: 660px) {
+  @media screen and (max-width: 1000px) {
     height: auto;
     flex-direction: column-reverse;
   }

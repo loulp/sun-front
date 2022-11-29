@@ -15,6 +15,13 @@ export default {
   metaInfo: {
     title: "Inspiration",
     link: [{ rel: "canonical", href: "https://sunjewelry.fr/inspiration" }],
+    meta: [
+      {
+        name: "description",
+        content:
+          "Découvrez l’inspiration et l’univers de la maison de joaillerie SUN Jewelry, Atelier de joaillerie Lyonnais",
+      },
+    ],
   },
   components: { emotion, MiddlePart, InspiCitation },
 };
@@ -107,7 +114,7 @@ export default {
         flex-direction: column;
       }
     }
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       height: auto;
     }
   }

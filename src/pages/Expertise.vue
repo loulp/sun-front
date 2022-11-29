@@ -21,6 +21,13 @@ export default {
   metaInfo: {
     title: "Le savoir faire",
     link: [{ rel: "canonical", href: "https://sunjewelry.fr/savoir_faire" }],
+    meta: [
+      {
+        name: "description",
+        content:
+          "Découvrez le savoir faire et l'artisanat de la maison de joaillerie SUN Jewelry, Atelier de joaillerie Lyonnais",
+      },
+    ],
   },
   components: { expertise, Workshop, Gemstone, Polishing, Bottom },
 };
@@ -46,7 +53,7 @@ export default {
       margin-bottom: -5px;
     }
 
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       margin-bottom: 15%;
     }
   }
@@ -69,7 +76,7 @@ export default {
       .media {
         width: 45%;
 
-        @media screen and (max-width: 660px) {
+        @media screen and (max-width: 1000px) {
           width: 60%;
         }
       }
@@ -94,12 +101,12 @@ export default {
           line-height: 1.6;
         }
 
-        @media screen and (max-width: 660px) {
+        @media screen and (max-width: 1000px) {
           width: 100%;
         }
       }
 
-      @media screen and (max-width: 660px) {
+      @media screen and (max-width: 1000px) {
         align-items: center;
         margin: 3%;
       }
@@ -129,7 +136,7 @@ export default {
       }
     }
 
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 1000px) {
       height: auto;
     }
   }

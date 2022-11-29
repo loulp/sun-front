@@ -147,6 +147,11 @@ export default {
     .productDetail {
       height: calc(100vh - #{$headerHeight});
       flex: 50%;
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        height: auto;
+      }
     }
 
     @media screen and (max-width: 660px) {
