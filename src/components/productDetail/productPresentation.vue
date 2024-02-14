@@ -1,5 +1,30 @@
 <template>
   <div class="container">
+    <!-- TODO virer, creer composant -->
+    <div v-if="showPopin" class="modal-mask">
+      <div class="modal-wrapper">
+        <div v-if="showPopin" class="modal-container">
+          <p>
+            Les commandes via le site web sont temporairement indisponibles. Pour toutes commandes vous
+            pouvez toujours me contacter via le
+            <a href="/contact" target="_blank" class="link"
+              >formulaire de contact</a
+            >
+            ou sur
+            <a
+              href="https://www.instagram.com/s.u.n.jewelry/"
+              target="_blank"
+              class="link"
+              >instagram</a
+            >
+          </p>
+          <button @click="showUnavailablePopin()" class="mainButton">
+            Retour
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="namePriceContainer">
       <div class="textContainer">
         <h3>{{ product.attributes.nom }}</h3>
@@ -70,7 +95,9 @@
         </select>
       </div>
     </div>
-    <button class="mainButton" @click="addToCart()">Ajouter au panier</button>
+    <button class="mainButton" @click="showUnavailablePopin()">
+      Ajouter au panier
+    </button>
   </div>
 </template>
 
@@ -88,6 +115,7 @@ export default {
       byUnity: false,
       ringSize: "43",
       goldColor: "Blanc",
+      showPopin: false,
     };
   },
 
@@ -125,6 +153,9 @@ export default {
   },
 
   methods: {
+    showUnavailablePopin() {
+      this.showPopin = !this.showPopin;
+    },
     addToCart() {
       if (this.product.attributes.category.data.attributes.type !== "Bague") {
         this.ringSize = "unique";
@@ -309,6 +340,43 @@ export default {
   @media screen and (max-width: 660px) {
     padding-left: 0;
     margin: 5%;
+  }
+}
+
+//TODO sortir de la
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+
+  .modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+
+    .modal-container {
+      width: 40%;
+      max-width: 400px;
+      min-width: 250px;
+      margin: 0px auto;
+      padding: 20px 30px;
+      background-color: white;
+      border-radius: 10px;
+      border: 1px solid $mainColor;
+
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+      transition: all 0.3s ease;
+
+      text-align: center;
+      .link {
+        color: $fontColor;
+      }
+    }
   }
 }
 </style>

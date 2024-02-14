@@ -19,11 +19,11 @@ const routes = [
     name: 'Cart',
     component: () => import('@/pages/Cart'),
   },
-  {
-    path: '/paiement',
-    name: 'Payment',
-    component: () => import('@/pages/Payment'),
-  },
+  // {
+  //   path: '/paiement',
+  //   name: 'Payment',
+  //   component: () => import('@/pages/Payment'),
+  // },
   {
     path: '/boutique/collection/:id',
     name: 'BoutiqueColl',
